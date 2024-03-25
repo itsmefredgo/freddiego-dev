@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { links } from "@/lib/data";
+import { links } from "@/../lib/data";
 
 function Header() {
   return (
