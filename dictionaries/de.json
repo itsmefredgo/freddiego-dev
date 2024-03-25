@@ -1,16 +1,16 @@
 {
   "navigation": {
-    "home": "Startseite",
-    "about": "Über"
+    "home": "freddiego",
+    "about": "About"
   },
   "page": {
     "home": {
-      "title": "Willkommen bei NextJs i18n",
-      "description": "Internationalisierung im NextJs 13 App-Router"
+      "title": "안녕하세요!",
+      "description": "고동현입니다. "
     },
     "about": {
-      "title": "Über uns",
-      "description": "Dies ist die About-Seite"
+      "title": "소개글",
+      "description": "안녕하세요. 개발자 고동현입니다."
     }
   }
 }

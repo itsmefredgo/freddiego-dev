@@ -14,9 +14,7 @@ function CustomLink({ href, lang, ...props }: CustomLinkProps) {
   const path = isDefaultLang ? href : `/${lang}${href}`;
 
   return (
-    <Link href={path} {...props}>
-      Enter
-    </Link>
+    <Link href={path} {...props}/>
   );
 }
 

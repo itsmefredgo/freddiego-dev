@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Locale } from "@/src/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
-import LocaleSwitcher from "./locale-switcher";
+import ChangeLanguage from "./locale-switcher";
 import CustomLink from "./customLink";
 
 export default async function Header({ lang }: { lang: Locale }) {
@@ -22,7 +22,7 @@ export default async function Header({ lang }: { lang: Locale }) {
             </CustomLink>
           </li>
         </ul>
-        <LocaleSwitcher />
+        <ChangeLanguage />
       </nav>
     </header>
   );
