@@ -5,9 +5,11 @@ function Header() {
   return (
     <header className=" h-10">
       <ul className=" flex gap-8">
-        {links.map(({ name, address }) => (
+        {links.map(({ name, address }, index) => (
           <li>
-            <Link href={address}>{name}</Link>
+            <Link key={index} href={address}>
+              {name}
+            </Link>
           </li>
         ))}
       </ul>
