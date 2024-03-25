@@ -1,16 +1,16 @@
 {
   "navigation": {
-    "home": "Home",
+    "home": "freddiego",
     "about": "About"
   },
   "page": {
     "home": {
-      "title": "Welcome to NextJs i18n",
-      "description": "Internationalization in NextJs 13 App router"
+      "title": "Hi there, my name is Frederick Go",
+      "description": "I am a full stack developer | software engineer | data scientist"
     },
     "about": {
-      "title": "About Us",
-      "description": "This is the about page"
+      "title": "About",
+      "description": "I am a full stack developer | software engineer | data scientist..."
     }
   }
 }

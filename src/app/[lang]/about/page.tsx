@@ -1,4 +1,4 @@
-import { Locale } from '@/i18n.config'
+import { Locale } from '@/src/i18n.config'
 import { getDictionary } from '@/lib/dictionary'
 
 export default async function About({
