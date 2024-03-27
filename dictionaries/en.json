@@ -1,0 +1,34 @@
+{
+  "navigation": {
+    "": "freddiego",
+    "about": "About",
+    "archive": "Archive",
+    "contact": "Contact"
+  },
+  "page": {
+    "home": {
+      "title": "Hi there, my name is Frederick Go",
+      "description": "I am a full stack developer | software engineer | data scientist"
+    },
+    "about": {
+      "title": "About page",
+      "summary": {
+        "section": "This is a summary section about me"
+      },
+      "work": {
+        "section": "This is my work experience section"
+      },
+      "techstack": {
+        "section": "This is my tech stack section"
+      }
+    },
+    "archive": {
+      "title": "Archive page",
+      "description": ""
+    },
+    "contact": {
+      "title": "Contact page",
+      "description": "contact information"
+    }
+  }
+}
