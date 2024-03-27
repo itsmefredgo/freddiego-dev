@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Locale } from "@/src/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 import ChangeLanguage from "./locale-switcher";
@@ -11,16 +10,11 @@ export default async function Header({ lang }: { lang: Locale }) {
     <header className="py-6">
       <nav className="container flex items-center justify-between">
         <ul className="flex gap-x-8">
-          <li>
-            <CustomLink href={`/`} lang={lang}>
-              {navigation.home}
+          {Object.entries(navigation).map(([key, value]) => (
+            <CustomLink href={`/` + key} lang={lang} key={key}>
+              {value}
             </CustomLink>
-          </li>
-          <li>
-            <CustomLink href={`/about`} lang={lang}>
-              {navigation.about}
-            </CustomLink>
-          </li>
+          ))}
         </ul>
         <ChangeLanguage />
       </nav>

@@ -11,10 +11,8 @@ export default async function About({
   return (
     <section className="py-24">
       <div className="container">
-        <h1 className="text-3xl font-bold">{page.about.title}</h1>
-        <h2 className=" text-2xl ">{page.about.summary.section}</h2>
-        <h2 className=" text-2xl ">{page.about.work.section}</h2>
-        <h2 className=" text-2xl ">{page.about.techstack.section}</h2>
+        <h1 className="text-3xl font-bold">{page.contact.title}</h1>
+        <p className="text-gray-500">{page.contact.description}</p>
       </div>
     </section>
   );
