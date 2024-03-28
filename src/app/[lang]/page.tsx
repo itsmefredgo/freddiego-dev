@@ -15,8 +15,11 @@ export default async function Home({
   return (
     <section className="py-24">
       <div className="container">
-        <h1 className="text-3xl font-bold">{page.home.title}</h1>
-        <p className="text-gray-500">{page.home.description}</p>
+        <h1 className="text-3xl font-bold">
+          {page.home.introduction.greeting}
+        </h1>
+        <p className="text-gray-500">{page.home.introduction.name}</p>
+        <p className="text-gray-500">{page.home.introduction.role}</p>
       </div>
     </section>
   );

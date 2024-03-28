@@ -5,13 +5,80 @@
     "archive": "Archive",
     "contact": "Contact"
   },
+
   "page": {
     "home": {
-      "title": "Hi there, my name is Frederick Go",
-      "description": "I am a full stack developer | software engineer | data scientist"
+      "introduction": {
+        "greeting": "Hi there,",
+        "name": "my name is Frederick Go",
+        "role": "I am a full-stack developer | software engineer. "
+      },
+      "work": {
+        "title": "Experiences",
+        "experiences": {
+          "St. Joseph's Children's Centre": {
+            "role": "Web Developer",
+            "date": "Dec 2022 - Dec 2023",
+            "description": "Maintained and updated the organization's website using WordPress. Addressed prior site neglect, resolving issues promptly and ensuring the site now provides up-to-date information."
+          }
+        }
+      },
+      "projects": {
+        "title": "Pinned Projects",
+        "projects": {
+          "NotifyAll": {
+            "description": "This is a project description. ",
+            "techstack": "React, Node.js, Express, MongoDB"
+          },
+          "Trello Cloning": {
+            "description": "This is a project description",
+            "techstack": "Tech 1, Tech 2, Tech 3"
+          },
+          "Parkbom Academic Institution Website": {
+            "description": "This is a project description",
+            "techstack": "Tech 1, Tech 2, Tech 3"
+          },
+          "Guitar Chord Music Sheet Library": {
+            "description": "This is a project description",
+            "techstack": "Tech 1, Tech 2, Tech 3"
+          }
+        }
+      },
+      "skills": {
+        "title": "Pinned Skills",
+        "skills": {
+          "Frontend": {
+            "description": "React, Next.js, HTML, CSS, JavaScript, etc..."
+          },
+          "Backend": {
+            "description": "Node.js, Express, MongoDB, etc..."
+          },
+          "Others": {
+            "description": "Git, GitHub, Vercel, AWS, etc..."
+          }
+        }
+      },
+      "contact": {
+        "title": "Contact me",
+        "email": "hyeongo0317@gmail.com",
+        "phoneNumber": "(1)-902-580-3648",
+        "linkedin": "https://www.linkedin.com/in/fred-go/",
+        "github": "https://github.com/itsmefredgo",
+        "resume": "resume download link"
+      }
     },
+
     "about": {
       "title": "About page",
+      "education": {
+        "title": "Education",
+        "education": {
+          "Dalhousie University": {
+            "degree": "Bachelor of Computer Science / Minor in Statistics",
+            "date": "2020 - 2023"
+          }
+        }
+      },
       "summary": {
         "section": "This is a summary section about me"
       },
@@ -22,10 +89,12 @@
         "section": "This is my tech stack section"
       }
     },
+
     "archive": {
       "title": "Archive page",
       "description": ""
     },
+
     "contact": {
       "title": "Contact page",
       "description": "contact information"
