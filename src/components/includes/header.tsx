@@ -51,7 +51,7 @@ export default function Header({ lang }: { lang: Locale }) {
             {Object.entries(navigation).map(
               ([key, value]) =>
                 key !== "" && (
-                  <span className="">
+                  <span key={key} className="">
                     <HeaderLink href={`/` + key} lang={lang} key={key}>
                       {value}
                     </HeaderLink>
