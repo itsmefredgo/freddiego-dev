@@ -2,20 +2,18 @@ import Link from "next/link";
 import React from "react";
 import { i18n } from "../i18n.config";
 
-type CustomLinkProps = {
+type HeaderLinkProps = {
   href: string;
   lang: string;
   children: React.ReactNode;
   [key: string]: any;
 };
 
-function CustomLink({ href, lang, ...props }: CustomLinkProps) {
+function HeaderLink({ href, lang, ...props }: HeaderLinkProps) {
   const isDefaultLang = lang === i18n.defaultLocale;
   const path = isDefaultLang ? href : `/${lang}${href}`;
 
-  return (
-    <Link href={path} {...props}/>
-  );
+  return <Link href={path} {...props} />;
 }
 
-export default CustomLink;
+export default HeaderLink;
