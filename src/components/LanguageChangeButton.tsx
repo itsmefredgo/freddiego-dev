@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 // i18n config data
 import { i18n } from "@/src/i18n.config";
 
-export default function ChangeLanguage() {
+export default function LanguageChangeButton() {
   // Get the current pathname using the usePathname hook
   const pathName = usePathname();
 
@@ -50,10 +50,7 @@ export default function ChangeLanguage() {
 
   // Link to switch between languages
   return (
-    <Link
-      href={getRedirectedPathName(getNextLanguage())}
-      className="rounded-md border bg-black px-3 py-2 text-white"
-    >
+    <Link href={getRedirectedPathName(getNextLanguage())} className="">
       {getNextLanguage()}
     </Link>
   );

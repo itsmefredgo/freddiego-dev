@@ -13,13 +13,11 @@ export default async function Home({
   const { page } = await getDictionary(lang);
 
   return (
-    <section className="py-24">
-      <div className="container">
-        <h1 className="text-3xl font-bold">
-          {page.home.introduction.greeting}
-        </h1>
-        <p className="text-gray-500">{page.home.introduction.name}</p>
-        <p className="text-gray-500">{page.home.introduction.role}</p>
+    <section className="">
+      <div className="">
+        <h1 className="">{page.home.introduction.greeting}</h1>
+        <p className="">{page.home.introduction.name}</p>
+        <p className="">{page.home.introduction.role}</p>
       </div>
     </section>
   );
