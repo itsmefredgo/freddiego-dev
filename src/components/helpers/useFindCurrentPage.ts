@@ -1,6 +1,6 @@
 import { usePathname } from "next/navigation";
 
-const findCurrentPage = (lang: string) => {
+const useFindCurrentPage = (lang: string) => {
   const path =
     lang === "en"
       ? usePathname().split("/")[1] // en
@@ -10,4 +10,4 @@ const findCurrentPage = (lang: string) => {
   return path;
 };
 
-export default findCurrentPage;
+export default useFindCurrentPage;

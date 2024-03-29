@@ -5,7 +5,7 @@ import LanguageChangeButton from "../LanguageChangeButton";
 import HeaderLink from "../HeaderLink";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
-import getCurrentPage from "../helpers/findCurrentPage";
+import getCurrentPage from "../helpers/useFindCurrentPage";
 
 export default function Header({ lang }: { lang: Locale }) {
   const navigation = {
