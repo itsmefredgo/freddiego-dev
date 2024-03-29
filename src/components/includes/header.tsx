@@ -1,11 +1,13 @@
 "use client";
 
 import { Locale } from "@/src/i18n.config";
+import Image from "next/image";
 import LanguageChangeButton from "../LanguageChangeButton";
 import HeaderLink from "../HeaderLink";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import getCurrentPage from "../helpers/useFindCurrentPage";
+import freddiego from "@/public/assets/images/freddiego1.svg";
 
 export default function Header({ lang }: { lang: Locale }) {
   const navigation = {
@@ -20,8 +22,12 @@ export default function Header({ lang }: { lang: Locale }) {
   return (
     <header>
       <nav
-        className=" min-w-full px-8 h-16 fixed bg-[#b3c6d070]
-        flex justify-between items-center"
+        className=" min-w-full h-16 fixed bg-[#b3c6d070]
+        flex justify-between items-center px-[2rem] 
+        sm:px-[min(calc((100%-36rem)/2),4rem)]
+        md:px-[min(calc((100%-40rem)/2),8rem)]
+        lg:px-[min(calc((100%-48rem)/2),10rem)]
+        xl:px-[calc((100%-60rem)/2)]"
       >
         <div className=" flex gap-8">
           <span className=" flex gap-4 md:after:content-['|'] md:after:ml-4">
@@ -33,6 +39,7 @@ export default function Header({ lang }: { lang: Locale }) {
             </button>
             <HeaderLink href={`/`} lang={lang} key={""}>
               freddiego
+              <Image src={freddiego} alt="Freddiego" className="text-red-500" />
             </HeaderLink>
           </span>
           <div
