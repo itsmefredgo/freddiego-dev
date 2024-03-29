@@ -11,10 +11,10 @@ export default async function About({
   return (
     <section className="">
       <div className="">
-        <h1 className="">{page.about.title}</h1>
-        <h2 className="">{page.about.summary.section}</h2>
-        <h2 className="">{page.about.work.section}</h2>
-        <h2 className="">{page.about.techstack.section}</h2>
+        <h1 className="">About Page</h1>
+        <h2 className=""></h2>
+        <h2 className=""></h2>
+        <h2 className=""></h2>
       </div>
     </section>
   );

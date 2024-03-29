@@ -2,6 +2,8 @@ import "./global.css";
 import type { Metadata } from "next";
 import { Locale, i18n } from "@/src/i18n.config";
 import Header from "@/src/components/includes/header";
+import Footer from "@/src/components/includes/footer";
+import Head from "next/head";
 
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
@@ -26,11 +28,13 @@ export default function RootLayout({
     <html lang={params.lang}>
       <body className={`${inter.className}`}>
         <Header lang={params.lang} />
-        <main className=" p-4 bg-[#d5d6c4] min-h-screen">
-          <div className=" bg-[#ecece7] rounded-2xl min-h-[calc(100vh-2rem)]">
-            {/* {children} */}
-          </div>
+        <main
+          className=" p-2 min-h-screen pt-20
+          bg-[#d4dfe4] text-[#131313] font-semibold" // dfe4d4 a6b4bf
+        >
+          {children}
         </main>
+        <Footer></Footer>
       </body>
     </html>
   );
