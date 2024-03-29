@@ -6,3 +6,8 @@
   /* border: orange solid 1px; */
   /* font-family: "Do Hyeon", sans-serif; */
 }
+
+#logo {
+  filter: invert(79%) sepia(20%) saturate(552%) hue-rotate(70deg)
+    brightness(94%) contrast(93%);
+}

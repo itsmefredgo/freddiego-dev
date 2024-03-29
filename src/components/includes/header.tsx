@@ -7,7 +7,7 @@ import HeaderLink from "../HeaderLink";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import getCurrentPage from "../helpers/useFindCurrentPage";
-import freddiego from "@/public/assets/images/freddiego1.svg";
+import freddiego from "@/public/assets/images/freddiego.svg";
 
 export default function Header({ lang }: { lang: Locale }) {
   const navigation = {
@@ -38,8 +38,7 @@ export default function Header({ lang }: { lang: Locale }) {
               <IoMenu />
             </button>
             <HeaderLink href={`/`} lang={lang} key={""}>
-              freddiego
-              <Image src={freddiego} alt="Freddiego" className="text-red-500" />
+              <Image src={freddiego} alt="Freddiego" id="logo" height={25} />
             </HeaderLink>
           </span>
           <div
