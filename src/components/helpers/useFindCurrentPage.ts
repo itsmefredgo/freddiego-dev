@@ -1,12 +1,13 @@
 import { usePathname } from "next/navigation";
 
 const useFindCurrentPage = (lang: string) => {
+  const pathSplit = usePathname().split("/");
   const path =
     lang === "en"
-      ? usePathname().split("/")[1] // en
-      : usePathname().split("/").length === 2 // not en
+      ? pathSplit[1] // en
+      : pathSplit.length === 2 // not en
       ? "" // root
-      : usePathname().split("/")[2]; // not root
+      : pathSplit[2]; // not root
   return path;
 };
 
