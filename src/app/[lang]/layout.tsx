@@ -38,7 +38,7 @@ export default function RootLayout({
           bg-[#d8dddf] text-[#131313]
           dark:bg-[#1b2225] dark:text-white"
         >
-          <TracingBeam>{children}</TracingBeam>
+          {children}
         </main>
 
         <Footer></Footer>

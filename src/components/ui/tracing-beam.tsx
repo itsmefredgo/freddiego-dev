@@ -32,13 +32,15 @@ export const TracingBeam = ({
     }
   }, [usePathname()]); // remakes the svg height on route change
 
+  // bottom end of gradient
   const y1 = useSpring(
-    useTransform(scrollYProgress, [0, 0.6], [50, svgHeight]),
+    useTransform(scrollYProgress, [0, 0.9], [50, svgHeight + 900]),
     {
       stiffness: 500,
       damping: 90,
     }
   );
+  // top end of gradient
   const y2 = useSpring(useTransform(scrollYProgress, [0, 1], [50, svgHeight]), {
     stiffness: 500,
     damping: 90,
