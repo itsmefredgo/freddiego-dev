@@ -8,6 +8,7 @@ import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import getCurrentPage from "../helpers/useFindCurrentPage";
 import freddiego from "@/public/assets/images/freddiego.svg";
+import ToggleDarkMode from "../ToggleDarkMode";
 
 export default function Header({ lang }: { lang: Locale }) {
   const navigation = {
@@ -22,15 +23,18 @@ export default function Header({ lang }: { lang: Locale }) {
   return (
     <header>
       <nav
-        className=" min-w-full h-16 fixed bg-[#b3c6d070]
+        className=" min-w-full h-16 fixed bg-[#b3c6d000] dark:text-white
         flex justify-between items-center px-[2rem] 
         sm:px-[min(calc((100%-36rem)/2),4rem)]
         md:px-[min(calc((100%-40rem)/2),8rem)]
         lg:px-[min(calc((100%-48rem)/2),10rem)]
         xl:px-[calc((100%-60rem)/2)]"
       >
-        <div className=" flex gap-8">
-          <span className=" flex gap-4 md:after:content-['|'] md:after:ml-4">
+        <div className=" flex gap-8 items-center">
+          <span
+            className=" flex gap-4 md:border-r-[1.25px] pr-8
+            md:border-[black] dark:md:border-[white]"
+          >
             <button
               className=" md:hidden"
               onClick={() => setIsMobileLinksOpen(true)}
@@ -73,8 +77,9 @@ export default function Header({ lang }: { lang: Locale }) {
             )}
           </div>
         </div>
-        <div className=" flex gap-8">
+        <div className=" flex gap-8 items-center justify-center text-[#7ec988]">
           <LanguageChangeButton />
+          <ToggleDarkMode />
         </div>
       </nav>
     </header>
