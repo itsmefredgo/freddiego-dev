@@ -28,7 +28,7 @@ export default function Header({ lang }: { lang: Locale }) {
         sm:px-[min(calc((100%-36rem)/2),4rem)]
         md:px-[min(calc((100%-40rem)/2),8rem)]
         lg:px-[min(calc((100%-48rem)/2),10rem)]
-        xl:px-[calc((100%-60rem)/2)]"
+        xl:px-[calc((100%-60rem)/2)] z-50"
       >
         <div className=" flex gap-8 items-center">
           <span

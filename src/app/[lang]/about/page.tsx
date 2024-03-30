@@ -11,7 +11,7 @@ export default async function About({
   const contents = page.about;
 
   return (
-    <div className="">
+    <div className=" h-[100rem]">
       <section>
         <SectionTitle title={contents.title}></SectionTitle>
         <ul>
