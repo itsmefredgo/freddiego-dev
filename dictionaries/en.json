@@ -86,7 +86,8 @@
         "title": "Education",
         "education": {
           "institution": "Dalhousie University (2020~2023)",
-          "description": "Bachelor of Computer Science / Minor in Statistics: 4.15GPA"
+          "major": "Bachelor of Computer Science",
+          "minor": "Minor in Statistics"
         }
       },
       "experiences": {

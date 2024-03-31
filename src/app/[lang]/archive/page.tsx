@@ -10,13 +10,11 @@ export default async function Archive({
   const { page } = await getDictionary(lang);
 
   return (
-    <TracingBeam>
       <section className=" h-[200rem]">
         <div className="">
           <h1 className="">{page.archive.title}</h1>
           <p className="">{page.archive.description}</p>
         </div>
       </section>
-    </TracingBeam>
   );
 }

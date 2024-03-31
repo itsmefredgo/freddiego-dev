@@ -7,6 +7,10 @@
   /* font-family: "Do Hyeon", sans-serif; */
 }
 
+main * {
+  text-shadow: 0 0 2px #b6cdb6;
+}
+
 #logo {
   filter: invert(79%) sepia(20%) saturate(552%) hue-rotate(70deg)
     brightness(94%) contrast(93%);
