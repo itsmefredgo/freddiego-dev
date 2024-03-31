@@ -9,7 +9,7 @@ export default async function About({
   const { page } = await getDictionary(lang);
 
   return (
-    <section className="">
+    <section className=" h-[500rem]">
       <div className="">
         <h1 className="">{page.contact.title}</h1>
         <p className="">{page.contact.description}</p>
