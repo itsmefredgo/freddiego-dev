@@ -23,10 +23,10 @@ export const TracingBeam = ({
   });
 
   useEffect(() => {
-    if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight - 67.5);
+    if (ref.current) {
+      setSvgHeight(ref.current.offsetHeight - 67.5);
     }
-  }, [usePathname()]); // remakes the svg height on route change
+  }, [usePathname(), ref.current?.offsetHeight]); // remakes the svg height on route change
 
   // Instead of creating the beam from in scale from 0.8 to 1,
   // Now is is mapped from 1 to 1.25 to reflect the height of the content
@@ -51,7 +51,7 @@ export const TracingBeam = ({
       ref={ref}
       className={cn("relative w-auto max-w-4xl mx-auto h-full", className)}
     >
-      <div className="absolute -left-6 md:-left-10 top-3 flex flex-col justify-center">
+      <div className=" h-full absolute -left-6 md:-left-10 top-3 flex flex-col justify-center">
         {/* Circle in the start point */}
         <motion.div
           transition={{
@@ -64,7 +64,8 @@ export const TracingBeam = ({
                 ? "none"
                 : "rgba(0, 0, 0, 0.24) 0px 3px 8px",
           }}
-          className="ml-[0px] h-4 w-4 rounded-full border border-netural-200 shadow-sm flex items-center justify-center"
+          className="ml-[0px] h-4 w-4 rounded-full border border-netural-200 
+          shadow-sm flex items-center justify-center"
         >
           <motion.div
             transition={{
@@ -77,15 +78,15 @@ export const TracingBeam = ({
               backgroundColor: "var(--emerald-500)",
               borderColor: "var(--emerald-600)",
             }}
-            className="h-2 w-2  rounded-full border border-neutral-300 bg-white"
+            className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
           />
         </motion.div>
         {/* End of Circle in the start point */}
         <svg
           viewBox={`0 0 10 ${svgHeight}`}
           width="auto"
-          height={svgHeight} // Set the SVG height
-          className=" block"
+          // Set the SVG height
+          className=" block h-full" // height changed to reflect the responsive height
           aria-hidden="true"
         >
           {/* Grey bar behind */}

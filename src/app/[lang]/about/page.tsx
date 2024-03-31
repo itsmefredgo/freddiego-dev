@@ -13,7 +13,7 @@ export default async function About({
   const contents = page.about;
 
   return (
-    <div className=" h-[auto] flex flex-col gap-20">
+    <div className=" h-[auto] flex flex-col gap-20 font-normal">
       <section>
         <SectionTitle title={contents.title}></SectionTitle>
         <ul className=" flex flex-col gap-16 pt-4">
@@ -21,7 +21,7 @@ export default async function About({
             ({ role, description, techstack }, index) => (
               <li key={index} className=" ">
                 <h2 className=" py-2 text-xl">{role}</h2>
-                <p className=" text-sm py-2">{description}</p>
+                <p className=" text-sm leading-[1.75rem] py-2">{description}</p>
                 <ul className=" pt-2 flex flex-row gap-4">
                   {techstack.map((tech, index) => (
                     <li key={index}>{tech}</li>
