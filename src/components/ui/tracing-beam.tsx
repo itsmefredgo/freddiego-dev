@@ -24,7 +24,7 @@ export const TracingBeam = ({
 
   useEffect(() => {
     if (ref.current) {
-      setSvgHeight(ref.current.offsetHeight - 300);
+      setSvgHeight(ref.current.offsetHeight - 500);
     }
   }, [usePathname(), ref.current?.offsetHeight]); // remakes the svg height on route change
 
@@ -51,7 +51,7 @@ export const TracingBeam = ({
       ref={ref}
       className={cn("relative w-auto max-w-4xl mx-auto h-full", className)}
     >
-      <div className=" h-[calc(100%-1.5rem)] absolute -left-6 md:-left-10 top-3 flex flex-col justify-center">
+      <div className=" h-[calc(100%-6rem)] absolute -left-6 md:-left-10 top-3 flex flex-col justify-center">
         {/* Circle in the start point */}
         <motion.div
           transition={{
