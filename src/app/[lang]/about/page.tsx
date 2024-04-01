@@ -24,14 +24,17 @@ export default async function About({
               <li key={index} className=" ">
                 <h2 className=" py-2 text-xl">{role}</h2>
                 <p className=" text-sm leading-[1.75rem] py-2">{description}</p>
-                <ul className=" pt-2 flex flex-row gap-4 w-full h-auto">
-                  {/* {techstack.map((tech, index) => (
-                    <li key={index}>{tech}</li>
-                  ))} */}
+                <ul
+                  className=" pt-2 flex flex-col md:flex-row gap-4 
+                  w-full h-auto justify-between"
+                >
                   {techstack.map(({ category, techList }, index) => (
-                    <li className="flex-1" key={index}>
+                    <li className=" md:w-[12rem]" key={index}>
                       <h3>{category}</h3>
-                      <ul className=" flex flex-row gap-2 justify-start flex-wrap">
+                      <ul
+                        className=" flex flex-row gap-2 md:gap-1 lg:gap-2 
+                        justify-start flex-wrap"
+                      >
                         {techList.map((tech, index) => (
                           <li key={index}>
                             <TechIcons tech={tech} />
@@ -65,7 +68,10 @@ export default async function About({
                 <div className=" flex flex-col md:flex-row ">
                   <span>{company}</span>
                   <span className=" hidden md:block">&nbsp;-&nbsp;</span>
-                  <span className=" before:content-['-_'] before:md:content-['']">
+                  <span
+                    className=" before:content-['-_'] 
+                    before:md:content-['']"
+                  >
                     {role}
                   </span>
                 </div>

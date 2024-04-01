@@ -22,7 +22,11 @@ const TechIcons: React.FC<TechIconsProps> = ({ tech }) => {
     return <>{tech}</>;
   }
 
-  return <Image src={imagePath} alt="" height={25} width={25} />;
+  return (
+    <div className=" bg-[#c6e4c4] rounded-xl p-1">
+      <Image src={imagePath} alt="" height={25} width={25} />
+    </div>
+  );
 };
 
 export default TechIcons;
