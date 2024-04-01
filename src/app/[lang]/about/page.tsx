@@ -1,6 +1,8 @@
 import { Locale } from "@/src/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 import SectionTitle from "@/src/components/SectionTitle";
+import Image from "next/image";
+import typescriptIcon from "@/public/assets/techicons/TypeScript.svg";
 
 import { TracingBeam } from "@/src/components/ui/tracing-beam";
 
@@ -26,6 +28,7 @@ export default async function About({
                   {techstack.map((tech, index) => (
                     <li key={index}>{tech}</li>
                   ))}
+                  <Image src={typescriptIcon} alt="" height={25}></Image>
                 </ul>
               </li>
             )
@@ -47,16 +50,20 @@ export default async function About({
         <ul>
           {contents.experiences.experiencesList.map(
             ({ company, role, date, descriptions }, index) => (
-              <li key={index}>
-                <h2 className=" flex flex-col md:flex-row">
+              <li key={index} className=" flex flex-col gap-2">
+                <div className=" flex flex-col md:flex-row ">
                   <span>{company}</span>
                   <span className=" hidden md:block">&nbsp;-&nbsp;</span>
-                  <span className=" before:content-['-_']">{role}</span>
-                </h2>
-                <p>{date}</p>
+                  <span className=" before:content-['-_'] before:md:content-['']">
+                    {role}
+                  </span>
+                </div>
+                <span>{date}</span>
                 <ul>
                   {descriptions.map((description, index) => (
-                    <li key={index}>{description}</li>
+                    <li key={index} className=" list-disc ml-5">
+                      {description}
+                    </li>
                   ))}
                 </ul>
               </li>

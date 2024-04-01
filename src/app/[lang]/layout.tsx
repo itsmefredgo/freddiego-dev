@@ -4,7 +4,6 @@ import { Locale, i18n } from "@/src/i18n.config";
 import Header from "@/src/components/includes/header";
 import Footer from "@/src/components/includes/footer";
 import { TracingBeam } from "@/src/components/ui/tracing-beam";
-import Head from "next/head";
 
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
@@ -27,20 +26,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
-      {/* <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
-          rel="stylesheet"
-        ></link>
-      </Head> */}
       <body className={`${inter.className}`}>
         <Header lang={params.lang} />
 
         <main
           className=" p-2 min-h-screen pt-24 font-semibold pr-[2rem] pl-[2.5rem]
-          sm:px-[min(calc((100%-36rem)/2),4rem)]  pb-8
+          sm:px-[min(calc((100%-36rem)/2),4rem)] pb-24
           md:px-[min(calc((100%-40rem)/2),8rem)]
           lg:px-[min(calc((100%-48rem)/2),10rem)]
           xl:px-[calc((100%-60rem)/2)]

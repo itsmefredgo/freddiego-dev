@@ -77,7 +77,7 @@ export default function Header({ lang }: { lang: Locale }) {
             )}
           </div>
         </div>
-        <div className=" flex gap-8 items-center justify-center text-[#7ec988]">
+        <div className=" flex gap-8 items-center justify-center text-[#3ea072] dark:text-[#52B788]">
           <LanguageChangeButton />
           <ToggleDarkMode />
         </div>

@@ -12,10 +12,14 @@
 }
 
 main * {
-  text-shadow: 0 0 20px #b6cdb6;
+  text-shadow: 0 0 10px #b6cdb6;
 }
 
 #logo {
-  filter: invert(79%) sepia(20%) saturate(552%) hue-rotate(70deg)
-    brightness(94%) contrast(93%);
+  filter: invert(52%) sepia(27%) saturate(822%) hue-rotate(100deg)
+    brightness(97%) contrast(88%);
+}
+.dark #logo {
+  filter: invert(70%) sepia(12%) saturate(1663%) hue-rotate(100deg)
+    brightness(90%) contrast(81%);
 }
