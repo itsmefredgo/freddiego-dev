@@ -2,13 +2,13 @@
 
 import { Locale } from "@/src/i18n.config";
 import Image from "next/image";
-import LanguageChangeButton from "../LanguageChangeButton";
-import HeaderLink from "../HeaderLink";
+import LanguageChangeButton from "../functions/LanguageChangeButton";
+import HeaderLink from "../ui/HeaderLink";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import getCurrentPage from "../helpers/useFindCurrentPage";
 import freddiego from "@/public/assets/images/freddiego.svg";
-import ToggleDarkMode from "../ToggleDarkMode";
+import ToggleDarkMode from "../functions/ToggleDarkMode";
 
 export default function Header({ lang }: { lang: Locale }) {
   const navigation = {

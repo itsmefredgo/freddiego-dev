@@ -1,9 +1,10 @@
-import "./global.css";
+// import "@/styles/globals.css";
+import "../globals.css";
 import type { Metadata } from "next";
 import { Locale, i18n } from "@/src/i18n.config";
 import Header from "@/src/components/includes/header";
 import Footer from "@/src/components/includes/footer";
-import { TracingBeam } from "@/src/components/ui/tracing-beam";
+import { TracingBeam } from "@/src/components/ui/TracingBeamBar";
 import Link from "next/link";
 
 import { Inter } from "next/font/google";
@@ -36,13 +37,10 @@ export default function RootLayout({
           md:px-[min(calc((100%-40rem)/2),8rem)]
           lg:px-[min(calc((100%-48rem)/2),10rem)]
           xl:px-[calc((100%-60rem)/2)]
-          bg-[#d8dddf] text-[#131313]
+          bg-[#d8dddf] text-[#131313] duration-300
           dark:bg-[#101517] dark:text-white"
         >
           <TracingBeam>{children}</TracingBeam>
-          <Link href={"/archive"} className=" text-[#7ec988] ml-[-2rem] mt-12">
-            View my projects here
-          </Link>
         </main>
 
         <Footer></Footer>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { i18n } from "../i18n.config";
+import { i18n } from "../../i18n.config";
 
 type HeaderLinkProps = {
   href: string;

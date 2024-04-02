@@ -51,7 +51,7 @@ export const TracingBeam = ({
       ref={ref}
       className={cn("relative w-auto max-w-4xl mx-auto h-full", className)}
     >
-      <div className=" h-[calc(100%-6rem)] absolute -left-6 md:-left-10 top-3 flex flex-col justify-center">
+      <div className=" h-[calc(100%)] absolute -left-6 md:-left-10 top-3 flex flex-col justify-center">
         {/* Circle in the start point */}
         <motion.div
           transition={{
