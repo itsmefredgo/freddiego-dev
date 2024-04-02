@@ -4,6 +4,7 @@ import { Locale, i18n } from "@/src/i18n.config";
 import Header from "@/src/components/includes/header";
 import Footer from "@/src/components/includes/footer";
 import { TracingBeam } from "@/src/components/ui/tracing-beam";
+import Link from "next/link";
 
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
@@ -39,6 +40,9 @@ export default function RootLayout({
           dark:bg-[#101517] dark:text-white"
         >
           <TracingBeam>{children}</TracingBeam>
+          <Link href={"/archive"} className=" text-[#7ec988] ml-[-2rem] mt-12">
+            View my projects here
+          </Link>
         </main>
 
         <Footer></Footer>
