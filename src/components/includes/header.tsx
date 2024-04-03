@@ -2,13 +2,13 @@
 
 import { Locale } from "@/src/i18n.config";
 import Image from "next/image";
-import LanguageChangeButton from "../LanguageChangeButton";
-import HeaderLink from "../HeaderLink";
+import LanguageChangeButton from "../functions/LanguageChangeButton";
+import HeaderLink from "../ui/HeaderLink";
 import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import getCurrentPage from "../helpers/useFindCurrentPage";
 import freddiego from "@/public/assets/images/freddiego.svg";
-import ToggleDarkMode from "../ToggleDarkMode";
+import ToggleDarkMode from "../functions/ToggleDarkMode";
 
 export default function Header({ lang }: { lang: Locale }) {
   const navigation = {
@@ -42,21 +42,28 @@ export default function Header({ lang }: { lang: Locale }) {
               <IoMenu />
             </button>
             <HeaderLink href={`/`} lang={lang} key={""}>
-              <Image src={freddiego} alt="Freddiego" id="logo" height={25} />
+              <div className=" h-[25px] w-auto">
+                <Image
+                  src={freddiego}
+                  alt="Freddiego"
+                  id="logo"
+                  className=" h-full w-full"
+                />
+              </div>
             </HeaderLink>
           </span>
           <div
             className={` absolute left-0 top-0 h-screen w-[20rem] max-w-full
             flex flex-col duration-300 items-end gap-8 p-8 bg-[#c4d1d6]
-            ${isMobileLinksOpen ? "translate-x-0" : "translate-x-[-30rem]"}
             md:static md:translate-x-0 md:w-auto md:bg-inherit md:h-auto
-            md:flex md:gap-12 md:p-0 md:flex-row`}
+            md:flex md:gap-12 md:p-0 md:flex-row
+            ${isMobileLinksOpen ? "translate-x-0" : "translate-x-[-30rem]"}`}
           >
             <button
-              className=" md:hidden"
+              className=" md:hidden w-auto"
               onClick={() => setIsMobileLinksOpen(false)}
             >
-              Close
+              X
             </button>
             {Object.entries(navigation).map(
               ([key, value]) =>

@@ -24,7 +24,7 @@ export const TracingBeam = ({
 
   useEffect(() => {
     if (ref.current) {
-      setSvgHeight(ref.current.offsetHeight - 500);
+      setSvgHeight(ref.current.offsetHeight);
     }
   }, [usePathname(), ref.current?.offsetHeight]); // remakes the svg height on route change
 
@@ -49,9 +49,9 @@ export const TracingBeam = ({
   return (
     <motion.div
       ref={ref}
-      className={cn("relative w-auto max-w-4xl mx-auto h-full", className)}
+      className={cn(" relative w-auto max-w-4xl mx-auto h-full", className)}
     >
-      <div className=" h-[calc(100%-6rem)] absolute -left-6 md:-left-10 top-3 flex flex-col justify-center">
+      <div className=" h-[calc(100%)] absolute -left-6 md:-left-10 top-3 flex flex-col justify-center">
         {/* Circle in the start point */}
         <motion.div
           transition={{
@@ -84,9 +84,8 @@ export const TracingBeam = ({
         {/* End of Circle in the start point */}
         <svg
           viewBox={`0 0 10 ${svgHeight}`}
-          width="auto"
           // Set the SVG height
-          className=" block h-full" // height changed to reflect the responsive height
+          className=" block h-full w-auto" // height changed to reflect the responsive height
           aria-hidden="true"
         >
           {/* Grey bar behind */}
@@ -130,7 +129,9 @@ export const TracingBeam = ({
         </svg>
       </div>
       {/* Contents */}
-      <div ref={contentRef}>{children}</div>
+      <div className="min-h-[calc(100vh+1px)]" ref={contentRef}>
+        {children}
+      </div>
     </motion.div>
   );
 };
