@@ -1,5 +1,5 @@
 // import "@/styles/globals.css";
-import "../globals.css";
+import "./globals.css";
 import type { Metadata } from "next";
 import { Locale, i18n } from "@/src/i18n.config";
 import Header from "@/src/components/includes/header";
