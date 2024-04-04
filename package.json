@@ -10,13 +10,18 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
+    "@sanity/image-url": "^1.0.2",
+    "@sanity/vision": "^3.36.4",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.24",
     "negotiator": "^0.6.3",
     "next": "14.1.4",
+    "next-sanity": "^7.1.4",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
+    "sanity": "^3.36.4",
+    "styled-components": "^6.1.8",
     "tailwind-merge": "^2.2.2"
   },
   "devDependencies": {
