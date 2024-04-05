@@ -5,10 +5,18 @@ import { client } from "@/sanity/lib/client";
 
 interface Post {
   title: string;
-  slug: string;
+  slug: { current: string };
   publishedAt: string;
   excerpt: string;
-  tags: string[];
+  body: any;
+  tags: Array<Tag>;
+  _id: string;
+}
+
+interface Tag {
+  title: string;
+  slug: { current: string };
+  _id: string;
 }
 
 async function getPosts() {
@@ -20,9 +28,8 @@ async function getPosts() {
     tags,
   }`;
 
-  const posts = await client.fetch(query);
 
-  return { posts };
+return await client.fetch(query);
 }
 
 export default async function Archive({
@@ -31,8 +38,7 @@ export default async function Archive({
   params: { lang: Locale };
 }) {
   const { page } = await getDictionary(lang);
-  const post = await getPosts();
-  console.log(post, "post");
+  const posts: Post[] = await getPosts();
 
   return (
     <div className=" h-[auto] flex flex-col gap-20 font-normal">
@@ -40,8 +46,8 @@ export default async function Archive({
       <section>
         <SectionTitle title="Projects" />
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-          {post.posts.map((post: Post) => (
-            <article key={post.slug}>
+          {posts?.length > 0 && posts?.map((post: Post) => (
+            <article key={post.slug.current}>
               <h2>{post.title}</h2>
               <p>{post.excerpt}</p>
             </article>
