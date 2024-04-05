@@ -1,38 +1,39 @@
 import { Rule } from "sanity";
+import { defineType } from "sanity";
 
-export const project = {
+export const project = defineType({
   name: "project",
-  Title: "Project",
+  title: "Project",
   type: "document",
 
   fields: [
     {
       name: "title",
-      Title: "Title",
+      title: "Title",
       type: "string",
     },
     {
       name: "slug",
-      Title: "Slug",
+      title: "Slug",
       type: "slug",
       options: { source: "title" },
       validation: (Rule: Rule) => Rule.required().error("A title is required."),
     },
     {
       name: "publishedAt",
-      Title: "Published At",
+      title: "Published At",
       type: "datetime",
       initialValue: () => new Date().toISOString(),
     },
     {
       name: "excerpt",
-      Title: "Excerpt",
+      title: "Excerpt",
       type: "text",
       validation: (Rule: Rule) => Rule.max(200).error("Max 200 characters."),
     },
     {
       name: "body",
-      Title: "Body",
+      title: "Body",
       type: "array",
       of: [
         { type: "block" },
@@ -40,13 +41,17 @@ export const project = {
           type: "image",
           fields: [{ type: "text", name: "alt", title: "Alt" }],
         },
+        {
+          type: "code",
+        },
       ],
     },
     {
-        name: "tags",
-        Title: "Tags",
-        type: "array",
-        of: [{ type: "reference", to: [{ type: "tag" }] }],
-    }
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "tag" }] }],
+    },
   ],
-};
+});
+
