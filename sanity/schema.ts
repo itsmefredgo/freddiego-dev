@@ -1,7 +1,7 @@
 import { type SchemaTypeDefinition } from "sanity";
-import { post } from "./lib/schemas/post";
+import { project } from "./lib/schemas/project";
 import { tag } from "./lib/schemas/tag";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [post, tag],
+  types: [project, tag],
 };

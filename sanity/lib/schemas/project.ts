@@ -1,8 +1,8 @@
 import { Rule } from "sanity";
 
-export const post = {
-  name: "post",
-  Title: "Post",
+export const project = {
+  name: "project",
+  Title: "Project",
   type: "document",
 
   fields: [

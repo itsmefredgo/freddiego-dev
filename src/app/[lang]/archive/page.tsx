@@ -2,25 +2,11 @@ import { Locale } from "@/src/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 import SectionTitle from "@/src/components/ui/SectionTitle";
 import { client } from "@/sanity/lib/client";
+import { Project, Tag } from "@/lib/sanityPropsInterface";
+import ProjectListItem from "@/src/components/ui/ProjectListItem";
 
-interface Post {
-  title: string;
-  slug: { current: string };
-  publishedAt: string;
-  excerpt: string;
-  body: any;
-  tags: Array<Tag>;
-  _id: string;
-}
-
-interface Tag {
-  title: string;
-  slug: { current: string };
-  _id: string;
-}
-
-async function getPosts() {
-  const query = `*[_type == "post"] | order(publishedAt desc) {
+async function getProjects() {
+  const query = `*[_type == "project"] | order(publishedAt desc) {
     title,
     slug,
     publishedAt,
@@ -28,8 +14,7 @@ async function getPosts() {
     tags,
   }`;
 
-
-return await client.fetch(query);
+  return await client.fetch(query);
 }
 
 export default async function Archive({
@@ -38,20 +23,18 @@ export default async function Archive({
   params: { lang: Locale };
 }) {
   const { page } = await getDictionary(lang);
-  const posts: Post[] = await getPosts();
+  const projects: Project[] = await getProjects();
 
   return (
     <div className=" h-[auto] flex flex-col gap-20 font-normal">
       <SectionTitle title="Archives" />
       <section>
         <SectionTitle title="Projects" />
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
-          {posts?.length > 0 && posts?.map((post: Post) => (
-            <article key={post.slug.current}>
-              <h2>{post.title}</h2>
-              <p>{post.excerpt}</p>
-            </article>
-          ))}
+        <div className=" flex flex-col gap-8">
+          {projects?.length > 0 &&
+            projects?.map((project: Project) => (
+              <ProjectListItem project={project} key={project.slug.current} />
+            ))}
         </div>
       </section>
     </div>
