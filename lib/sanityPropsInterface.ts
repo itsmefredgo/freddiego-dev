@@ -4,6 +4,8 @@ export interface Project {
         current: string;
     };
     publishedAt: string;
+    github: string;
+    demo: string;
     excerpt: string;
     body: any;
     tags: Array<Tag>;

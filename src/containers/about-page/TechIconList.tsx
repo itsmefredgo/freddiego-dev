@@ -7,7 +7,7 @@ type TechIconListProps = {
 function TechIconList(props: TechIconListProps) {
   const { techIcons } = props;
   return (
-    <ul className="flex flex-row gap-2 md:gap-1 lg:gap-2 justify-start flex-wrap">
+    <ul className="flex flex-row gap-2 justify-start flex-wrap">
       {techIcons.map((iconName, index: number) => (
         <li key={index}>
           <TechIcon tech={iconName} />

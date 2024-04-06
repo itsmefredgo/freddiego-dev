@@ -26,6 +26,16 @@ export const project = defineType({
       initialValue: () => new Date().toISOString(),
     },
     {
+      name: "github",
+      title: "GitHub Link",
+      type: "string",
+    },
+    {
+      name: "demo",
+      title: "Demo Link",
+      type: "string",
+    },
+    {
       name: "excerpt",
       title: "Excerpt",
       type: "text",
@@ -54,4 +64,3 @@ export const project = defineType({
     },
   ],
 });
-
