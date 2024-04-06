@@ -1,9 +1,10 @@
 import { Locale } from "@/src/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
-import SectionTitle from "@/src/components/ui/SectionTitle";
 import { client } from "@/sanity/lib/client";
-import { Project, Tag } from "@/lib/sanityPropsInterface";
+
+import SectionTitle from "@/src/components/ui/SectionTitle";
 import ProjectListItem from "@/src/components/ui/ProjectListItem";
+import { Project } from "@/lib/sanityPropsInterface";
 
 async function getProjects() {
   const query = `*[_type == "project"] | order(publishedAt desc) {

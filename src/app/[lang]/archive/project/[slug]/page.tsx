@@ -17,6 +17,8 @@ async function getProject(slug: string) {
     title,
     body,
     slug,
+    github,
+    demo,
     publishedAt,
     excerpt,
     tags,
