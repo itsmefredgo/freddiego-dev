@@ -3,8 +3,8 @@ import { getDictionary } from "@/lib/dictionary";
 import SectionTitle from "@/src/components/ui/SectionTitle";
 import { client } from "@/sanity/lib/client";
 import { Project, Tag } from "@/lib/sanityPropsInterface";
-import ProjectListItem from "@/src/components/ui/ProjectListItem";
-import ProjectComponent from "@/src/components/ui/ProjectComponent";
+import ProjectListItem from "@/src/containers/archive-page/ProjectListItem";
+import ProjectComponent from "@/src/containers/archive-page/ProjectComponent";
 
 interface Params {
   params: {

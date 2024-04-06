@@ -7,7 +7,7 @@ interface Props {
 
 function ProjectListItem({ project }: Props) {
   return (
-    <div className=" bg-[#cedbcc] dark:bg-[#192124] p-4 rounded-lg">
+    <div className=" bg-subBackground p-4 rounded-lg duration-300 hover:bg-accent">
       <Link
         href={`/archive/project/${project.slug.current}`}
         className=" flex flex-col gap-2"
@@ -20,7 +20,7 @@ function ProjectListItem({ project }: Props) {
             </p>
           )}
         </div>
-        {project?.excerpt && <p>Abstract: {project?.excerpt}</p>}
+        <div>{project.excerpt && <p>Abstract: {project?.excerpt}</p>}</div>
       </Link>
     </div>
   );
