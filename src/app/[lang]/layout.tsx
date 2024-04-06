@@ -1,5 +1,5 @@
 // import "@/styles/globals.css";
-import "../globals.css";
+import "./globals.css";
 import type { Metadata } from "next";
 import { Locale, i18n } from "@/src/i18n.config";
 import Header from "@/src/components/includes/header";
@@ -38,7 +38,7 @@ export default function RootLayout({
           lg:px-[min(calc((100%-48rem)/2),10rem)]
           xl:px-[calc((100%-60rem)/2)]
           bg-[#d8dddf] text-[#131313] duration-300
-          dark:bg-[#101517] dark:text-white "
+          dark:bg-[#101517] dark:text-white glow5"
         >
           <TracingBeam>{children}</TracingBeam>
         </main>

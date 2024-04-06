@@ -1,6 +1,21 @@
 import { Locale } from "@/src/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 import SectionTitle from "@/src/components/ui/SectionTitle";
+import { client } from "@/sanity/lib/client";
+import { Project, Tag } from "@/lib/sanityPropsInterface";
+import ProjectListItem from "@/src/components/ui/ProjectListItem";
+
+async function getProjects() {
+  const query = `*[_type == "project"] | order(publishedAt desc) {
+    title,
+    slug,
+    publishedAt,
+    excerpt,
+    tags,
+  }`;
+
+  return await client.fetch(query);
+}
 
 export default async function Archive({
   params: { lang },
@@ -8,102 +23,23 @@ export default async function Archive({
   params: { lang: Locale };
 }) {
   const { page } = await getDictionary(lang);
+  const projects: Project[] = await getProjects();
 
   return (
     <div className=" h-[auto] flex flex-col gap-20 font-normal">
-      <SectionTitle title="Archives" />
       <section>
         <SectionTitle title="Projects" />
-        <ul>
-          <li>
-            <h1>Project 1</h1>
-            <p>
-              Project 1 description: Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum.
-            </p>
-          </li>
-          <li>
-            <h1>Project 2</h1>
-            <p>
-              Project 2 description: Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum.
-            </p>
-          </li>
-        </ul>
+        <div className=" flex flex-col gap-4">
+          {projects?.length > 0 &&
+            projects?.map((project: Project) => (
+              <ProjectListItem project={project} key={project.slug.current} />
+            ))}
+        </div>
       </section>
       <section>
         <SectionTitle title="Blogs" />
-        <ul>
-          <li>
-            <h1>Project 1</h1>
-            <p>
-              Project 1 description: Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum.
-            </p>
-          </li>
-          <li>
-            <h1>Project 2</h1>
-            <p>
-              Project 2 description: Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum.
-            </p>
-          </li>
-          <li>
-            <h1>Project 2</h1>
-            <p>
-              Project 2 description: Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum.
-            </p>
-          </li>
-          <li>
-            <h1>Project 2</h1>
-            <p>
-              Project 2 description: Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-              occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum.
-            </p>
-          </li>
-        </ul>
+        <h1>To be added...</h1>
       </section>
-      {/* <div className="">
-        <h1 className="">{page.archive.title}</h1>
-        <p className="">{page.archive.description}</p>
-      </div> */}
     </div>
   );
 }
