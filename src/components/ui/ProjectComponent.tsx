@@ -21,7 +21,7 @@ interface Props {
 
 function ProjectComponent({ project }: Props) {
   return (
-    <article className=" ">
+    <article className=" glowpink">
       <ProjectTitle title={project?.title} />
       <div className=" flex">
         <p>
