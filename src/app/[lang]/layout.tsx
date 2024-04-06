@@ -38,7 +38,7 @@ export default function RootLayout({
           lg:px-[min(calc((100%-48rem)/2),10rem)]
           xl:px-[calc((100%-60rem)/2)]
           bg-[#d8dddf] text-[#131313] duration-300
-          dark:bg-[#101517] dark:text-white "
+          dark:bg-[#101517] dark:text-white glow5"
         >
           <TracingBeam>{children}</TracingBeam>
         </main>

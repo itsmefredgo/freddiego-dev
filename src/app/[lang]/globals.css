@@ -4,13 +4,23 @@
 
 * {
   /* border: orange solid 1px; */
-  font-family: "Nanum Gothic", sans-serif;
+  /* font-family: "Nanum Gothic", sans-serif; */
   /* font-weight: 400; */
-  font-style: normal;
+  /* font-style: normal; */
 }
 
-main * {
+/* main *:not(code *) {
+  text-shadow: 0 0 5px #e93eef;
+} */
+
+.glow10 {
   text-shadow: 0 0 10px #b6cdb6;
+}
+.glow5 {
+  text-shadow: 0 0 5px #b6cdb6;
+}
+.glowpink {
+  text-shadow: 0 0 10px #e93eef;
 }
 
 #logo {

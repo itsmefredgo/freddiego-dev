@@ -27,15 +27,18 @@ export default async function Archive({
 
   return (
     <div className=" h-[auto] flex flex-col gap-20 font-normal">
-      <SectionTitle title="Archives" />
       <section>
         <SectionTitle title="Projects" />
-        <div className=" flex flex-col gap-8">
+        <div className=" flex flex-col gap-4">
           {projects?.length > 0 &&
             projects?.map((project: Project) => (
               <ProjectListItem project={project} key={project.slug.current} />
             ))}
         </div>
+      </section>
+      <section>
+        <SectionTitle title="Blogs" />
+        <h1>To be added...</h1>
       </section>
     </div>
   );
