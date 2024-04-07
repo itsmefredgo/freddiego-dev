@@ -11,10 +11,7 @@ function Experience({ company, role, date, descriptions }: ExperienceProps) {
       <div className=" flex flex-col md:flex-row ">
         <span>{company}</span>
         <span className=" hidden md:block">&nbsp;-&nbsp;</span>
-        <span
-          className=" before:content-['-_'] 
-                    before:md:content-['']"
-        >
+        <span className=" before:content-['-_'] before:md:content-['']">
           {role}
         </span>
       </div>

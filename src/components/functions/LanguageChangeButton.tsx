@@ -7,6 +7,9 @@ import { usePathname } from "next/navigation";
 // i18n config data
 import { i18n } from "@/src/i18n.config";
 
+import { TbMessageLanguage } from "react-icons/tb";
+import { FollowerPointerCard } from "@/src/components/ui/following-pointer";
+
 export default function LanguageChangeButton() {
   // Get the current pathname using the usePathname hook
   const pathName = usePathname();
@@ -50,8 +53,16 @@ export default function LanguageChangeButton() {
 
   // Link to switch between languages
   return (
-    <Link href={getRedirectedPathName(getNextLanguage())} className="">
-      {getNextLanguage()}
+    <Link
+      href={getRedirectedPathName(getNextLanguage())}
+      className=" h-[1.5rem]flex flex-col justify-center"
+    >
+      <FollowerPointerCard
+        title={getNextLanguage()}
+        className="h-[1.5rem] w-[1.5rem]"
+      >
+        <TbMessageLanguage className="h-full w-full" />
+      </FollowerPointerCard>
     </Link>
   );
 }

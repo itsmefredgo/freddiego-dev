@@ -1,4 +1,4 @@
-import "./globals.css";
+import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Locale, i18n } from "@/src/i18n.config";
 import Header from "@/src/components/includes/header";
@@ -7,6 +7,8 @@ import { TracingBeam } from "@/src/components/ui/TracingBeamBar";
 
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
+
+
 
 export const metadata: Metadata = {
   title: "freddiego",
@@ -28,14 +30,14 @@ export default function RootLayout({
     <html lang={params.lang}>
       <body className={`${inter.className} relative`}>
         <Header lang={params.lang} />
-
         <main
           className={` ${mainDivWidth} p-2 pt-24 font-semibold pr-[2rem] 
-          pl-[2.5rem] pb-24 bg-background text-text duration-300 glow5 `}
+            pl-[2.5rem] pb-24 bg-background text-text duration-300 glow5 `}
         >
-          <TracingBeam>{children}</TracingBeam>
+          
+            <TracingBeam>{children}</TracingBeam>
+          
         </main>
-
         <Footer></Footer>
       </body>
     </html>

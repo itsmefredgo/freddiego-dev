@@ -9,6 +9,8 @@ import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Link from "next/link";
 import ProjectTitle from "./ProjectTitle";
 import { Blog } from "@/lib/sanityPropsInterface";
+import { TbArrowBackUp } from "react-icons/tb";
+import { FollowerPointerCard } from "@/src/components/ui/following-pointer";
 
 interface Props {
   blog: Blog;
@@ -19,8 +21,10 @@ function BlogComponent({ blog }: Props) {
     <article className=" ">
       <div className=" flex justify-between">
         <ProjectTitle title={blog?.title} />
-        <Link href={"/archive#blogs"} className=" text-primary">
-          Back
+        <Link href={"/archive#blogs"} className=" text-primary relative">
+          <FollowerPointerCard title="Back to Blogs">
+            <TbArrowBackUp className=" text-[2rem] w-[2rem] pt-2 hover:pt-0 duration-150" />
+          </FollowerPointerCard>
         </Link>
       </div>
       <div className=" flex">

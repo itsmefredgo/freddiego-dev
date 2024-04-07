@@ -6,6 +6,7 @@ type AboutEducationProps = {
     institution: string;
     major: string;
     minor: string;
+    GPA: string;
   };
 };
 
@@ -19,7 +20,7 @@ function AboutEducation({ title, education }: AboutEducationProps) {
         <span className=" hidden md:block">&nbsp;/&nbsp;</span>
         <p>{education.minor}</p>
       </div>
-      <p>GPA: 4.15</p>
+      <div>{education.GPA}</div>
     </section>
   );
 }
