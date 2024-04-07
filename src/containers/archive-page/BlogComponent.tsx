@@ -8,65 +8,35 @@ import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import Link from "next/link";
 import ProjectTitle from "./ProjectTitle";
-import { Project } from "@/lib/sanityPropsInterface";
-import github from "@/public/assets/techicons/GitHub.svg";
+import { Blog } from "@/lib/sanityPropsInterface";
 
 interface Props {
-  project: Project;
+  blog: Blog;
 }
 
-function ProjectComponent({ project }: Props) {
+function BlogComponent({ blog }: Props) {
   return (
     <article className=" ">
       <div className=" flex justify-between">
-        <ProjectTitle title={project?.title} />
-        <Link href={"/archive#projects"} className=" text-primary">
+        <ProjectTitle title={blog?.title} />
+        <Link href={"/archive#blogs"} className=" text-primary">
           Back
         </Link>
       </div>
       <div className=" flex">
         <p>
-          {new Date(project?.publishedAt).toLocaleDateString("en-US", {
+          {new Date(blog?.publishedAt).toLocaleDateString("en-US", {
             month: "long",
             day: "numeric",
             year: "numeric",
           })}
         </p>
-        {project?.github && (
-          <>
-            <span className=" mx-2">&#x2022;</span>
-            <a href={`https://` + project?.github} target="_blank">
-              <div className=" pt-[1px]">
-                <Image
-                  src={github}
-                  alt="Github Link"
-                  width={22}
-                  height={22}
-                  className="customSvgColour"
-                />
-              </div>
-            </a>
-          </>
-        )}
-        {project?.demo && (
-          <>
-            <span className=" mx-2">&#x2022;</span>
-            <a
-              href={project.demo}
-              className="underline font-extrabold glow1 text-primary"
-              target="_blank"
-            >
-              Demo
-            </a>
-          </>
-        )}
       </div>
 
       <div className=" [&>*]:my-0">
-        {/* <p>{project?.excerpt}</p> */}
         <div className={`${portableTextStyles} `}>
           <PortableText
-            value={project?.body}
+            value={blog?.body}
             components={myPortableTextComponents}
           />
         </div>
@@ -75,7 +45,7 @@ function ProjectComponent({ project }: Props) {
   );
 }
 
-export default ProjectComponent;
+export default BlogComponent;
 
 const myPortableTextComponents = {
   types: {
