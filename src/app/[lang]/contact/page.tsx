@@ -1,5 +1,6 @@
 import { Locale } from "@/src/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
+import { useState } from "react";
 
 export default async function About({
   params: { lang },

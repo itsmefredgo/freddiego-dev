@@ -13,7 +13,7 @@
   text-shadow: 0 0 5px #e93eef;
 } */
 
-.glow10 {
+/* .glow10 {
   text-shadow: 0 0 10px #b6cdb6;
 }
 .glow5 {
@@ -24,17 +24,53 @@
 }
 .glowpink {
   text-shadow: 0 0 10px #e93eef;
+} */
+
+.customSvgColour {
+  filter: invert(11%) sepia(57%) saturate(5086%) hue-rotate(213deg)
+    brightness(93%) contrast(94%);
 }
 
-#logo {
-  filter: invert(52%) sepia(27%) saturate(822%) hue-rotate(100deg)
-    brightness(97%) contrast(88%);
+.dark .customSvgColour {
+  filter: invert(78%) sepia(31%) saturate(5170%) hue-rotate(188deg)
+    brightness(100%) contrast(94%);
 }
-.dark #logo {
-  filter: invert(70%) sepia(12%) saturate(1663%) hue-rotate(100deg)
-    brightness(90%) contrast(81%);
+.clickable {
+  color: #47a77b;
 }
-#github {
-  filter: invert(52%) sepia(27%) saturate(822%) hue-rotate(100deg)
-    brightness(97%) contrast(88%);
+@layer base {
+  :root {
+    --text: #020d2c;
+    --background: #edeff3;
+    --subBackground: #e3e6ee;
+    --primary: #083781;
+    --secondary: #6b56f5;
+    --accent: #390dd9;
+  }
+  .dark {
+    --text: #d3defd;
+    --background: #0c0e12;
+    --subBackground: #141821;
+    --primary: #7eacf7;
+    --secondary: #1f0aa9;
+    --accent: #5226f2;
+  }
+}
+
+@keyframes githubUnhover {
+  0% {
+    width: 30rem;
+  }
+  100% {
+    width: 22px;
+  }
+}
+
+@keyframes githubHover {
+  0% {
+    width: 22px;
+  }
+  100% {
+    width: 30rem;
+  }
 }

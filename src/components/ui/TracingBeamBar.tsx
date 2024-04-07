@@ -53,34 +53,7 @@ export const TracingBeam = ({
     >
       <div className=" h-[calc(100%)] absolute -left-6 md:-left-10 top-3 flex flex-col justify-center">
         {/* Circle in the start point */}
-        <motion.div
-          transition={{
-            duration: 0.2,
-            delay: 0.2,
-          }}
-          animate={{
-            boxShadow:
-              scrollYProgress.get() > 0
-                ? "none"
-                : "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-          }}
-          className="ml-[0px] h-4 w-4 rounded-full border border-[#34805c] 
-          shadow-sm flex items-center justify-center"
-        >
-          <motion.div
-            transition={{
-              duration: 2,
-              delay: 10,
-            }}
-            // Instead of making it white when scrolled,
-            // it is now kept the original colour at all times.
-            animate={{
-              backgroundColor: "#52B788",
-              borderColor: "#52B788",
-            }}
-            className="h-2 w-2 rounded-full border-2 border-[#52B788] bg-[#52B788]"
-          />
-        </motion.div>
+
         {/* End of Circle in the start point */}
         <svg
           viewBox={`0 0 10 ${svgHeight}`}
@@ -91,20 +64,21 @@ export const TracingBeam = ({
           {/* Grey bar behind */}
           {/* original shape at the end removed.  */}
           <motion.path
-            d={`M0 0 V-1 l5 0 V ${svgHeight * 1}`}
+            d={`M0 -2 V-1 -2 l5 0 V ${svgHeight * 1}`}
             fill="none"
-            stroke="#9091A0"
-            strokeOpacity="0.1"
+            stroke="#d3defd"
+            strokeWidth={2}
+            strokeOpacity="0.15"
             transition={{
               duration: 0,
             }}
           ></motion.path>
           {/* Active bar on top */}
           <motion.path
-            d={`M0 0 V-1 l5 0 V${svgHeight * 1}`}
+            d={`M0 -2 V-1 -2 l5 0 V${svgHeight * 1}`}
             fill="none"
             stroke="url(#gradient)"
-            strokeWidth="1.5"
+            strokeWidth="2"
             className="motion-reduce:hidden"
             transition={{
               duration: 0,
@@ -120,10 +94,10 @@ export const TracingBeam = ({
               y1={y1}
               y2={y2}
             >
-              <stop stopColor="#95D5B2" stopOpacity="0"></stop>
-              <stop stopColor="#95D5B2"></stop>
-              <stop offset="0.325" stopColor="#40916C"></stop>
-              <stop offset="1" stopColor="#40916C" stopOpacity="0"></stop>
+              <stop stopColor="#a7c8fe" stopOpacity="0"></stop>
+              <stop stopColor="#a7c8fe"></stop>
+              <stop offset="0.325" stopColor="#4c8df7"></stop>
+              <stop offset="1" stopColor="#4c8df7" stopOpacity="0"></stop>
             </motion.linearGradient>
           </defs>
         </svg>

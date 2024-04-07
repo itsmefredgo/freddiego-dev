@@ -13,10 +13,19 @@ module.exports = {
     "./src/containers/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
-  theme: {},
-  plugins: [
-    addVariablesForColors,
-  ],
+  theme: {
+    extend: {
+      colors: {
+        text: "var(--text)",
+        background: "var(--background)",
+        subBackground: "var(--subBackground)",
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        accent: "var(--accent)",
+      },
+    },
+  },
+  plugins: [addVariablesForColors],
 };
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).

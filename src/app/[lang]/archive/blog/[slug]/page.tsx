@@ -2,9 +2,9 @@ import { Locale } from "@/src/i18n.config";
 import { getDictionary } from "@/lib/dictionary";
 import SectionTitle from "@/src/components/ui/SectionTitle";
 import { client } from "@/sanity/lib/client";
-import { Project, Tag } from "@/lib/sanityPropsInterface";
+import { Blog } from "@/lib/sanityPropsInterface";
 import ProjectListItem from "@/src/containers/archive-page/ProjectListItem";
-import ProjectComponent from "@/src/containers/archive-page/ProjectComponent";
+import BlogComponent from "@/src/containers/archive-page/BlogComponent";
 
 interface Params {
   params: {
@@ -12,27 +12,24 @@ interface Params {
   };
 }
 
-async function getProject(slug: string) {
-  const query = `*[_type == "project" && slug.current == "${slug}"][0] {
+async function getBlogs(slug: string) {
+  const query = `*[_type == "blog" && slug.current == "${slug}"][0] {
     title,
-    body,
     slug,
-    github,
-    demo,
     publishedAt,
     excerpt,
-    tags,
+    body,
   }`;
 
-  return await client.fetch(query);
+  return await client.fetch(query, { slug });
 }
 
 async function page({ params }: Params) {
-  const project: Project = await getProject(params.slug);
+  const blog: Blog = await getBlogs(params.slug);
 
   return (
     <div>
-      <ProjectComponent project={project} />
+      <BlogComponent blog={blog} />
     </div>
   );
 }
