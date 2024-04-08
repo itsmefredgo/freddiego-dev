@@ -2,6 +2,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* footer,
+footer * {
+  border: red solid 1px;
+} */
+
 * {
   /* border: orange solid 1px; */
   /* font-family: "Nanum Gothic", sans-serif; */
@@ -35,9 +40,7 @@
   filter: invert(78%) sepia(31%) saturate(5170%) hue-rotate(188deg)
     brightness(100%) contrast(94%);
 }
-.clickable {
-  color: #47a77b;
-}
+
 @layer base {
   :root {
     --text: #020d2c;
@@ -54,23 +57,5 @@
     --primary: #7eacf7;
     --secondary: #1f0aa9;
     --accent: #5226f2;
-  }
-}
-
-@keyframes githubUnhover {
-  0% {
-    width: 30rem;
-  }
-  100% {
-    width: 22px;
-  }
-}
-
-@keyframes githubHover {
-  0% {
-    width: 22px;
-  }
-  100% {
-    width: 30rem;
   }
 }

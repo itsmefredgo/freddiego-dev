@@ -8,7 +8,7 @@ type AboutRolesProps = {
 
 function AboutRoles({ title, summaryRoles }: AboutRolesProps) {
   return (
-    <section>
+    <section id="roles" className="pt-[5rem] mt-[-5rem]">
       <SectionTitle title={title}></SectionTitle>
       <ul className=" flex flex-col gap-16 pt-4">
         {summaryRoles.map((summaryRole, index: number) => (

@@ -20,7 +20,7 @@ export default function Layout({
       >
         <TracingBeam>{children}</TracingBeam>
       </main>
-      <Footer></Footer>
+      <Footer lang={params.lang}></Footer>
     </>
   );
 }
