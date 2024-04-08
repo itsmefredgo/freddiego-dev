@@ -13,7 +13,7 @@ export default async function Home({
   const { page } = await getDictionary(lang);
 
   return (
-    <section className=" h-[200rem]">
+    <section className=" ">
       <div className="">
         <h1 className="">{page.home.introduction.greeting}</h1>
         <p className="">{page.home.introduction.name}</p>

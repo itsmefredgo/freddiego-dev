@@ -15,7 +15,7 @@ export default function Header({ lang }: { lang: Locale }) {
     "": "freddiego",
     about: "About",
     archive: "Archive",
-    contact: "Contact",
+    // contact: "Contact",
   };
 
   const [isMobileLinksOpen, setIsMobileLinksOpen] = useState(false);
