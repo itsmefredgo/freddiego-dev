@@ -2,34 +2,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* footer,
-footer * {
-  border: red solid 1px;
-} */
-
 * {
   /* border: orange solid 1px; */
   /* font-family: "Nanum Gothic", sans-serif; */
   /* font-weight: 400; */
   /* font-style: normal; */
 }
-
-/* main *:not(code *) {
-  text-shadow: 0 0 5px #e93eef;
-} */
-
-/* .glow10 {
-  text-shadow: 0 0 10px #b6cdb6;
-}
-.glow5 {
-  text-shadow: 0 0 2.5px #b6cdb6;
-}
-.glow1 {
-  text-shadow: 0 0 2.5px #b6cdb6;
-}
-.glowpink {
-  text-shadow: 0 0 10px #e93eef;
-} */
 
 .customSvgColour {
   filter: invert(11%) sepia(57%) saturate(5086%) hue-rotate(213deg)
@@ -49,6 +27,7 @@ footer * {
     --primary: #083781;
     --secondary: #6b56f5;
     --accent: #390dd9;
+    --subtext: #717171;
   }
   .dark {
     --text: #d3defd;
@@ -57,5 +36,6 @@ footer * {
     --primary: #7eacf7;
     --secondary: #1f0aa9;
     --accent: #5226f2;
+    --subtext: #acacac;
   }
 }

@@ -9,6 +9,7 @@ import { i18n } from "@/src/i18n.config";
 
 import { TbMessageLanguage } from "react-icons/tb";
 import { FollowerPointerCard } from "@/src/components/ui/following-pointer";
+import { HiOutlineLanguage } from "react-icons/hi2";
 
 export default function LanguageChangeButton() {
   // Get the current pathname using the usePathname hook
@@ -62,7 +63,7 @@ export default function LanguageChangeButton() {
         className="h-[1.5rem] w-[1.5rem]"
         isFixed={true}
       >
-        <TbMessageLanguage className="h-full w-full" />
+        <HiOutlineLanguage className="h-full w-full " />
       </FollowerPointerCard>
     </Link>
   );

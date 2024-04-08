@@ -10,11 +10,13 @@ export const FollowerPointerCard = ({
   className,
   title,
   isFixed,
+  bgColour,
 }: {
   children: React.ReactNode;
   className?: string;
   title?: string | React.ReactNode;
   isFixed?: boolean;
+  bgColour?: string;
 }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -22,6 +24,7 @@ export const FollowerPointerCard = ({
   const [rect, setRect] = useState<DOMRect | null>(null);
   const [isInside, setIsInside] = useState<boolean>(false); // Add this line
   const isFixedComponent = isFixed || false;
+  const bgColourInput = bgColour || "#222222";
   const updateRect = () => {
     if (ref.current) {
       setRect(ref.current.getBoundingClientRect());
@@ -63,7 +66,9 @@ export const FollowerPointerCard = ({
       className={cn("relative", className)}
     >
       <AnimatePresence>
-        {isInside && <FollowPointer x={x} y={y} title={title} />}
+        {isInside && (
+          <FollowPointer x={x} y={y} title={title} bgColour={bgColourInput} />
+        )}
       </AnimatePresence>
       {children}
     </div>
@@ -74,12 +79,14 @@ export const FollowPointer = ({
   x,
   y,
   title,
+  bgColour,
 }: {
   x: any;
   y: any;
   title?: string | React.ReactNode;
+  bgColour?: string;
 }) => {
-  const colors = ["#000000"];
+  const colors = [bgColour];
   return (
     <motion.div
       className="h-4 w-4 rounded-full absolute z-50"
@@ -117,9 +124,8 @@ export const FollowPointer = ({
           scale: 0.5,
           opacity: 0,
         }}
-        className={
-          "px-2 py-2 bg-neutral-200 text-white whitespace-nowrap min-w-max text-xs rounded-full"
-        }
+        className={`px-2 py-2 bg-neutral-200 
+        text-white whitespace-nowrap min-w-max text-xs rounded-full`}
       >
         {title}
       </motion.div>

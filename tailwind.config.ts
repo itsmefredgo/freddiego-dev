@@ -22,6 +22,7 @@ module.exports = {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
         accent: "var(--accent)",
+        subtext: "var(--subtext)",
       },
       animation: {
         shimmer: "shimmer 2s linear infinite",
