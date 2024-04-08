@@ -1,34 +1,12 @@
 import { Locale } from "@/src/i18n.config";
 import Image from "next/image";
-import LanguageChangeButton from "../functions/LanguageChangeButton";
 import HeaderLink from "../ui/HeaderLink";
-import { useState } from "react";
-import { IoMenu } from "react-icons/io5";
-import getCurrentPage from "../helpers/useFindCurrentPage";
 import freddiego from "@/public/assets/images/freddiego.svg";
-import ToggleDarkMode from "../functions/ToggleDarkMode";
-import TechIcons from "../ui/TechIcon";
-import GitHubIcon from "@/public/assets/techicons/GitHub.svg";
-import LinkedInIcon from "@/public/assets/techicons/LinkedIn.svg";
 
 function Footer({ lang }: { lang: Locale }) {
-  const aboutLinks = [
-    ["Roles", "/about#roles"],
-    ["Education", "/about#education"],
-    ["Experiences", "/about#experiences"],
-  ];
-  const archiveLinks = [
-    ["Projects", "/about#projects"],
-    ["Blogs", "/about#blogs"],
-  ];
-
   return (
     <footer className="bg-subBackground">
-      <div
-        className={` text-text pb-6 pt-16
-        lg:px-8 lg:pt-24 ${mainDivWidth} px-4 `}
-      >
-        {/* mx-auto max-w-screen-xl px-4 sm:px-6  */}
+      <div className={` text-text ${footerDivWidth}`}>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-5 ">
           <div className=" md:col-span-3">
             <div className="flex justify-center sm:justify-start">
@@ -92,31 +70,25 @@ function Footer({ lang }: { lang: Locale }) {
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-4 md:grid-cols-2 md:col-span-2">
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium ">About</p>
-              <ul className="mt-8 space-y-4 text-sm">
-                {aboutLinks.map(([title, href]) => (
-                  <li key={title}>
-                    <HeaderLink href={href} lang={lang}>
-                      {title}
-                    </HeaderLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {footerPageLinks.map((page) => (
+              <div className="text-center sm:text-left">
+                <p className="text-lg font-medium ">
+                  <HeaderLink href={page.Title[1]} lang={lang}>
+                    {page.Title[0]}
+                  </HeaderLink>
+                </p>
 
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium ">Archive</p>
-              <ul className="mt-8 space-y-4 text-sm">
-                {archiveLinks.map(([title, href]) => (
-                  <li key={title}>
-                    <HeaderLink href={href} lang={lang}>
-                      {title}
-                    </HeaderLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <ul className="mt-8 space-y-4 text-sm">
+                  {page.Link.map(([title, href]) => (
+                    <li key={title}>
+                      <HeaderLink href={href} lang={lang}>
+                        {title}
+                      </HeaderLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -137,9 +109,28 @@ function Footer({ lang }: { lang: Locale }) {
 
 export default Footer;
 
-const mainDivWidth = `
+const footerPageLinks = [
+  {
+    Title: ["About", "/about"],
+    Link: [
+      ["Roles", "/about#roles"],
+      ["Education", "/about#education"],
+      ["Experiences", "/about#experiences"],
+    ],
+  },
+  {
+    Title: ["Archive", "/archive"],
+    Link: [
+      ["Projects", "/about#projects"],
+      ["Blogs", "/about#blogs"],
+    ],
+  },
+];
+
+const footerDivWidth = `
 sm:px-[min(calc((100%-36rem)/2),4rem)] 
 md:px-[min(calc((100%-40rem)/2),8rem)]
 lg:px-[min(calc((100%-48rem)/2),10rem)]
 xl:px-[calc((100%-60rem)/2)]
+px-4 pb-8 pt-16 lg:px-8 lg:pt-24 
 `;
