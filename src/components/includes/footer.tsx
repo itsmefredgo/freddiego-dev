@@ -6,6 +6,7 @@ import freddiego from "@/public/assets/images/freddiego.svg";
 function Footer({ lang }: { lang: Locale }) {
   return (
     <footer className="bg-subBackground">
+      <section id="contact"></section>
       <div className={` text-text ${footerDivWidth}`}>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-5 ">
           <div className=" md:col-span-3">
@@ -27,7 +28,7 @@ function Footer({ lang }: { lang: Locale }) {
               Get in touch
             </p>
             <p className="mt-2 text-center leading-relaxed sm:max-w-xs sm:text-left">
-              e-mail: hyeongo0317@gmail.com
+              Email: hyeongo0317@gmail.com
             </p>
             <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
               <li>
@@ -71,7 +72,7 @@ function Footer({ lang }: { lang: Locale }) {
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-4 md:grid-cols-2 md:col-span-2">
             {footerPageLinks.map((page) => (
-              <div className="text-center sm:text-left">
+              <div className="text-center sm:text-left" key={page.Title[0]}>
                 <p className="text-lg font-medium ">
                   <HeaderLink href={page.Title[1]} lang={lang}>
                     {page.Title[0]}

@@ -9,6 +9,7 @@ import { IoMenu } from "react-icons/io5";
 import getCurrentPage from "../helpers/useFindCurrentPage";
 import freddiego from "@/public/assets/images/freddiego.svg";
 import ToggleDarkMode from "../functions/ToggleDarkMode";
+import ContactButton from "../functions/ContactButton";
 
 export default function Header({ lang }: { lang: Locale }) {
   const navigation = {
@@ -82,6 +83,7 @@ export default function Header({ lang }: { lang: Locale }) {
           </div>
         </div>
         <div className=" flex gap-8 items-center justify-center text-primary">
+          <ContactButton />
           <LanguageChangeButton />
           <ToggleDarkMode />
         </div>
