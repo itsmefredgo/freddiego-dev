@@ -9,7 +9,10 @@ import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Link from "next/link";
 import ProjectTitle from "./ProjectTitle";
 import { Project } from "@/lib/sanityPropsInterface";
+import { TbArrowBackUp } from "react-icons/tb";
+
 import github from "@/public/assets/techicons/GitHub.svg";
+import { FollowerPointerCard } from "@/src/components/ui/following-pointer";
 
 interface Props {
   project: Project;
@@ -20,8 +23,13 @@ function ProjectComponent({ project }: Props) {
     <article className=" ">
       <div className=" flex justify-between">
         <ProjectTitle title={project?.title} />
-        <Link href={"/archive#projects"} className=" text-primary">
-          Back
+        <Link
+          href={"/archive#projects"}
+          className=" text-primary relative flex flex-col justify-end"
+        >
+          <FollowerPointerCard title="Back to Projects">
+            <TbArrowBackUp className=" text-[2rem] w-[2rem] mt-2 hover:mt-0 duration-150" />
+          </FollowerPointerCard>
         </Link>
       </div>
       <div className=" flex">
@@ -63,7 +71,6 @@ function ProjectComponent({ project }: Props) {
       </div>
 
       <div className=" [&>*]:my-0">
-        {/* <p>{project?.excerpt}</p> */}
         <div className={`${portableTextStyles} `}>
           <PortableText
             value={project?.body}

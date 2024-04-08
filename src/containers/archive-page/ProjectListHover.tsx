@@ -58,8 +58,6 @@ export const ProjectHoverEffect = ({
     </div>
   );
 };
-// "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border
-//border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
 
 export const ProjectContainer = ({
   className,
@@ -73,7 +71,7 @@ export const ProjectContainer = ({
       className={cn(
         ` rounded-xl h-full w-full pl-2 pt-2 pb-3 pr-6 hover:pl-4 hover:pr-2 
           duration-200 overflow-hidden bg-subBackground border-2 relative z-20
-         border-slate-700`,
+          border-slate-300 dark:border-slate-700`,
         className
       )}
     >

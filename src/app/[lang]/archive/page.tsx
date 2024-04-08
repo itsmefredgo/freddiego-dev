@@ -3,7 +3,6 @@ import { getDictionary } from "@/lib/dictionary";
 import { client } from "@/sanity/lib/client";
 
 import SectionTitle from "@/src/components/ui/SectionTitle";
-import ProjectListItem from "@/src/containers/archive-page/ProjectListItem";
 import { Project, Blog } from "@/lib/sanityPropsInterface";
 import { ProjectHoverEffect } from "@/src/containers/archive-page/ProjectListHover";
 import { BlogHoverEffect } from "@/src/containers/archive-page/BlogListHover";
