@@ -66,9 +66,9 @@ export const TracingBeam = ({
           <motion.path
             d={`M0 -2 V-1 -2 l5 0 V ${svgHeight * 1}`}
             fill="none"
-            stroke="#d3defd"
+            stroke="#666666"
             strokeWidth={2}
-            strokeOpacity="0.15"
+            strokeOpacity="0.2"
             transition={{
               duration: 0,
             }}

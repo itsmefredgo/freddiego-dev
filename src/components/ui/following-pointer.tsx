@@ -9,23 +9,25 @@ export const FollowerPointerCard = ({
   children,
   className,
   title,
+  isFixed,
 }: {
   children: React.ReactNode;
   className?: string;
   title?: string | React.ReactNode;
+  isFixed?: boolean;
 }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const ref = React.useRef<HTMLDivElement>(null);
   const [rect, setRect] = useState<DOMRect | null>(null);
   const [isInside, setIsInside] = useState<boolean>(false); // Add this line
-
+  const isFixedComponent = isFixed || false;
+  const updateRect = () => {
+    if (ref.current) {
+      setRect(ref.current.getBoundingClientRect());
+    }
+  };
   useEffect(() => {
-    const updateRect = () => {
-      if (ref.current) {
-        setRect(ref.current.getBoundingClientRect());
-      }
-    };
     window.addEventListener("resize", updateRect);
     updateRect();
     return () => window.removeEventListener("resize", updateRect);
@@ -33,10 +35,15 @@ export const FollowerPointerCard = ({
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (rect) {
-      const scrollX = window.scrollX;
       const scrollY = window.scrollY;
-      x.set(e.clientX - rect.left + scrollX - 40);
-      y.set(e.clientY - rect.top + scrollY + 10);
+      const scrollX = window.scrollX;
+      if (isFixedComponent) {
+        x.set(e.clientX - rect.left - 10);
+        y.set(e.clientY - rect.top + 10);
+      } else {
+        x.set(e.clientX - rect.left + scrollX);
+        y.set(e.clientY - rect.top + scrollY);
+      }
     }
   };
   const handleMouseLeave = () => {
@@ -44,6 +51,7 @@ export const FollowerPointerCard = ({
   };
 
   const handleMouseEnter = () => {
+    updateRect();
     setIsInside(true);
   };
   return (

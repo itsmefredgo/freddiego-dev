@@ -13,10 +13,10 @@ export default async function About({
   const contents = page.about;
 
   return (
-      <div className=" h-[auto] flex flex-col gap-20 font-normal">
-        <AboutRoles {...contents} />
-        <AboutEducation {...contents.education} />
-        <AboutExperiences {...contents.experiences} />
-      </div>
+    <div className=" h-[auto] flex flex-col gap-20 font-normal">
+      <AboutRoles {...contents} />
+      <AboutEducation {...contents.education} />
+      <AboutExperiences {...contents.experiences} />
+    </div>
   );
 }

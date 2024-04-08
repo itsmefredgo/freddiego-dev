@@ -28,6 +28,7 @@ const ToggleDarkMode = () => {
       <FollowerPointerCard
         title={darkMode ? "Dark Mode" : "Light Mode"}
         className="h-[1.5rem] w-[1.5rem]"
+        isFixed={true}
       >
         <IoMoon className="block dark:hidden h-full w-full" />
         <IoMdSunny className="hidden dark:block  h-full w-full" />

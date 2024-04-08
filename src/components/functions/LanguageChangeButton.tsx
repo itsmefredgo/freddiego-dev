@@ -60,6 +60,7 @@ export default function LanguageChangeButton() {
       <FollowerPointerCard
         title={getNextLanguage()}
         className="h-[1.5rem] w-[1.5rem]"
+        isFixed={true}
       >
         <TbMessageLanguage className="h-full w-full" />
       </FollowerPointerCard>
