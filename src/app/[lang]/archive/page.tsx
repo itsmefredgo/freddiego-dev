@@ -42,11 +42,11 @@ export default async function Archive({
 
   return (
     <div className=" h-[auto] flex flex-col gap-20 font-normal">
-      <section id="projects">
+      <section id="projects" className="pt-[5rem] mt-[-5rem]">
         <SectionTitle title="Projects" />
         <ProjectHoverEffect projects={projects} />
       </section>
-      <section id="blogs">
+      <section id="blogs" className="pt-[5rem] mt-[-5rem]">
         <SectionTitle title="Blogs" />
         <BlogHoverEffect blogs={blogs} />
       </section>

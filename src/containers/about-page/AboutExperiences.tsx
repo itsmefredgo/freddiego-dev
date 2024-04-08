@@ -13,7 +13,7 @@ type AboutExperiencesProps = {
 
 function AboutExperiences({ title, experiencesList }: AboutExperiencesProps) {
   return (
-    <section>
+    <section id="experiences" className="pt-[5rem] mt-[-5rem]">
       <SectionTitle title={title}></SectionTitle>
       <ul>
         {experiencesList.map((experience, index) => (

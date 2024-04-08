@@ -12,7 +12,7 @@ type AboutEducationProps = {
 
 function AboutEducation({ title, education }: AboutEducationProps) {
   return (
-    <section>
+    <section id="education" className="pt-[5rem] mt-[-5rem]">
       <SectionTitle title={title}></SectionTitle>
       <h2>{education.institution}</h2>
       <div className=" flex flex-col md:flex-row">

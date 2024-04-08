@@ -40,9 +40,7 @@ footer * {
   filter: invert(78%) sepia(31%) saturate(5170%) hue-rotate(188deg)
     brightness(100%) contrast(94%);
 }
-.clickable {
-  color: #47a77b;
-}
+
 @layer base {
   :root {
     --text: #020d2c;

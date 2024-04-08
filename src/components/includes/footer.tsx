@@ -121,8 +121,8 @@ const footerPageLinks = [
   {
     Title: ["Archive", "/archive"],
     Link: [
-      ["Projects", "/about#projects"],
-      ["Blogs", "/about#blogs"],
+      ["Projects", "/archive#projects"],
+      ["Blogs", "/archive#blogs"],
     ],
   },
 ];
