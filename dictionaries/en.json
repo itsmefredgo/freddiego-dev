@@ -11,7 +11,12 @@
       "introduction": {
         "greeting": "Hi there,",
         "name": "my name is Frederick Go",
-        "role": "I am a full-stack developer | software engineer. "
+        "roles": [
+          "Software Engineer",
+          "Full-stack Developer",
+          "Data Scientist"
+        ],
+        "hello": "Nice to See You."
       },
       "work": {
         "title": "Experiences",
