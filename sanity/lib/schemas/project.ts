@@ -26,6 +26,15 @@ export const project = defineType({
       initialValue: () => new Date().toISOString(),
     },
     {
+      name: "thumbnail",
+      title: "Thumbnail",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      fields: [{ type: "text", name: "alt", title: "Alt" }],
+    },
+    {
       name: "github",
       title: "GitHub Link",
       type: "string",

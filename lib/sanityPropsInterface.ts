@@ -4,6 +4,7 @@ export interface Project {
     current: string;
   };
   publishedAt: string;
+  thumbnail: any;
   github: string;
   demo: string;
   excerpt: string;
