@@ -13,8 +13,11 @@ export default async function Home({
 
   return (
     <div className=" ">
-      <AuroraBackground className="w-full h-fit rounded-3xl mb-8 p-8 text-black dark:text-white">
-        <section className=" w-full bg-transparent rounded-3xl mb-8 p-8 z-10">
+      <AuroraBackground
+        className="w-full h-fit rounded-3xl 
+        mb-8 p-12 text-black dark:text-white"
+      >
+        <section className=" w-full bg-transparent rounded-3xl z-10">
           <div>
             <h1 className=" text-[2.5rem]">
               {page.home.introduction.greeting}
