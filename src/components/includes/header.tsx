@@ -4,39 +4,50 @@ import { Locale } from "@/src/i18n.config";
 import Image from "next/image";
 import LanguageChangeButton from "../functions/LanguageChangeButton";
 import HeaderLink from "../ui/HeaderLink";
-import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 import getCurrentPage from "../helpers/useFindCurrentPage";
 import freddiego from "@/public/assets/images/freddiego.svg";
 import ToggleDarkMode from "../functions/ToggleDarkMode";
 import ContactButton from "../functions/ContactButton";
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/src/components/ui/dropdown-menu";
+
 export default function Header({ lang }: { lang: Locale }) {
   const navigation = {
-    "": "freddiego",
     about: "About",
     archive: "Archive",
-    // contact: "Contact",
   };
-
-  const [isMobileLinksOpen, setIsMobileLinksOpen] = useState(false);
-
+  // ${defaultNavBarStyle}
   return (
     <header>
-      <nav className={`${defaultNavBarStyle}`}>
-        <div className=" flex gap-8 items-center">
+      <nav
+        className={` w-full h-16 fixed text-text 
+                  flex flex-row gap-4 
+                  md:gap-0 md:justify-between items-center 
+                  
+                  px-[1rem]
+                  sm:px-[min(calc((100%-36rem)/2),4rem)]
+                  md:px-[min(calc((100%-40rem)/2),8rem)]
+                  lg:px-[min(calc((100%-48rem)/2),10rem)]
+                  xl:px-[calc((100%-60rem)/2)] z-50 `}
+      >
+        <div
+          className="  flex flex-row-reverse 
+          justify-end md:justify-start md:flex-row gap-2 md:gap-8 items-center "
+        >
           <span
-            className=" flex gap-4 pr-8 duration-300
+            className=" flex md:pr-8
             md:border-r-[1.25px] md:border-text "
           >
-            <button
-              className=" md:hidden"
-              onClick={() => setIsMobileLinksOpen(true)}
-            >
-              <IoMenu />
-            </button>
             <HeaderLink href={`/`} lang={lang} key={""}>
-              <div className=" h-[25px] w-auto">
+              <div className=" h-[25px] w-auto ">
                 <Image
                   src={freddiego}
                   alt="Freddiego"
@@ -46,36 +57,30 @@ export default function Header({ lang }: { lang: Locale }) {
             </HeaderLink>
           </span>
           <div
-            className={` ${mobileNavBarExtendStyle} ${
-              isMobileLinksOpen ? "translate-x-0" : "translate-x-[-30rem]"
-            }`}
+            className="hidden md:static w-auto h-auto bg-inherit gap-12
+            md:flex md:flex-row"
           >
-            <button
-              className=" md:hidden w-auto"
-              onClick={() => setIsMobileLinksOpen(false)}
-            >
-              X
-            </button>
-            {Object.entries(navigation).map(
-              ([key, value]) =>
-                key !== "" && (
-                  <span
-                    key={key}
-                    className={` duration-100 ${
-                      getCurrentPage(lang) === key
-                        ? " font-bold"
-                        : " font-normal"
-                    }`}
-                  >
-                    <HeaderLink href={`/` + key} lang={lang} key={key}>
-                      {value}
-                    </HeaderLink>
-                  </span>
-                )
-            )}
+            <SubLinks></SubLinks>
           </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger className=" md:hidden ">
+              <IoMenu />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className=" w-fit bg-subBackground dark:bg-subBackground">
+              {Object.entries(navigation).map(([key, value]) => (
+                <HeaderLink href={`/` + key} lang={lang} key={key}>
+                  <DropdownMenuItem>{value}</DropdownMenuItem>
+                  {value !== navigation.archive}
+                  <DropdownMenuSeparator></DropdownMenuSeparator>
+                </HeaderLink>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
-        <div className=" flex gap-8 items-center justify-center text-primary">
+        <div
+          className=" flex gap-4 text-primary items-center
+          justify-around sm:justify-end md:gap-8 "
+        >
           <ContactButton />
           <LanguageChangeButton />
           <ToggleDarkMode />
@@ -83,20 +88,34 @@ export default function Header({ lang }: { lang: Locale }) {
       </nav>
     </header>
   );
+
+  // These are links in header except main page link (About & Archive)
+  function SubLinks() {
+    return (
+      <>
+        {Object.entries(navigation).map(([key, value]) => (
+          <span
+            key={key}
+            className={` duration-100 ${
+              getCurrentPage(lang) === key ? " font-bold" : " font-normal"
+            }`}
+          >
+            <HeaderLink href={`/` + key} lang={lang} key={key}>
+              {value}
+            </HeaderLink>
+          </span>
+        ))}
+      </>
+    );
+  }
 }
 
 const defaultNavBarStyle = `
-min-w-full h-16 fixed bg-[#b3c6d000] text-text
-flex justify-between items-center px-[2rem] 
+w-full h-16 fixed text-text 
+flex flex-row gap-4 
+md:gap-0 md:justify-between items-center px-[2rem] 
 sm:px-[min(calc((100%-36rem)/2),4rem)]
 md:px-[min(calc((100%-40rem)/2),8rem)]
 lg:px-[min(calc((100%-48rem)/2),10rem)]
 xl:px-[calc((100%-60rem)/2)] z-50
-`;
-
-const mobileNavBarExtendStyle = ` 
-absolute left-0 top-0 h-screen w-[25rem] max-w-full
-flex flex-col duration-300 items-end gap-8 p-8 bg-secondary
-md:static md:translate-x-0 md:w-auto md:bg-inherit md:h-auto
-md:flex md:gap-12 md:p-0 md:flex-row
 `;

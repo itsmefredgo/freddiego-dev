@@ -25,6 +25,7 @@ export const FollowerPointerCard = ({
   const [isInside, setIsInside] = useState<boolean>(false); // Add this line
   const isFixedComponent = isFixed || false;
   const bgColourInput = bgColour || "#222222";
+
   const updateRect = () => {
     if (ref.current) {
       setRect(ref.current.getBoundingClientRect());
@@ -32,6 +33,7 @@ export const FollowerPointerCard = ({
   };
   useEffect(() => {
     window.addEventListener("resize", updateRect);
+    window.addEventListener("scroll", updateRect);
     updateRect();
     return () => window.removeEventListener("resize", updateRect);
   }, []);
@@ -110,7 +112,7 @@ export const FollowPointer = ({
     >
       <motion.div
         style={{
-          backgroundColor: colors[Math.floor(Math.random() * colors.length)],
+          backgroundColor: colors[0],
         }}
         initial={{
           scale: 0.5,

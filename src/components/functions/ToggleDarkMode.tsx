@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { IoMoon } from "react-icons/io5";
-import { IoMdSunny } from "react-icons/io";
 import { FollowerPointerCard } from "@/src/components/ui/following-pointer";
+import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 
 const ToggleDarkMode = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -30,8 +29,8 @@ const ToggleDarkMode = () => {
         className="h-[1.5rem] w-[1.5rem]"
         isFixed={true}
       >
-        <IoMoon className="block dark:hidden h-full w-full" />
-        <IoMdSunny className="hidden dark:block  h-full w-full" />
+        <IoMoonOutline className="block dark:hidden h-full w-full" />
+        <IoSunnyOutline className="hidden dark:block  h-full w-full" />
       </FollowerPointerCard>
     </button>
   );
