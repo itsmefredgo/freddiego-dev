@@ -8,6 +8,9 @@
   /* font-weight: 400; */
   /* font-style: normal; */
 }
+body {
+  overflow-x: hidden;
+}
 
 .customSvgColour {
   filter: invert(11%) sepia(57%) saturate(5086%) hue-rotate(213deg)
