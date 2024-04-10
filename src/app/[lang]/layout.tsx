@@ -1,8 +1,8 @@
 import "@/styles/globals.css";
-import { Locale, i18n } from "@/src/i18n.config";
+import { Locale } from "@/src/i18n.config";
+import { TracingBeam } from "@/src/components/ui/TracingBeamBar";
 import Header from "@/src/components/includes/header";
 import Footer from "@/src/components/includes/footer";
-import { TracingBeam } from "@/src/components/ui/TracingBeamBar";
 
 export default function Layout({
   children,
