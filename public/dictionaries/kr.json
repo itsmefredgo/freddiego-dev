@@ -9,19 +9,16 @@
   "page": {
     "home": {
       "introduction": {
-        "greeting": "Hi there,",
-        "name": "my name is Frederick Go",
-        "roles": [
-          "Software Engineer",
-          "Full-stack Developer",
-          "Data Scientist"
-        ],
-        "hello": "Nice to See You."
+        "greeting": "인녕하세요, ",
+        "name": "고동현입니다. ",
+        "roles": ["소프트웨어 엔지니어", "풀 스택 개발자", "데이터 과학자"],
+        "hello": "반갑습니다. "
       },
       "roles": [
         {
-          "title": "Engineer",
-          "description": "I am a dedicated Software Engineer/Full-stack Developer. ",
+          "title": "엔지니어",
+          "description": "열정이 가득한 소프트웨어 개발자",
+          "techstatement": "애용하는 기술 스택:",
           "techlist": [
             "Next.js",
             "JavaScript",
@@ -33,8 +30,9 @@
           "projects": ["notifyall", "notifyall"]
         },
         {
-          "title": "Data Scientist",
-          "description": "I am a dedicated Data Scientist. ",
+          "title": "데이터 과학자",
+          "description": "A.I. & 데이터를 시각화하는 것을 좋아하는 데이터 과학자/분석가",
+          "techstatement": "애용하는 기술 스택:",
           "techlist": [
             "Next.js",
             "JavaScript",
@@ -49,31 +47,31 @@
       "experiences": [
         {
           "company": "St. Joseph's Children's Centre",
-          "role": "Web Developer",
+          "role": "웹 개발자",
           "date": "Dec 2022 - Dec 2023",
           "descriptions": [
-            "Revitalized and updated the organization's website, on WordPress & PHP, to ensure accurate and current information.",
-            "Addressed prior site neglect, resolving issues promptly and ensuring the site now provides up-to-date information.",
-            "Resolved issues with email inquiries resulting in clients in interest sending emails via a form easily."
+            "- Revitalized and updated the organization's website, on WordPress & PHP, to ensure accurate and current information.",
+            "- Addressed prior site neglect, resolving issues promptly and ensuring the site now provides up-to-date information.",
+            "- Resolved issues with email inquiries resulting in clients in interest sending emails via a form easily."
           ],
           "links": { "about": false, "projects": false, "contact": false }
         },
         {
           "company": null,
-          "role": "Freelance Web Developer",
+          "role": "프리랜서 웹 개발자",
           "date": "Jan 2024 - Mar 2024",
           "descriptions": [
-            "Designed and developed a website for a client to showcase their products and services. The website was built using Next.js and deployed on Vercel. The website is responsive and accessible on mobile and desktop devices."
+            "- Designed and developed a website for a client to showcase their products and services. The website was built using Next.js and deployed on Vercel. The website is responsive and accessible on mobile and desktop devices."
           ],
           "links": { "about": false, "projects": true, "contact": false }
         },
         {
           "company": null,
-          "role": "Where Next?",
+          "role": "이제 어디로?",
           "date": "Feb 2024 - Present",
           "descriptions": [
-            "I'm currently seeking opportunities to to dive into the world of software engineering as a developer. With practical experience in web development gained through volunteering and freelancing projects, I'm eager to transition into a full-time role where I can apply and further develop my skills.",
-            "If you're on the lookout for a dedicated developer to join your team or know of any opportunities, I'd appreciate the chance to connect and explore potential possibilities!"
+            "저는 현재 개발자로 소프트웨어 엔지니어링의 세계에 뛰어들기 위한 기회를 찾고 있습니다. 자원봉사와 프리랜싱 프로젝트를 통해 웹 개발에 대한 실무 경험을 쌓았으며, 제 기술을 적용하고 더 발전시킬 수 있는 풀타임 역할로 전환하기를 간절히 바라고 있습니다.",
+            "팀에 합류할 헌신된 개발자를 찾고 있다면 또는 어떠한 기회를 아시는 경우, 연락하여 잠재적인 가능성을 탐색하는 기회를 감사히 받겠습니다!"
           ],
           "links": { "about": true, "projects": false, "contact": true }
         }
@@ -84,8 +82,8 @@
       "title": "About Me",
       "summaryRoles": [
         {
-          "role": "Engineer",
-          "description": "Front-end has been the appealing aspect of software and web developments for me. However, ever since I have discovered how much the front-end can be so powerful with a great back-end, I have been so eager to learn both sides of technology and integrate which led myself into becoming a full-stack developer. Web applications are in my toolkit with experiences of building cloud-based web applications. I love to code in my lovely tech stack: NextJS and Express, my go-to frameworks. Then I pick a data base and integrate all other sorts of things depending on the project, I love learning new techs. ",
+          "role": "엔지니어",
+          "description": "Front-end이 소프트웨어 및 웹 개발에서 저에게 매력적인 측면이었습니다. 그러나 최근에는 훌륭한 백엔드와 함께 프론트엔드가 얼마나 강력할 수 있는지를 발견한 이후로, 기술의 양쪽을 모두 배우고 통합하는 것에 대해 매우 열려 있어서 풀스택 개발자가 되기 위해 스스로를 이끌었습니다. 클라우드 기반 웹 애플리케이션을 구축하는 경험을 통해 웹 애플리케이션은 제 도구상자 안에 있습니다. NextJS와 Express, 내가 선호하는 프레임워크에서 코딩하는 것을 좋아합니다. 그런 다음 프로젝트에 따라 데이터베이스를 선택하고 다른 종류의 기술을 모두 통합합니다. 새로운 기술을 배우는 것을 좋아합니다.",
           "techstack": [
             {
               "category": "Languages",
@@ -141,8 +139,8 @@
           ]
         },
         {
-          "role": "Data Analyst",
-          "description": "While there is an engineering side of me, on the other side, I love playing around with math/stat especially when it comes to extracting information and visualizing them. I fell in love with data science on the day I saw the power of big data and it has been a fascinating field for me. The idea of being able to extract super meaningful information out of some rows and columns of random looking data is so exiting, just imagine finding patterns of all sorts of things and solving problems! That is when I decided to dive deeper into data science which led me to achieving a certificate in data science from Dalhousie University and Data Analytics certificate from Google. Now, from time to time, whenever I want to understand about certain areas of the world, I dig for data online and make analysis using Python (mostly) and R using data analysis and machine learning. ",
+          "role": "데이터 분석가",
+          "description": "저에게는 엔지니어링 측면이 있지만, 반대편에서는 특히 정보 추출과 시각화에 관련된 수학/통계와 놀기를 좋아합니다. 빅데이터의 힘을 처음으로 보았던 날부터 데이터 과학에 반해왔으며, 이는 저에게 매력적인 분야입니다. 어떤 무작위로 보이는 데이터의 행과 열에서 매우 의미 있는 정보를 추출할 수 있다는 아이디어는 너무 흥미롭습니다. 다양한 패턴을 찾고 문제를 해결하는 것을 상상해보세요! 그 순간, 데이터 과학에 더 깊이 파고들기로 결심했고, 그로부터 Dalhousie 대학의 데이터 과학 자격증과 Google의 데이터 분석 자격증을 취득했습니다. 이제 가끔씩 세계의 특정 분야에 대해 이해하고 싶을 때 인터넷에서 데이터를 찾아 파이썬(대부분)과 R을 사용하여 데이터 분석 및 기계 학습을 수행합니다.",
           "techstack": [
             {
               "category": "Languages",
@@ -176,10 +174,10 @@
       "education": {
         "title": "Education",
         "education": {
-          "institution": "Dalhousie University (2020~2023)",
-          "major": "Bachelor of Computer Science",
-          "minor": "Minor in Statistics",
-          "GPA": "GPA: 4.15/4.3"
+          "institution": "달하우지 대학교, 캐나다 (2020~2023)",
+          "major": "컴퓨터 과학 학사 (BCS)",
+          "minor": "통계학 부전공",
+          "GPA": "학점: 4.15/4.3"
         }
       },
       "experiences": {
@@ -187,7 +185,7 @@
         "experiencesList": [
           {
             "company": "St. Joseph's Children's Centre",
-            "role": "Web Developer",
+            "role": "웹 개발자",
             "date": "Dec 2022 - Dec 2023",
             "descriptions": [
               "Revitalized and updated the organization's website, on WordPress & PHP, to ensure accurate and current information.",
@@ -198,16 +196,6 @@
         ]
       },
       "nextPageLink": "View my projects here ->"
-    },
-
-    "archive": {
-      "title": "Archive page",
-      "description": ""
-    },
-
-    "contact": {
-      "title": "Contact page",
-      "description": "contact information"
     }
   }
 }

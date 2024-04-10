@@ -74,7 +74,7 @@ function Footer({ lang }: { lang: Locale }) {
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-4 md:grid-cols-2 md:col-span-2">
               {footerPageLinks.map((page) => (
                 <div className="text-center sm:text-left" key={page.Title[0]}>
-                  <p className="text-lg font-medium ">
+                  <p className="text-lg font-medium hover:text-secondary hover:font-bold">
                     <HeaderLink href={page.Title[1]} lang={lang}>
                       {page.Title[0]}
                     </HeaderLink>
@@ -82,7 +82,10 @@ function Footer({ lang }: { lang: Locale }) {
 
                   <ul className="mt-8 space-y-4 text-sm">
                     {page.Link.map(([title, href]) => (
-                      <li key={title} className="text-subtext">
+                      <li
+                        key={title}
+                        className="text-subtext hover:text-secondary hover:font-bold"
+                      >
                         <HeaderLink href={href} lang={lang}>
                           {title}
                         </HeaderLink>

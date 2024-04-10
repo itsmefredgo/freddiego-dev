@@ -22,6 +22,7 @@
         {
           "title": "Engineer",
           "description": "I am a dedicated Software Engineer/Full-stack Developer. ",
+          "techstatement": "Some of the tech I love:",
           "techlist": [
             "Next.js",
             "JavaScript",
@@ -35,6 +36,7 @@
         {
           "title": "Data Scientist",
           "description": "I am a dedicated Data Scientist. ",
+          "techstatement": "Some of the tech I love:",
           "techlist": [
             "Next.js",
             "JavaScript",

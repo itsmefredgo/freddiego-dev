@@ -5,7 +5,10 @@ import { FaPaperPlane } from "react-icons/fa";
 
 function ContactButton() {
   return (
-    <a href={`${usePathname()}#contact`} className="h-[1.5rem] w-[1.5rem]">
+    <a
+      href={`${usePathname()}#contact`}
+      className="h-[1.5rem] w-[1.5rem] hover:text-secondary"
+    >
       <FollowerPointerCard
         title="Get in touch"
         className="h-[1.5rem] w-[1.5rem] flex justify-center items-center"

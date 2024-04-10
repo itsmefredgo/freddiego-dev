@@ -13,7 +13,7 @@ export default async function Home({
   const contents = page;
 
   return (
-    <div className=" h-[auto] flex flex-col gap-12 font-normal">
+    <div className=" h-[auto] flex flex-col gap-40 font-normal">
       <MainIntro {...contents.home.introduction} />
       <MainRoles roles={contents.home.roles} />
       <MainExperiences experiences={contents.home.experiences} />

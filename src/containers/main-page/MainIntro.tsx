@@ -47,9 +47,10 @@ function AboutEducation({ greeting, name, roles, hello }: AboutEducationProps) {
         <div className=" md:hidden">
           <NiceToSeeYou />
         </div>
-      </section>{" "}
+      </section>
     </AuroraBackground>
   );
+
   function CanadaPin({ classString }: { classString?: string }) {
     return (
       <div className={` flex-1 ${classString}`}>

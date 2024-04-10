@@ -16,10 +16,18 @@ body {
   filter: invert(11%) sepia(57%) saturate(5086%) hue-rotate(213deg)
     brightness(93%) contrast(94%);
 }
+.customSvgColour:hover {
+  filter: invert(64%) sepia(15%) saturate(1154%) hue-rotate(100deg)
+    brightness(92%) contrast(83%);
+}
 
 .dark .customSvgColour {
   filter: invert(78%) sepia(31%) saturate(5170%) hue-rotate(188deg)
     brightness(100%) contrast(94%);
+}
+.dark .customSvgColour:hover {
+  filter: invert(87%) sepia(10%) saturate(1587%) hue-rotate(91deg)
+    brightness(101%) contrast(94%);
 }
 
 @layer base {
@@ -28,7 +36,7 @@ body {
     --background: #edeff3;
     --subBackground: #e3e6ee;
     --primary: #083781;
-    --secondary: #6b56f5;
+    --secondary: #57a983;
     --accent: #390dd9;
     --subtext: #717171;
   }

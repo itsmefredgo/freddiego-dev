@@ -21,25 +21,16 @@ import {
 
 export default function Header({ lang }: { lang: Locale }) {
   const navigation = {
+    "": "freddiego",
     about: "About",
     archive: "Archive",
   };
   // ${defaultNavBarStyle}
   return (
     <header>
-      <nav
-        className={` w-full h-16 fixed text-text 
-                  flex flex-row gap-4 
-                  md:gap-0 md:justify-between items-center 
-                  
-                  px-[1rem]
-                  sm:px-[min(calc((100%-36rem)/2),4rem)]
-                  md:px-[min(calc((100%-40rem)/2),8rem)]
-                  lg:px-[min(calc((100%-48rem)/2),10rem)]
-                  xl:px-[calc((100%-60rem)/2)] z-50 `}
-      >
+      <nav className={`  ${headerStyle}`}>
         <div
-          className="  flex flex-row-reverse 
+          className=" flex flex-row-reverse 
           justify-end md:justify-start md:flex-row gap-2 md:gap-8 items-center "
         >
           <span
@@ -93,29 +84,26 @@ export default function Header({ lang }: { lang: Locale }) {
   function SubLinks() {
     return (
       <>
-        {Object.entries(navigation).map(([key, value]) => (
-          <span
-            key={key}
-            className={` duration-100 ${
-              getCurrentPage(lang) === key ? " font-bold" : " font-normal"
-            }`}
-          >
-            <HeaderLink href={`/` + key} lang={lang} key={key}>
-              {value}
-            </HeaderLink>
-          </span>
-        ))}
+        {Object.entries(navigation).map(([key, value]) =>
+          value === "freddiego" ? null : (
+            <span
+              key={key}
+              className={` hover:text-secondary  hover:font-bold duration-100 ${
+                getCurrentPage(lang) === key && " underline"
+              }`}
+            >
+              <HeaderLink href={`/` + key} lang={lang} key={key}>
+                {value}
+              </HeaderLink>
+            </span>
+          )
+        )}
       </>
     );
   }
 }
 
-const defaultNavBarStyle = `
-w-full h-16 fixed text-text 
-flex flex-row gap-4 
-md:gap-0 md:justify-between items-center px-[2rem] 
-sm:px-[min(calc((100%-36rem)/2),4rem)]
-md:px-[min(calc((100%-40rem)/2),8rem)]
-lg:px-[min(calc((100%-48rem)/2),10rem)]
-xl:px-[calc((100%-60rem)/2)] z-50
-`;
+const headerStyle = `pr-[min(5%,2rem)] sm:mr-0 sm:px-[min(calc((100%-36rem)/2),4rem)] 
+md:px-[min(calc((100%-40rem)/2),8rem)] lg:px-[min(calc((100%-48rem)/2),10rem)]
+xl:px-[calc((100%-60rem)/2)] p-2 font-semibold pr-[2rem] pl-[2.5rem] h-16
+bg-background text-text duration-300 glow5 flex justify-between items-center`;

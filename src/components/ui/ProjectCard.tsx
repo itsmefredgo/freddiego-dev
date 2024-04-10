@@ -34,9 +34,14 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
           />
         </CardItem>
         <div className="flex flex-col gap-2 flex-1 justify-between">
-          <CardItem translateZ={50} className="">
-            <div>{projectData.title}</div>
-            <div>
+          <CardItem translateZ={50} className=" flex flex-col gap-4">
+            <Link
+              href={`/archive/project/${projectData.slug.current}`}
+              className=" text-primary text-[1.5rem] hover:text-secondary"
+            >
+              {projectData.title}
+            </Link>
+            <div className=" text-subtext text-sm">
               {new Date(projectData?.publishedAt).toLocaleDateString("en-US", {
                 month: "long",
                 day: "numeric",
@@ -55,12 +60,16 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
             className=" flex justify-between w-full text-primary"
           >
             <div className=" flex flex-row gap-2">
-              <a href={projectData.github} target="_blank">
+              <a
+                href={projectData.github}
+                target="_blank"
+                className=" hover:text-secondary"
+              >
                 <FaGithubSquare className=" h-[1.5rem] w-[1.5rem] " />
               </a>
               <a
                 href={projectData.demo}
-                className="flex items-center justify-center pb-[3px]"
+                className="flex items-center justify-center pb-[3px] hover:text-secondary"
               >
                 <FaExternalLinkAlt className=" h-[1.3rem] w-[1.3rem] " />
               </a>
@@ -68,9 +77,9 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
             <div className=" flex items-end">
               <Link
                 href={`/archive/project/${projectData.slug.current}`}
-                className=" text-[0.75rem] border-b border-primary"
+                className=" text-[0.75rem] border-b border-primary hover:border-secondary hover:text-secondary"
               >
-                Read more
+                Read about it
               </Link>
             </div>
           </CardItem>
