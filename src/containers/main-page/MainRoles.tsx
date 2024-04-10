@@ -49,7 +49,7 @@ function MainRoles({}: MainRolesProps) {
   return (
     <section className=" w-full bg-transparent flex flex-col gap-12 px-2">
       {contents.roles.map((role) => (
-        <div>
+        <div key={role.title}>
           <SectionTitle title={role.title} />
           <div className=" flex flex-col gap-4 ">
             <div>
