@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { urlForImage } from "@/sanity/lib/image";
+import { urlForImage } from "@/lib/image";
 import { PortableText } from "@portabletext/react";
 
 const BlockContent = require("@sanity/block-content-to-react");
@@ -8,7 +8,7 @@ import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import Link from "next/link";
 import ProjectTitle from "./ProjectTitle";
-import { Project } from "@/lib/sanityPropsInterface";
+import { Project } from "@/sanity/sanityPropsInterface";
 import { TbArrowBackUp } from "react-icons/tb";
 
 import github from "@/public/assets/techicons/GitHub.svg";

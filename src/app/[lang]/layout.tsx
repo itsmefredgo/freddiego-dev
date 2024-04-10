@@ -1,4 +1,3 @@
-import "@/styles/globals.css";
 import { Locale } from "@/src/i18n.config";
 import { TracingBeam } from "@/src/components/ui/TracingBeamBar";
 import Header from "@/src/components/includes/header";

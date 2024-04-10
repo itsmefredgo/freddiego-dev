@@ -1,5 +1,5 @@
 import { Locale } from "@/src/i18n.config";
-import { getDictionary } from "@/lib/dictionary";
+import { getDictionary } from "@/public/dictionary";
 import AboutRoles from "@/src/containers/about-page/AboutRoles";
 import AboutEducation from "@/src/containers/about-page/AboutEducation";
 import AboutExperiences from "@/src/containers/about-page/AboutExperiences";

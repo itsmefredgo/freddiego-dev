@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 import Link from "next/link";
-import { Blog } from "@/lib/sanityPropsInterface";
+import { Blog } from "@/sanity/sanityPropsInterface";
 
 export const BlogHoverEffect = ({
   blogs,

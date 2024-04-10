@@ -1,5 +1,5 @@
 import { Locale } from "@/src/i18n.config";
-import { getDictionary } from "@/lib/dictionary";
+import { getDictionary } from "@/public/dictionary";
 import { useState } from "react";
 
 export default async function About({

@@ -9,70 +9,82 @@
   "page": {
     "home": {
       "introduction": {
-        "greeting": "안녕하세요",
+        "greeting": "Hi there,",
         "name": "my name is Frederick Go",
-        "role": "I am a full-stack developer | software engineer. "
+        "roles": [
+          "Software Engineer",
+          "Full-stack Developer",
+          "Data Scientist"
+        ],
+        "hello": "Nice to See You."
       },
-      "work": {
-        "title": "Experiences",
-        "experiences": {
-          "St. Joseph's Children's Centre": {
-            "role": "Web Developer",
-            "date": "Dec 2022 - Dec 2023",
-            "description": "Maintained and updated the organization's website using WordPress. Addressed prior site neglect, resolving issues promptly and ensuring the site now provides up-to-date information."
-          }
+      "roles": [
+        {
+          "title": "Engineer",
+          "description": "I am a dedicated Software Engineer/Full-stack Developer. ",
+          "techlist": [
+            "Next.js",
+            "JavaScript",
+            "TypeScript",
+            "HTML",
+            "CSS",
+            "Python"
+          ],
+          "projects": ["notifyall", "notifyall"]
+        },
+        {
+          "title": "Data Scientist",
+          "description": "I am a dedicated Data Scientist. ",
+          "techlist": [
+            "Next.js",
+            "JavaScript",
+            "TypeScript",
+            "HTML",
+            "CSS",
+            "Python"
+          ],
+          "projects": ["notifyall", "notifyall"]
         }
-      },
-      "projects": {
-        "title": "Pinned Projects",
-        "projects": {
-          "NotifyAll": {
-            "description": "This is a project description. ",
-            "techstack": "React, Node.js, Express, MongoDB"
-          },
-          "Trello Cloning": {
-            "description": "This is a project description",
-            "techstack": "Tech 1, Tech 2, Tech 3"
-          },
-          "Parkbom Academic Institution Website": {
-            "description": "This is a project description",
-            "techstack": "Tech 1, Tech 2, Tech 3"
-          },
-          "Guitar Chord Music Sheet Library": {
-            "description": "This is a project description",
-            "techstack": "Tech 1, Tech 2, Tech 3"
-          }
+      ],
+      "experiences": [
+        {
+          "company": "St. Joseph's Children's Centre",
+          "role": "Web Developer",
+          "date": "Dec 2022 - Dec 2023",
+          "descriptions": [
+            "- Revitalized and updated the organization's website, on WordPress & PHP, to ensure accurate and current information.",
+            "- Addressed prior site neglect, resolving issues promptly and ensuring the site now provides up-to-date information.",
+            "- Resolved issues with email inquiries resulting in clients in interest sending emails via a form easily."
+          ],
+          "links": { "about": false, "projects": false, "contact": false }
+        },
+        {
+          "company": null,
+          "role": "Freelance Web Developer",
+          "date": "Jan 2024 - Mar 2024",
+          "descriptions": [
+            "- Designed and developed a website for a client to showcase their products and services. The website was built using Next.js and deployed on Vercel. The website is responsive and accessible on mobile and desktop devices."
+          ],
+          "links": { "about": false, "projects": true, "contact": false }
+        },
+        {
+          "company": null,
+          "role": "Where Next?",
+          "date": "Feb 2024 - Present",
+          "descriptions": [
+            "I'm currently seeking opportunities to to dive into the world of software engineering as a developer. With practical experience in web development gained through volunteering and freelancing projects, I'm eager to transition into a full-time role where I can apply and further develop my skills.",
+            "If you're on the lookout for a dedicated developer to join your team or know of any opportunities, I'd appreciate the chance to connect and explore potential possibilities!"
+          ],
+          "links": { "about": true, "projects": false, "contact": true }
         }
-      },
-      "skills": {
-        "title": "Pinned Skills",
-        "skills": {
-          "Frontend": {
-            "description": "React, Next.js, HTML, CSS, JavaScript, etc..."
-          },
-          "Backend": {
-            "description": "Node.js, Express, MongoDB, etc..."
-          },
-          "Others": {
-            "description": "Git, GitHub, Vercel, AWS, etc..."
-          }
-        }
-      },
-      "contact": {
-        "title": "Contact me",
-        "email": "hyeongo0317@gmail.com",
-        "phoneNumber": "(1)-902-580-3648",
-        "linkedin": "https://www.linkedin.com/in/fred-go/",
-        "github": "https://github.com/itsmefredgo",
-        "resume": "resume download link"
-      }
+      ]
     },
 
     "about": {
       "title": "About Me",
       "summaryRoles": [
         {
-          "role": "엔지니어",
+          "role": "Engineer",
           "description": "Front-end has been the appealing aspect of software and web developments for me. However, ever since I have discovered how much the front-end can be so powerful with a great back-end, I have been so eager to learn both sides of technology and integrate which led myself into becoming a full-stack developer. Web applications are in my toolkit with experiences of building cloud-based web applications. I love to code in my lovely tech stack: NextJS and Express, my go-to frameworks. Then I pick a data base and integrate all other sorts of things depending on the project, I love learning new techs. ",
           "techstack": [
             {

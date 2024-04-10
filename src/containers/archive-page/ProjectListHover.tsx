@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 import Link from "next/link";
-import { Project } from "@/lib/sanityPropsInterface";
+import { Project } from "@/sanity/sanityPropsInterface";
 
 export const ProjectHoverEffect = ({
   projects,
