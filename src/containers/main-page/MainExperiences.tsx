@@ -64,7 +64,7 @@ function MainExperiences({}: MainExperiencesProps) {
         <AccordionItem value="item-3">
           <AccordionTrigger>
             <div className="flex flex-col items-start">
-              <div>Now where?</div>
+              <div>Where Next?</div>
               <div className=" text-sm">Feb 2024 - Present</div>
             </div>
           </AccordionTrigger>
