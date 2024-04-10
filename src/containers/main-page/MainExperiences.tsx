@@ -23,18 +23,18 @@ function MainExperiences({}: MainExperiencesProps) {
               <div className=" items-start flex flex-col sm:flex-row">
                 <span>Web Developer</span>
                 <span className="hidden sm:block">&nbsp;-&nbsp;</span>
-                <span>St. Joseph's Children's Centre</span>
+                <span>St. Joseph&apos;s Children&apos;s Centre</span>
               </div>
               <div className=" text-sm">Dec 2022 - Dec 2023</div>
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            Revitalized and updated the organization's website, on WordPress &
-            PHP, to ensure accurate and current information. Addressed prior
-            site neglect, resolving issues promptly and ensuring the site now
-            provides up-to-date information. Resolved issues with email
-            inquiries resulting in clients in interest sending emails via a form
-            easily.
+            Revitalized and updated the organization&apos;s website, on
+            WordPress & PHP, to ensure accurate and current information.
+            Addressed prior site neglect, resolving issues promptly and ensuring
+            the site now provides up-to-date information. Resolved issues with
+            email inquiries resulting in clients in interest sending emails via
+            a form easily.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
@@ -71,16 +71,16 @@ function MainExperiences({}: MainExperiencesProps) {
           <AccordionContent>
             <div className=" flex flex-col gap-8 mr-6">
               <p>
-                I'm currently seeking opportunities to to dive into the world of
-                software engineering as a developer. With practical experience
-                in web development gained through volunteering and freelancing
-                projects, I'm eager to transition into a full-time role where I
-                can apply and further develop my skills.
+                I&apos;m currently seeking opportunities to to dive into the
+                world of software engineering as a developer. With practical
+                experience in web development gained through volunteering and
+                freelancing projects, I&apos;m eager to transition into a
+                full-time role where I can apply and further develop my skills.
               </p>
               <p>
-                If you're on the lookout for a dedicated developer to join your
-                team or know of any opportunities, I'd appreciate the chance to
-                connect and explore potential possibilities!
+                If you&apos;re on the lookout for a dedicated developer to join
+                your team or know of any opportunities, I&apos;d appreciate the
+                chance to connect and explore potential possibilities!
               </p>
               <div className=" flex justify-between text-primary underline">
                 <a href="/#contact">Contact freddiego?</a>
