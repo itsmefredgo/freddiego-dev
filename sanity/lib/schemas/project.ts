@@ -35,6 +35,12 @@ export const project = defineType({
       fields: [{ type: "text", name: "alt", title: "Alt" }],
     },
     {
+      title: "techlist",
+      name: "techlist",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+    {
       name: "github",
       title: "GitHub Link",
       type: "string",

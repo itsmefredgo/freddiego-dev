@@ -5,6 +5,7 @@ export interface Project {
   };
   publishedAt: string;
   thumbnail: any;
+  techlist: Array<string>;
   github: string;
   demo: string;
   excerpt: string;
