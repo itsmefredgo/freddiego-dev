@@ -64,6 +64,9 @@ export const project = defineType({
         { type: "block" },
         {
           type: "image",
+          options: {
+            hotspot: true,
+          },
           fields: [{ type: "text", name: "alt", title: "Alt" }],
         },
         {

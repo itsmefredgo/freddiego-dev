@@ -15,11 +15,11 @@ function CopyEmail() {
           setCopied(false);
         }, 3000);
       }}
-      className="text-primary flex hover:underline items-end h-[1.8rem] hover:text-secondary"
+      className="text-primary flex hover:underline items-end h-[1.9rem] hover:text-secondary ml-[0.2rem]"
     >
-      <FaRegPaperPlane className=" h-[1.5rem] w-[1.5rem]" />
+      <FaRegPaperPlane className=" h-[1.5rem] w-[1.5rem] " />
 
-      <p className="text-[0.75rem] ml-2 ">
+      <p className="text-[0.75rem] ml-[0.6rem]">
         {copied ? "Copied!" : "Copy Email?"}
       </p>
     </button>
