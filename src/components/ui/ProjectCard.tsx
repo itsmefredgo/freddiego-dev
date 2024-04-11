@@ -48,10 +48,11 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
                 year: "numeric",
               })}
             </div>
-            <div className=" flex flex-row gap-2">
+            <div className=" flex flex-wrap gap-2">
               {projectData.techlist.map((tech: string) => (
                 <TechIcon key={tech} tech={tech} />
               ))}
+              ...
             </div>
             <div className=" text-sm">{projectData.excerpt}</div>
           </CardItem>
@@ -104,7 +105,7 @@ const myPortableTextComponents = {
           alt="Post"
           layout="fill"
           objectFit="cover"
-          className="rounded-lg mb-4 "
+          className="rounded-lg mb-4"
         />
       </div>
     ),
