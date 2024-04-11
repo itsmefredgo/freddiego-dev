@@ -29,8 +29,8 @@ const ToggleDarkMode = () => {
         className="h-[1.5rem] w-[1.5rem]"
         isFixed={true}
       >
-        <IoMoonOutline className="block dark:hidden h-full w-full" />
-        <IoSunnyOutline className="hidden dark:block  h-full w-full" />
+        <IoMoonOutline className="block dark:hidden h-full w-full hover:text-secondary" />
+        <IoSunnyOutline className="hidden dark:block  h-full w-full hover:text-secondary" />
       </FollowerPointerCard>
     </button>
   );

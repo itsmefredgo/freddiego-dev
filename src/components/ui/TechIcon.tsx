@@ -8,7 +8,7 @@ interface TechIconsProps {
   tech: string;
 }
 
-const TechIcons: React.FC<TechIconsProps> = ({ tech }) => {
+const TechIcon: React.FC<TechIconsProps> = ({ tech }) => {
   const getImagePath = (tech: string) => {
     try {
       return require(`@/public/assets/techicons/${tech}.svg`);
@@ -39,4 +39,4 @@ const TechIcons: React.FC<TechIconsProps> = ({ tech }) => {
   );
 };
 
-export default TechIcons;
+export default TechIcon;

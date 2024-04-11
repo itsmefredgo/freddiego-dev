@@ -1,9 +1,9 @@
 import { Locale } from "@/src/i18n.config";
-import { getDictionary } from "@/lib/dictionary";
-import { client } from "@/sanity/lib/client";
+import { getDictionary } from "@/public/dictionary";
+import { client } from "@/lib/client";
 
 import SectionTitle from "@/src/components/ui/SectionTitle";
-import { Project, Blog } from "@/lib/sanityPropsInterface";
+import { Project, Blog } from "@/sanity/sanityPropsInterface";
 import { ProjectHoverEffect } from "@/src/containers/archive-page/ProjectListHover";
 import { BlogHoverEffect } from "@/src/containers/archive-page/BlogListHover";
 

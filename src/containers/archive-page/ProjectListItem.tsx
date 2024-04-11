@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Project } from "@/lib/sanityPropsInterface";
+import { Project } from "@/sanity/sanityPropsInterface";
 
 interface Props {
   project: Project;

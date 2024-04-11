@@ -7,9 +7,19 @@ import { usePathname } from "next/navigation";
 // i18n config data
 import { i18n } from "@/src/i18n.config";
 
-import { TbMessageLanguage } from "react-icons/tb";
 import { FollowerPointerCard } from "@/src/components/ui/following-pointer";
 import { HiOutlineLanguage } from "react-icons/hi2";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/src/components/ui/alert-dialog";
 
 export default function LanguageChangeButton() {
   // Get the current pathname using the usePathname hook
@@ -53,18 +63,60 @@ export default function LanguageChangeButton() {
   };
 
   // Link to switch between languages
-  return (
-    <Link
-      href={getRedirectedPathName(getNextLanguage())}
-      className=" h-[1.5rem]flex flex-col justify-center"
-    >
-      <FollowerPointerCard
-        title={getNextLanguage()}
-        className="h-[1.5rem] w-[1.5rem]"
-        isFixed={true}
+  const nextLanguage = getNextLanguage();
+
+  if (nextLanguage === "en") {
+    return (
+      <Link
+        href={getRedirectedPathName(nextLanguage)}
+        className=" h-[1.5rem]flex flex-col justify-center hover:text-secondary"
       >
-        <HiOutlineLanguage className="h-full w-full " />
-      </FollowerPointerCard>
-    </Link>
-  );
+        <FollowerPointerCard
+          title={nextLanguage}
+          className="h-[1.5rem] w-[1.5rem]"
+          isFixed={true}
+        >
+          <HiOutlineLanguage className="h-full w-full " />
+        </FollowerPointerCard>
+      </Link>
+    );
+  } else {
+    return (
+      <AlertDialog>
+        <AlertDialogTrigger className="h-[1.5rem] w-[1.5rem] hover:text-secondary">
+          <FollowerPointerCard title={nextLanguage} className="" isFixed={true}>
+            <HiOutlineLanguage className="h-full w-full " />
+          </FollowerPointerCard>
+        </AlertDialogTrigger>
+        <AlertDialogContent className=" w-fit">
+          <AlertDialogHeader>
+            <AlertDialogDescription className=" flex flex-col gap-4">
+              <div className=" break-keep">
+                일부 콘텐츠는 한국어를 지원하지 않습니다. 양해 부탁드립니다.
+                감사합니다
+                <br /> - 고동현 -
+              </div>
+              <div>
+                Not all contents support Korean. Thank you for your
+                understanding. <br />- Frederick -
+              </div>
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction className=" bg-primary">
+              <Link
+                href={getRedirectedPathName(nextLanguage)}
+                className=" h-[1.5rem] flex flex-col justify-center"
+              >
+                계속하기 / Continue
+              </Link>
+            </AlertDialogAction>
+            <AlertDialogAction className=" bg-[#e23b3b] dark:bg-[#ffacac]">
+              돌아가기 / Back
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+    );
+  }
 }
