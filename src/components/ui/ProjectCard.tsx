@@ -106,9 +106,8 @@ const myPortableTextComponents = {
         <Image
           src={urlForImage(value)}
           alt="Post"
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg mb-4"
+          fill
+          className="rounded-lg mb-4 object-cover"
         />
       </div>
     ),
