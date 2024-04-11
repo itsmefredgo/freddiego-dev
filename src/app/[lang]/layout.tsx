@@ -23,7 +23,7 @@ export default function Layout({
   params: { lang: Locale };
 }) {
   return (
-    <html lang={params.lang}>
+    <html lang={params.lang} className=" scroll-smooth">
       <body className={`${inter.className} relative`}>
         <Header lang={params.lang} />
         <main className={`${mainDivWidth}`}>
