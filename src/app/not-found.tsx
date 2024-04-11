@@ -5,7 +5,7 @@ import Header from "../components/includes/header";
 
 function NotFound() {
   return (
-    <body>
+    <div>
       <Header lang="en"></Header>
       <main
         className={` ${mainDivWidth} font-semibold bg-background flex items-center justify-center
@@ -26,7 +26,7 @@ function NotFound() {
           </Link>
         </div>
       </main>
-    </body>
+    </div>
   );
 }
 
