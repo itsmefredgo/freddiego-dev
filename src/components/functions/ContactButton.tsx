@@ -8,6 +8,7 @@ function ContactButton() {
     <a
       href={`${usePathname()}#contact`}
       className="h-[1.5rem] w-[1.5rem] hover:text-secondary"
+      aria-label="Contact me button"
     >
       <FollowerPointerCard
         title="Get in touch"

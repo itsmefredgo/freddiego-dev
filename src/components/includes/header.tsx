@@ -28,15 +28,12 @@ export default function Header({ lang }: { lang: Locale }) {
   // ${defaultNavBarStyle}
   return (
     <header>
-      <nav className={`  ${headerStyle}`}>
+      <nav className={` ${headerStyle}`} role="navigation">
         <div
-          className=" flex flex-row-reverse 
-          justify-end md:justify-start md:flex-row gap-2 md:gap-8 items-center "
+          className=" flex flex-row-reverse justify-end md:justify-start 
+          md:flex-row gap-2 md:gap-8 items-center"
         >
-          <span
-            className=" flex md:pr-8
-            md:border-r-[1.25px] md:border-text "
-          >
+          <span className=" flex md:pr-8 md:border-r-[1.25px] md:border-text">
             <HeaderLink href={`/`} lang={lang} key={""}>
               <div className=" h-[25px] w-auto ">
                 <Image
@@ -54,10 +51,16 @@ export default function Header({ lang }: { lang: Locale }) {
             <SubLinks></SubLinks>
           </div>
           <DropdownMenu>
-            <DropdownMenuTrigger className=" md:hidden ">
-              <IoMenu />
+            <DropdownMenuTrigger
+              className=" md:hidden"
+              aria-label="Navigation menu"
+            >
+              <IoMenu role="button" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className=" w-fit bg-subBackground dark:bg-subBackground">
+            <DropdownMenuContent
+              className=" w-fit bg-subBackground 
+              dark:bg-subBackground"
+            >
               {Object.entries(navigation).map(([key, value]) => (
                 <HeaderLink href={`/` + key} lang={lang} key={key}>
                   <DropdownMenuItem>{value}</DropdownMenuItem>

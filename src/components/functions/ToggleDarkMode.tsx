@@ -23,7 +23,11 @@ const ToggleDarkMode = () => {
   }, [darkMode]);
 
   return (
-    <button onClick={() => setDarkMode(!darkMode)} className=" h-[1.5rem]">
+    <button
+      onClick={() => setDarkMode(!darkMode)}
+      className=" h-[1.5rem]"
+      aria-label="Dark mode button"
+    >
       <FollowerPointerCard
         title={darkMode ? "Dark Mode" : "Light Mode"}
         className="h-[1.5rem] w-[1.5rem]"
