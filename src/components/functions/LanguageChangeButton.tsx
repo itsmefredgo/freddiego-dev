@@ -70,6 +70,7 @@ export default function LanguageChangeButton() {
       <Link
         href={getRedirectedPathName(nextLanguage)}
         className=" h-[1.5rem]flex flex-col justify-center hover:text-secondary"
+        aria-label="Language change button"
       >
         <FollowerPointerCard
           title={nextLanguage}
@@ -83,7 +84,10 @@ export default function LanguageChangeButton() {
   } else {
     return (
       <AlertDialog>
-        <AlertDialogTrigger className="h-[1.5rem] w-[1.5rem] hover:text-secondary">
+        <AlertDialogTrigger
+          className="h-[1.5rem] w-[1.5rem] hover:text-secondary"
+          aria-label="Language change button"
+        >
           <FollowerPointerCard title={nextLanguage} className="" isFixed={true}>
             <HiOutlineLanguage className="h-full w-full " />
           </FollowerPointerCard>
@@ -107,11 +111,15 @@ export default function LanguageChangeButton() {
               <Link
                 href={getRedirectedPathName(nextLanguage)}
                 className=" h-[1.5rem] flex flex-col justify-center"
+                aria-label="Continue button"
               >
                 계속하기 / Continue
               </Link>
             </AlertDialogAction>
-            <AlertDialogAction className=" bg-[#e23b3b] dark:bg-[#ffacac]">
+            <AlertDialogAction
+              className=" bg-[#e23b3b] dark:bg-[#ffacac]"
+              aria-label="Cancel button"
+            >
               돌아가기 / Back
             </AlertDialogAction>
           </AlertDialogFooter>

@@ -65,12 +65,14 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
                 href={projectData.github}
                 target="_blank"
                 className=" hover:text-secondary"
+                aria-label="Github link to project"
               >
                 <FaGithubSquare className=" h-[1.5rem] w-[1.5rem] " />
               </a>
               <a
                 href={projectData.demo}
                 className="flex items-center justify-center pb-[3px] hover:text-secondary"
+                aria-label="Link to the proejct demo"
               >
                 <FaExternalLinkAlt className=" h-[1.3rem] w-[1.3rem] " />
               </a>
@@ -79,6 +81,7 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
               <Link
                 href={`/archive/project/${projectData.slug.current}`}
                 className=" text-[0.75rem] border-b border-primary hover:border-secondary hover:text-secondary"
+                aria-label="Link to the project details page"
               >
                 Read about it
               </Link>

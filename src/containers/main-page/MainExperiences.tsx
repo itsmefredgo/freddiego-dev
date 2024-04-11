@@ -28,8 +28,8 @@ function MainExperiences({ experiences }: MainExperiencesProps) {
       <Accordion type="single" collapsible>
         {experiences?.map((experience, index) => (
           <AccordionItem value={`item-${index}`} key={`item-${index}`}>
-            <AccordionTrigger>
-              <div className="flex flex-col items-start">
+            <AccordionTrigger className=" border border-red-700">
+              <div className="flex flex-col items-start" id="hello">
                 <div className=" items-start flex flex-col sm:flex-row">
                   <span>{experience.role}</span>
                   {experience.role && experience.company && (
@@ -61,7 +61,11 @@ function MainExperiences({ experiences }: MainExperiencesProps) {
                     </Link>
                   )}
                   {experience.links.contact && (
-                    <a href="/#contact" className=" hover:text-secondary">
+                    <a
+                      href="/#contact"
+                      className=" hover:text-secondary"
+                      aria-label="Contact freddiego?"
+                    >
                       Contact freddiego?
                     </a>
                   )}
