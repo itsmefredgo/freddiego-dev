@@ -11,17 +11,13 @@
       "introduction": {
         "greeting": "Hi there,",
         "name": "my name is Frederick Go",
-        "roles": [
-          "Software Engineer",
-          "Full-stack Developer",
-          "Data Scientist"
-        ],
+        "roles": ["Software Engineer", "Data Scientist", "Web Developer"],
         "hello": "Nice to See You."
       },
       "roles": [
         {
           "title": "Engineer",
-          "description": "I am a dedicated Software Engineer/Full-stack Developer. ",
+          "description": "I am a dedicated Full-stack Software Engineer. ",
           "techstatement": "Some of the tech I love:",
           "techlist": [
             "Next.js",

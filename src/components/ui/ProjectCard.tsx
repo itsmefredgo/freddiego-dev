@@ -54,7 +54,7 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
               ))}
               ...
             </div>
-            <div className=" text-sm">{projectData.excerpt}</div>
+            <div className=" text-sm h-[5rem]">{projectData.excerpt}</div>
           </CardItem>
           <CardItem
             translateZ={25}
