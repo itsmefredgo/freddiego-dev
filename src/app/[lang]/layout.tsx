@@ -1,13 +1,9 @@
 import "@/public/styles/globals.css";
 import { Locale, i18n } from "@/src/i18n.config";
-import { TracingBeam } from "@/src/components/ui/TracingBeamBar";
+import { TracingBeam } from "@/src/components/ui/tracing-beam";
 import Header from "@/src/components/includes/header";
 import Footer from "@/src/components/includes/footer";
-import type { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "freddiego",
-  description: "Frederick's portfolio website",
-};
+
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 

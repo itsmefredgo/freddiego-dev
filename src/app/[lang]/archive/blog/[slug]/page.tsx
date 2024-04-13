@@ -1,6 +1,6 @@
 import { Locale } from "@/src/i18n.config";
 import { getDictionary } from "@/public/dictionary";
-import SectionTitle from "@/src/components/ui/SectionTitle";
+import SectionTitle from "@/src/components/ui/section-title";
 import { client } from "@/lib/client";
 import { Blog } from "@/sanity/sanityPropsInterface";
 import ProjectListItem from "@/src/containers/archive-page/ProjectListItem";
