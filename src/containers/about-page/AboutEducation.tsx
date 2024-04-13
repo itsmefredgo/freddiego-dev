@@ -1,4 +1,4 @@
-import SectionTitle from "@/src/components/ui/SectionTitle";
+import SectionTitle from "@/src/components/ui/section-title";
 
 type AboutEducationProps = {
   title: string;

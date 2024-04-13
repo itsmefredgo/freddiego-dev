@@ -2,7 +2,7 @@ import { Locale } from "@/src/i18n.config";
 import { getDictionary } from "@/public/dictionary";
 import { client } from "@/lib/client";
 
-import SectionTitle from "@/src/components/ui/SectionTitle";
+import SectionTitle from "@/src/components/ui/section-title";
 import { Project, Blog } from "@/sanity/sanityPropsInterface";
 import { ProjectHoverEffect } from "@/src/containers/archive-page/ProjectListHover";
 import { BlogHoverEffect } from "@/src/containers/archive-page/BlogListHover";

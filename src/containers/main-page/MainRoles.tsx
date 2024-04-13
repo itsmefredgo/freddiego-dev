@@ -1,6 +1,6 @@
-import SectionTitle from "@/src/components/ui/SectionTitle";
-import TechIcons from "@/src/components/ui/TechIcon";
-import ProjectCard from "@/src/components/ui/ProjectCard";
+import SectionTitle from "@/src/components/ui/section-title";
+import TechIcons from "@/src/components/ui/tech-icon";
+import ProjectCard from "@/src/components/ui/project-card";
 import Link from "next/link";
 
 type MainRolesProps = {

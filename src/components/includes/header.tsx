@@ -2,13 +2,13 @@
 
 import { Locale } from "@/src/i18n.config";
 import Image from "next/image";
-import LanguageChangeButton from "../functions/LanguageChangeButton";
-import HeaderLink from "../ui/HeaderLink";
+import LanguageChangeButton from "../functions/language-button";
+import HeaderLink from "../ui/lang-direct-link";
 import { IoMenu } from "react-icons/io5";
 import getCurrentPage from "../helpers/useFindCurrentPage";
 import freddiego from "@/public/assets/images/freddiego.svg";
-import ToggleDarkMode from "../functions/ToggleDarkMode";
-import ContactButton from "../functions/ContactButton";
+import ToggleDarkMode from "../functions/dark-mode-toggler";
+import ContactButton from "../functions/contact-button";
 
 import {
   DropdownMenu,

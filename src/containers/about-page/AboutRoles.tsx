@@ -1,4 +1,4 @@
-import SectionTitle from "@/src/components/ui/SectionTitle";
+import SectionTitle from "@/src/components/ui/section-title";
 import Role from "./Role";
 
 type AboutRolesProps = {

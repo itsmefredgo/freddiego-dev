@@ -1,4 +1,4 @@
-import TechIcon from "@/src/components/ui/TechIcon";
+import TechIcon from "@/src/components/ui/tech-icon";
 
 type TechIconListProps = {
   techIcons: string[];

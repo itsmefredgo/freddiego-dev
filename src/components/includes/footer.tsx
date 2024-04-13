@@ -1,8 +1,8 @@
 import { Locale } from "@/src/i18n.config";
 import Image from "next/image";
-import HeaderLink from "../ui/HeaderLink";
+import HeaderLink from "../ui/lang-direct-link";
 import freddiego from "@/public/assets/images/freddiego.svg";
-import CopyEmail from "../ui/CopyEmail";
+import CopyEmail from "../ui/copy-email";
 import { CgFileDocument } from "react-icons/cg";
 
 function Footer({ lang }: { lang: Locale }) {
