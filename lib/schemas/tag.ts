@@ -1,13 +1,13 @@
 import { defineType } from "sanity";
 
-export const tag = defineType({
-  name: "tag",
-  title: "Tag",
+export const category = defineType({
+  name: "category",
+  title: "Category",
   type: "document",
   fields: [
     {
       name: "name",
-      title: "Tag Name",
+      title: "Category Name",
       type: "string",
     },
     {
