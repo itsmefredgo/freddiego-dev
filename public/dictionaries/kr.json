@@ -17,31 +17,15 @@
       "roles": [
         {
           "title": "엔지니어",
+          "slug": "engineer",
           "description": "열정이 가득한 소프트웨어 개발자",
-          "techstatement": "애용하는 기술 스택:",
-          "techlist": [
-            "Next.js",
-            "JavaScript",
-            "TypeScript",
-            "HTML",
-            "CSS",
-            "Python"
-          ],
-          "projects": ["notifyall", "parkbom-academic-institution"]
+          "techstatement": "애용하는 기술 스택:"
         },
         {
           "title": "데이터 과학자",
+          "slug": "data-scientist",
           "description": "A.I. & 데이터를 시각화하는 것을 좋아하는 데이터 과학자/분석가",
-          "techstatement": "애용하는 기술 스택:",
-          "techlist": [
-            "Next.js",
-            "JavaScript",
-            "TypeScript",
-            "HTML",
-            "CSS",
-            "Python"
-          ],
-          "projects": ["notifyall", "notifyall"]
+          "techstatement": "애용하는 기술 스택:"
         }
       ],
       "experiences": [

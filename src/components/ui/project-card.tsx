@@ -37,10 +37,7 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
           className="flex flex-col gap-2 flex-1 justify-between
          min-h-[18rem] max-h-[40rem]"
         >
-          <CardItem
-            translateZ={50}
-            className=" flex flex-col gap-4 border w-full"
-          >
+          <CardItem translateZ={50} className=" flex flex-col gap-4 w-full">
             <Link
               href={`/archive/project/${projectData?.slug.current}`}
               className=" text-primary text-[1.5rem] hover:text-secondary"

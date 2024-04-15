@@ -11,44 +11,49 @@ type AboutEducationProps = {
 
 function AboutEducation({ greeting, name, roles, hello }: AboutEducationProps) {
   return (
-    <AuroraBackground className=" min-w-auto w-full h-fit rounded-3xl mb-8 p-12 text-text duration-300">
-      <section className=" w-full bg-transparent rounded-3xl z-10">
-        <div>
-          <h1 className=" text-[2.5rem]">{greeting}</h1>
-          <p className=" text-[2rem] text-primary">{name}</p>
-        </div>
-
-        <Separator className=" my-4" />
-
-        <div className="flex h-6 items-center space-x-4 text-sm">
-          <SoftwareEngineer />
-          <Separator orientation="vertical" className=" " />
-          <FullStackDeveloper />
-          <Separator orientation="vertical" className=" hidden md:block" />
-          <DataScientist classString=" hidden md:block" />
-        </div>
-
-        <Separator className=" my-4" />
-
-        <div className="flex h-[2rem]  items-center space-x-4 text-sm md:text-[1.5rem]">
-          <div className=" flex-1 gap-1 flex ">
-            <CanadaPin classString=" hidden md:block" />
-            <DataScientist classString=" md:hidden" />
+    <div className="pt-[5rem] mt-[-5rem]">
+      <AuroraBackground
+        className=" min-w-auto w-full h-fit rounded-3xl mb-8 p-12 text-text duration-300
+      "
+      >
+        <section className=" w-full bg-transparent rounded-3xl z-10">
+          <div>
+            <h1 className=" text-[2.5rem]">{greeting}</h1>
+            <p className=" text-[2rem] text-primary">{name}</p>
           </div>
-          <Separator orientation="vertical" className="  " />
-          <div className=" flex-1 gap-1 flex ">
-            <CanadaPin classString=" md:hidden" />
-            <NiceToSeeYou classString=" hidden md:block" />
+
+          <Separator className=" my-4" />
+
+          <div className="flex h-6 items-center space-x-4 text-sm">
+            <SoftwareEngineer />
+            <Separator orientation="vertical" className=" " />
+            <FullStackDeveloper />
+            <Separator orientation="vertical" className=" hidden md:block" />
+            <DataScientist classString=" hidden md:block" />
           </div>
-        </div>
 
-        <Separator className=" my-4 md:hidden" />
+          <Separator className=" my-4" />
 
-        <div className=" md:hidden">
-          <NiceToSeeYou />
-        </div>
-      </section>
-    </AuroraBackground>
+          <div className="flex h-[2rem]  items-center space-x-4 text-sm md:text-[1.5rem]">
+            <div className=" flex-1 gap-1 flex ">
+              <CanadaPin classString=" hidden md:block" />
+              <DataScientist classString=" md:hidden" />
+            </div>
+            <Separator orientation="vertical" className="  " />
+            <div className=" flex-1 gap-1 flex ">
+              <CanadaPin classString=" md:hidden" />
+              <NiceToSeeYou classString=" hidden md:block" />
+            </div>
+          </div>
+
+          <Separator className=" my-4 md:hidden" />
+
+          <div className=" md:hidden">
+            <NiceToSeeYou />
+          </div>
+        </section>
+      </AuroraBackground>
+    </div>
   );
 
   function CanadaPin({ classString }: { classString?: string }) {

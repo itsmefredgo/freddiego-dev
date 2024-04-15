@@ -22,7 +22,7 @@ type SanityOccupation = {
   pinnedProjects: Project[];
 };
 
-async function MainRoles({ roles }: MainRolesProps) {
+function MainRoles({ roles }: MainRolesProps) {
   return (
     <section className=" w-full bg-transparent flex flex-col gap-40 px-2">
       {roles?.map((role) => (
@@ -33,22 +33,6 @@ async function MainRoles({ roles }: MainRolesProps) {
               <p>{role.description}</p>
             </div>
             <OccupationDetails {...role} />
-            {/*  */}
-            {/* <div className=" flex gap-2">
-              <div className=" flex items-end">
-                <p>{role.techstatement}</p>
-              </div>
-              {role.techlist?.map((tech) => (
-                <TechIcons key={tech} tech={tech} />
-              ))}
-            </div>
-            <div className=" text-[1.5rem] mt-8">Pinned Projects</div>
-            <div className=" grid grid-cols-1 lg:grid-cols-2 gap-4">
-              {role.projects?.map((project) => (
-                <ProjectCard key={project} projectSlug={project} />
-              ))}
-            </div> */}
-            {/*  */}
           </div>
           <div className="py-2 mt-4">
             <Link
@@ -82,24 +66,23 @@ async function MainRoles({ roles }: MainRolesProps) {
 
     const occupationDetail: SanityOccupation = await getOccupationDetail();
 
-    // console.log("oppucation detail received is ", occupationDetail.techlist);
-
     return (
       <>
         <div className=" flex gap-2">
           <div className=" flex items-end">
             <p>{techstatement}</p>
           </div>
-          {occupationDetail.techlist?.map((tech) => (
-            // console.log("tech", tech),
+          {occupationDetail?.techlist?.map((tech) => (
             <TechIcons key={tech.slug.current} tech={tech.name} />
-            // <>{tech.slug.current}</>
           ))}
         </div>
         <div className=" text-[1.5rem] mt-8">Pinned Projects</div>
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {occupationDetail.pinnedProjects?.map((project) => (
-            <ProjectCard key={project.slug.current} projectSlug={project.slug.current} />
+          {occupationDetail?.pinnedProjects.map((project) => (
+            <ProjectCard
+              key={project.slug.current}
+              projectSlug={project.slug.current}
+            />
           ))}
         </div>
       </>

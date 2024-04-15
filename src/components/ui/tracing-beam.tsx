@@ -49,14 +49,14 @@ export const TracingBeam = ({
   return (
     <motion.div
       ref={ref}
-      className={cn(" relative w-auto max-w-4xl mx-auto h-full", className)}
+      className={cn(" relative w-auto mx-auto h-full", className)}
     >
-      <div className=" h-[calc(100%)] absolute -left-6 md:-left-10 top-3 flex flex-col justify-center">
+      <div className=" h-[calc(100%)] absolute -left-6 md:-left-10 top-3 flex flex-col justify-center ">
         {/* Circle in the start point */}
 
         {/* End of Circle in the start point */}
         <svg
-          viewBox={`0 0 10 ${svgHeight}`}
+          viewBox={`0 0 20 ${svgHeight}`}
           // Set the SVG height
           className=" block h-full w-auto" // height changed to reflect the responsive height
           aria-hidden="true"
@@ -64,7 +64,7 @@ export const TracingBeam = ({
           {/* Grey bar behind */}
           {/* original shape at the end removed.  */}
           <motion.path
-            d={`M0 -2 V-1 -2 l5 0 V ${svgHeight * 1}`}
+            d={`M0 -1 V-1 -2 l5 0 V ${svgHeight * 1}`}
             fill="none"
             stroke="#666666"
             strokeWidth={2}
