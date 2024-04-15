@@ -2,7 +2,7 @@ import { Locale } from "@/src/i18n.config";
 import { getDictionary } from "@/public/dictionary";
 import SectionTitle from "@/src/components/ui/section-title";
 import { client } from "@/lib/client";
-import { Project, Tag } from "@/sanity/sanityPropsInterface";
+import { Project } from "@/sanity/sanityPropsInterface";
 import ProjectListItem from "@/src/containers/archive-page/ProjectListItem";
 import ProjectComponent from "@/src/containers/archive-page/ProjectComponent";
 
@@ -21,7 +21,6 @@ async function getProject(slug: string) {
     demo,
     publishedAt,
     excerpt,
-    tags,
   }`;
 
   return await client.fetch(query);

@@ -51,20 +51,22 @@ export const TracingBeam = ({
       ref={ref}
       className={cn(" relative w-auto mx-auto h-full", className)}
     >
-      <div className=" h-[calc(100%)] absolute -left-6 md:-left-10 top-3 flex flex-col justify-center ">
-        {/* Circle in the start point */}
-
-        {/* End of Circle in the start point */}
+      <div className=" h-[calc(100%)] absolute ml-[-1.5rem] top-3">
         <svg
-          viewBox={`0 0 20 ${svgHeight}`}
+          viewBox={`0 0 9 ${svgHeight}`}
           // Set the SVG height
-          className=" block h-full w-auto" // height changed to reflect the responsive height
+          className=" block h-full" // height changed to reflect the responsive height
           aria-hidden="true"
         >
           {/* Grey bar behind */}
           {/* original shape at the end removed.  */}
           <motion.path
-            d={`M0 -1 V-1 -2 l5 0 V ${svgHeight * 1}`}
+            // M 1 0: Move to the starting point (1, 0).
+            // V -36: Draw a vertical line to the y-coordinate -36.
+            // l 18 24: Draw a relative line to the point (18, 24).
+            // V ${svgHeight}: Draw a vertical line to the y-coordinate equal to svgHeight.
+            d={`M 5 0V ${svgHeight}`}
+            // d={`M 1 0V -36 l 18 24 V ${svgHeight * 0.8} l -18 24V ${svgHeight}`}
             fill="none"
             stroke="#666666"
             strokeWidth={2}
@@ -75,7 +77,7 @@ export const TracingBeam = ({
           ></motion.path>
           {/* Active bar on top */}
           <motion.path
-            d={`M0 -2 V-1 -2 l5 0 V${svgHeight * 1}`}
+            d={`M 5 0V ${svgHeight}`}
             fill="none"
             stroke="url(#gradient)"
             strokeWidth="2"
@@ -103,7 +105,7 @@ export const TracingBeam = ({
         </svg>
       </div>
       {/* Contents */}
-      <div className="min-h-[calc(100vh+1px)]" ref={contentRef}>
+      <div className="min-h-[calc(100vh+1px)] " ref={contentRef}>
         {children}
       </div>
     </motion.div>
