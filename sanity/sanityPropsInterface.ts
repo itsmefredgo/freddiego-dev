@@ -10,7 +10,6 @@ export interface Project {
   demo: string;
   excerpt: string;
   body: any;
-  tags: Array<Tag>;
   _id: string;
 }
 
@@ -25,10 +24,10 @@ export interface Blog {
   _id: string;
 }
 
-export interface Tag {
-  title: string;
+export interface Tech {
+  name: string;
   slug: {
     current: string;
+    _id: string;
   };
-  _id: string;
 }
