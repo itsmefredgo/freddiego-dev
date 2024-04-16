@@ -6,14 +6,12 @@ import SectionTitle from "@/src/components/ui/section-title";
 import { Project, Blog } from "@/sanity/sanityPropsInterface";
 import { ProjectHoverEffect } from "@/src/containers/archive-page/ProjectListHover";
 import { BlogHoverEffect } from "@/src/containers/archive-page/BlogListHover";
+import ProjectCard from "@/src/components/ui/project-card";
 
 async function getProjects() {
   const query = `*[_type == "project"] | order(publishedAt desc) {
     title,
     slug,
-    publishedAt,
-    excerpt,
-    tags,
   }`;
 
   return await client.fetch(query);
@@ -44,7 +42,16 @@ export default async function Archive({
     <div className=" h-[auto] flex flex-col gap-20 font-normal">
       <section id="projects" className="pt-[5rem] mt-[-5rem]">
         <SectionTitle title="Projects" />
-        <ProjectHoverEffect projects={projects} />
+        {/* <ProjectHoverEffect projects={projects} /> */}
+        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.slug.current}
+              projectSlug={project.slug.current}
+            />
+          ))}
+        </div>
+        {/* <ProjectCard projectSlug={projects} /> */}
       </section>
       <section id="blogs" className="pt-[5rem] mt-[-5rem]">
         <SectionTitle title="Blogs" />

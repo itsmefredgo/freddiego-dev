@@ -16,18 +16,14 @@ function getLocale(request: NextRequest): string | undefined {
 
   try {
     const locale = matchLocale(languages, locales, i18n.defaultLocale);
-    console.log(locale);
     return locale;
   } catch (error) {
-    // console.log("error...");
     return "en";
   }
-  // const locale = matchLocale(languages, locales, i18n.defaultLocale);
-  // return locale;
+
 }
 
 export function middleware(request: NextRequest) {
-  // console.log("entered middleware");
   const pathname = request.nextUrl.pathname;
 
   if (pathname.startsWith("/studio")) {

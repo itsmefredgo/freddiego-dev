@@ -17,31 +17,15 @@
       "roles": [
         {
           "title": "Engineer",
+          "slug": "engineer",
           "description": "I am a dedicated Full-stack Software Engineer. ",
-          "techstatement": "Some of the tech I love:",
-          "techlist": [
-            "Next.js",
-            "JavaScript",
-            "TypeScript",
-            "HTML",
-            "CSS",
-            "Python"
-          ],
-          "projects": ["notifyall", "parkbom-academy"]
+          "techstatement": "Some of the tech I love:"
         },
         {
           "title": "Data Scientist",
+          "slug": "data-scientist",
           "description": "I am a dedicated Data Scientist. ",
-          "techstatement": "Some of the tech I love:",
-          "techlist": [
-            "Next.js",
-            "JavaScript",
-            "TypeScript",
-            "HTML",
-            "CSS",
-            "Python"
-          ],
-          "projects": ["2430-project", "music-recommender-system"]
+          "techstatement": "Some of the tech I love:"
         }
       ],
       "experiences": [

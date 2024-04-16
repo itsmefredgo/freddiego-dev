@@ -2,15 +2,27 @@ import SectionTitle from "@/src/components/ui/section-title";
 import TechIcons from "@/src/components/ui/tech-icon";
 import ProjectCard from "@/src/components/ui/project-card";
 import Link from "next/link";
+import { client } from "@/lib/client";
+import { Project, Tech } from "@/sanity/sanityPropsInterface";
+import { ProjectHoverEffect } from "../archive-page/ProjectListHover";
+import PinnedProject from "@/src/components/ui/main-role-project";
 
 type MainRolesProps = {
-  roles: {
-    title: string;
-    description: string;
-    techstatement: string;
-    techlist: string[];
-    projects: string[];
-  }[];
+  roles: Occupation[];
+};
+
+type Occupation = {
+  title: string;
+  slug: string;
+  description: string;
+  techstatement: string;
+};
+
+type SanityOccupation = {
+  title: string;
+  slug: string;
+  techlist: Tech[];
+  pinnedProjects: Project[];
 };
 
 function MainRoles({ roles }: MainRolesProps) {
@@ -23,20 +35,7 @@ function MainRoles({ roles }: MainRolesProps) {
             <div>
               <p>{role.description}</p>
             </div>
-            <div className=" flex gap-2">
-              <div className=" flex items-end">
-                <p>{role.techstatement}</p>
-              </div>
-              {role.techlist?.map((tech) => (
-                <TechIcons key={tech} tech={tech} />
-              ))}
-            </div>
-            <div className=" text-[1.5rem] mt-8">Pinned Projects</div>
-            <div className=" grid grid-cols-1 lg:grid-cols-2 gap-4">
-              {role.projects?.map((project) => (
-                <ProjectCard key={project} projectSlug={project} />
-              ))}
-            </div>
+            <OccupationDetails {...role} />
           </div>
           <div className="py-2 mt-4">
             <Link
@@ -50,6 +49,49 @@ function MainRoles({ roles }: MainRolesProps) {
       ))}
     </section>
   );
+
+  async function OccupationDetails({ slug, techstatement }: Occupation) {
+    async function getOccupationDetail() {
+      const query = `*[_type == "occupation" && slug.current == "${slug}"][0] {
+        title,
+        slug,
+        "techlist": techlist[]->{
+          name,
+          slug
+        },
+        "pinnedProjects": pinnedProjects[]->{
+          title,
+          slug,
+          thumbnail,
+        }
+      }`;
+      return await client.fetch(query);
+    }
+
+    const occupationDetail: SanityOccupation = await getOccupationDetail();
+
+    return (
+      <>
+        <div className=" flex gap-2">
+          <div className=" flex items-end">
+            <p>{techstatement}</p>
+          </div>
+          {occupationDetail?.techlist?.map((tech) => (
+            <TechIcons key={tech.slug.current} tech={tech.name} />
+          ))}
+        </div>
+        <div className=" text-[1.5rem] my-4">Pinned Projects</div>
+        <div className=" grid grid-cols-1 gap-8">
+          {occupationDetail?.pinnedProjects.map((project) => (
+            <PinnedProject
+              key={project.slug.current}
+              projectSlug={project.slug.current}
+            />
+          ))}
+        </div>
+      </>
+    );
+  }
 }
 
 export default MainRoles;
