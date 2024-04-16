@@ -44,7 +44,6 @@ export default async function Archive() {
     <div className=" h-[auto] flex flex-col gap-20 font-normal">
       <section id="projects" className="pt-[5rem] mt-[-5rem]">
         <SectionTitle title="Projects" />
-        {/* <ProjectHoverEffect projects={projects} /> */}
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-4">
           {projects.map((project) => (
             <ProjectCard
@@ -53,7 +52,6 @@ export default async function Archive() {
             />
           ))}
         </div>
-        {/* <ProjectCard projectSlug={projects} /> */}
       </section>
       <section id="blogs" className="pt-[5rem] mt-[-5rem]">
         <SectionTitle title="Blogs" />

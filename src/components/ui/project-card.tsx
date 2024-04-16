@@ -8,6 +8,7 @@ import TechIcon from "@/src/components/ui/tech-icon";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
 import Link from "next/link";
+import CategoryCard from "./category-card";
 
 type ProjectCardProps = {
   projectSlug: string;
@@ -28,18 +29,24 @@ async function getProjectCardData(projectSlug: string) {
 
 export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
   const projectData: Project = await getProjectCardData(projectSlug);
-
+  console.log(projectData.categories);
   return (
-    <CardContainer className=" w-full">
-      <CardBody className=" flex flex-col sm:flex-row lg:flex-col bg-subBackground gap-4 p-4 rounded-md w-full">
+    <CardContainer className=" w-full h-full">
+      <CardBody className=" flex flex-col sm:flex-row lg:flex-col bg-subBackground gap-4 p-4 rounded-md w-full h-full">
         <CardItem
           translateZ={37.5}
-          className=" flex flex-1 h-12 tiny:h-auto w-auto"
+          className=" flex-1 flex h-12 tiny:h-auto w-auto"
         >
-          <PortableText
-            value={projectData?.thumbnail}
-            components={myPortableTextComponents}
-          />
+          <Link
+            href={`/archive/project/${projectData?.slug.current}`}
+            aria-label="Link to the project details page"
+            className=" w-full"
+          >
+            <PortableText
+              value={projectData?.thumbnail}
+              components={myPortableTextComponents}
+            />
+          </Link>
         </CardItem>
         <div
           className="flex flex-col gap-2 flex-1 justify-between
@@ -67,6 +74,15 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
               ) : (
                 <>On-going</>
               )}
+            </div>
+            <div className=" flex flex-wrap gap-2">
+              {projectData.categories &&
+                projectData?.categories?.map((category) => (
+                  <CategoryCard
+                    key={category.slug.current}
+                    categorySlug={category.name}
+                  />
+                ))}
             </div>
             <div className=" flex flex-wrap gap-2">
               {projectData?.techstack?.map((tech: Tech) => (

@@ -18,13 +18,13 @@
         {
           "title": "Engineer",
           "slug": "engineer",
-          "description": "I am a dedicated Full-stack Software Engineer. ",
+          "description": "Full-stack software engineer with a degree in Computer Science from Dalhousie University.",
           "techstatement": "Some of the tech I love:"
         },
         {
-          "title": "Data Scientist",
-          "slug": "data-scientist",
-          "description": "I am a dedicated Data Scientist. ",
+          "title": "Data Analyst",
+          "slug": "data-analyst",
+          "description": "Data Scientist/Analyst with a degree in Computer Science and Statistics, and a certificate in Data Science from Dalhousie University; and Data Analytics certificate from Google.",
           "techstatement": "Some of the tech I love:"
         }
       ],
@@ -67,6 +67,7 @@
       "summaryRoles": [
         {
           "role": "Engineer",
+          "slug": "engineer",
           "description": "Front-end has been the appealing aspect of software and web developments for me. However, ever since I have discovered how much the front-end can be so powerful with a great back-end, I have been so eager to learn both sides of technology and integrate which led myself into becoming a full-stack developer. Web applications are in my toolkit with experiences of building cloud-based web applications. I love to code in my lovely tech stack: NextJS and Express, my go-to frameworks. Then I pick a data base and integrate all other sorts of things depending on the project, I love learning new techs. ",
           "techstack": [
             {
@@ -124,6 +125,7 @@
         },
         {
           "role": "Data Analyst",
+          "slug": "data-analyst",
           "description": "While there is an engineering side of me, on the other side, I love playing around with math/stat especially when it comes to extracting information and visualizing them. I fell in love with data science on the day I saw the power of big data and it has been a fascinating field for me. The idea of being able to extract super meaningful information out of some rows and columns of random looking data is so exiting, just imagine finding patterns of all sorts of things and solving problems! That is when I decided to dive deeper into data science which led me to achieving a certificate in data science from Dalhousie University and Data Analytics certificate from Google. Now, from time to time, whenever I want to understand about certain areas of the world, I dig for data online and make analysis using Python (mostly) and R using data analysis and machine learning. ",
           "techstack": [
             {
