@@ -15,7 +15,7 @@ function AboutExperiences({ title, experiencesList }: AboutExperiencesProps) {
   return (
     <section id="experiences" className="pt-[5rem] mt-[-5rem]">
       <SectionTitle title={title}></SectionTitle>
-      <ul>
+      <ul className=" flex flex-col gap-12 mt-8">
         {experiencesList.map((experience, index) => (
           <Experience {...experience} key={index} />
         ))}

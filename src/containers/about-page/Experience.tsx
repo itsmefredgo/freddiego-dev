@@ -7,13 +7,13 @@ type ExperienceProps = {
 
 function Experience({ company, role, date, descriptions }: ExperienceProps) {
   return (
-    <li key={company} className=" flex flex-col gap-2">
+    <li className=" flex flex-col gap-2">
       <div className=" flex flex-col md:flex-row ">
         <span>{company}</span>
-        <span className=" hidden md:block">&nbsp;-&nbsp;</span>
-        <span className=" before:content-['-_'] before:md:content-['']">
-          {role}
-        </span>
+        {company && role && (
+          <span className=" hidden md:block">&nbsp;-&nbsp;</span>
+        )}
+        <span className=" ">{role}</span>
       </div>
       <span>{date}</span>
       <ul>
