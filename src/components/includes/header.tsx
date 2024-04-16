@@ -27,7 +27,7 @@ export default function Header({ lang }: { lang: Locale }) {
   };
   // ${defaultNavBarStyle}
   return (
-    <header>
+    <header className="">
       <nav className={` ${headerStyle}`} role="navigation">
         <div
           className=" flex flex-row-reverse justify-end md:justify-start 
