@@ -5,7 +5,7 @@ import Link from "next/link";
 import { client } from "@/lib/client";
 import { Project, Tech } from "@/sanity/sanityPropsInterface";
 import { ProjectHoverEffect } from "../archive-page/ProjectListHover";
-import PinnedProject from "@/src/components/ui/main-role-project";
+import PinnedProject from "@/src/components/ui/pinned-project";
 
 type MainRolesProps = {
   roles: Occupation[];
@@ -73,15 +73,19 @@ function MainRoles({ roles }: MainRolesProps) {
     return (
       <>
         <div className=" flex gap-2">
-          <div className=" flex items-end">
-            <p>{techstatement}</p>
+          <div className=" flex flex-wrap gap-2">
+            <div className=" flex items-end">
+              <p>{techstatement}</p>
+            </div>
+            <div className=" flex flex-wrap gap-2">
+              {occupationDetail?.techlist?.map((tech) => (
+                <TechIcons key={tech.slug.current} tech={tech.name} />
+              ))}
+            </div>
           </div>
-          {occupationDetail?.techlist?.map((tech) => (
-            <TechIcons key={tech.slug.current} tech={tech.name} />
-          ))}
         </div>
         <div className=" text-[1.5rem] my-4">Pinned Projects</div>
-        <div className=" grid grid-cols-1 gap-8">
+        <div className=" grid grid-cols-1 border-t-2 border-subBackground">
           {occupationDetail?.pinnedProjects.map((project) => (
             <PinnedProject
               key={project.slug.current}
