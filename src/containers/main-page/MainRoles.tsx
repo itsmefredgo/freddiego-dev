@@ -4,7 +4,6 @@ import ProjectCard from "@/src/components/ui/project-card";
 import Link from "next/link";
 import { client } from "@/lib/client";
 import { Project, Tech } from "@/sanity/sanityPropsInterface";
-import { ProjectHoverEffect } from "../archive-page/ProjectListHover";
 import PinnedProject from "@/src/components/ui/pinned-project";
 
 type MainRolesProps = {

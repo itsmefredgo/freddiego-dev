@@ -1,7 +1,7 @@
 type ExperienceProps = {
-  company: string;
-  role: string;
-  date: string;
+  company: string | null;
+  role: string | null;
+  date: string | null;
   descriptions: string[];
 };
 

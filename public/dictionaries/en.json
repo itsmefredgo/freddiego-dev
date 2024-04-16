@@ -175,8 +175,7 @@
               "Revitalized and updated the organization's website, on WordPress & PHP, to ensure accurate and current information.",
               "Addressed prior site neglect, resolving issues promptly and ensuring the site now provides up-to-date information.",
               "Resolved issues with email inquiries resulting in clients in interest sending emails via a form easily."
-            ],
-            "links": { "about": false, "projects": false, "contact": false }
+            ]
           },
           {
             "company": null,
@@ -184,8 +183,7 @@
             "date": "Jan 2024 - Mar 2024",
             "descriptions": [
               "Designed and developed a website for a client to showcase their products and services. The website was built using Next.js and deployed on Vercel. The website is responsive and accessible on mobile and desktop devices."
-            ],
-            "links": { "about": false, "projects": true, "contact": false }
+            ]
           },
           {
             "company": null,
@@ -194,8 +192,7 @@
             "descriptions": [
               "I'm currently seeking opportunities to to dive into the world of software engineering as a developer. With practical experience in web development gained through volunteering and freelancing projects, I'm eager to transition into a full-time role where I can apply and further develop my skills.",
               "If you're on the lookout for a dedicated developer to join your team or know of any opportunities, I'd appreciate the chance to connect and explore potential possibilities!"
-            ],
-            "links": { "about": true, "projects": false, "contact": true }
+            ]
           }
         ]
       },

@@ -4,9 +4,9 @@ import Experience from "./Experience";
 type AboutExperiencesProps = {
   title: string;
   experiencesList: {
-    company: string;
-    role: string;
-    date: string;
+    company: string | null;
+    role: string | null;
+    date: string | null;
     descriptions: string[];
   }[];
 };

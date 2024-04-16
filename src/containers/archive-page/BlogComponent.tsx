@@ -54,7 +54,9 @@ export default BlogComponent;
 const myPortableTextComponents = {
   types: {
     image: ({ value }: any) => (
-      <Image src={urlForImage(value)} alt="Post" width={700} height={700} />
+      <div className=" flex justify-around">
+        <Image src={urlForImage(value)} alt="Post" width={700} height={700} />
+      </div>
     ),
     code: ({ value }: any) => (
       <div className="my-2">
