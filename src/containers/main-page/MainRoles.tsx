@@ -1,6 +1,5 @@
 import SectionTitle from "@/src/components/ui/section-title";
 import TechIcons from "@/src/components/ui/tech-icon";
-import ProjectCard from "@/src/components/ui/project-card";
 import Link from "next/link";
 import { client } from "@/lib/client";
 import { Project, Tech } from "@/sanity/sanityPropsInterface";
@@ -29,7 +28,12 @@ function MainRoles({ roles }: MainRolesProps) {
     <section className=" w-full bg-transparent flex flex-col gap-40 px-2">
       {roles?.map((role) => (
         <div key={role.title}>
-          <SectionTitle title={role.title} />
+          <Link
+            href={`/about#${role.slug}`}
+            className=" text-primary hover:text-secondary"
+          >
+            <SectionTitle title={role.title} />
+          </Link>
           <div className=" flex flex-col gap-4 ">
             <div>
               <p>{role.description}</p>
@@ -73,13 +77,15 @@ function MainRoles({ roles }: MainRolesProps) {
       <>
         <div className=" flex gap-2">
           <div className=" flex flex-wrap gap-2">
-            <div className=" flex items-end">
+            <div className=" flex items-center">
               <p>{techstatement}</p>
             </div>
-            <div className=" flex flex-wrap gap-2">
+            <div className=" flex flex-wrap gap-2 items-center">
+              &#123;
               {occupationDetail?.techlist?.map((tech) => (
                 <TechIcons key={tech.slug.current} tech={tech.name} />
               ))}
+              &#125; &#183;&#183;&#183;
             </div>
           </div>
         </div>
