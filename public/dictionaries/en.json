@@ -22,8 +22,8 @@
           "techstatement": "Some of the tech I love:"
         },
         {
-          "title": "Data Analyst",
-          "slug": "data-analyst",
+          "role": "Data Scientist",
+          "slug": "data-scientist",
           "description": "Data Scientist/Analyst with a degree in Computer Science and Statistics, and a certificate in Data Science from Dalhousie University; and Data Analytics certificate from Google.",
           "techstatement": "Some of the tech I love:"
         }
@@ -124,8 +124,8 @@
           ]
         },
         {
-          "role": "Data Analyst",
-          "slug": "data-analyst",
+          "role": "Data Scientist",
+          "slug": "data-scientist",
           "description": "While there is an engineering side of me, on the other side, I love playing around with math/stat especially when it comes to extracting information and visualizing them. I fell in love with data science on the day I saw the power of big data and it has been a fascinating field for me. The idea of being able to extract super meaningful information out of some rows and columns of random looking data is so exiting, just imagine finding patterns of all sorts of things and solving problems! That is when I decided to dive deeper into data science which led me to achieving a certificate in data science from Dalhousie University and Data Analytics certificate from Google. Now, from time to time, whenever I want to understand about certain areas of the world, I dig for data online and make analysis using Python (mostly) and R using data analysis and machine learning. ",
           "techstack": [
             {
