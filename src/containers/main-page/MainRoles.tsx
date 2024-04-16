@@ -4,6 +4,8 @@ import ProjectCard from "@/src/components/ui/project-card";
 import Link from "next/link";
 import { client } from "@/lib/client";
 import { Project, Tech } from "@/sanity/sanityPropsInterface";
+import { ProjectHoverEffect } from "../archive-page/ProjectListHover";
+import PinnedProject from "@/src/components/ui/main-role-project";
 
 type MainRolesProps = {
   roles: Occupation[];
@@ -17,6 +19,7 @@ type Occupation = {
 };
 
 type SanityOccupation = {
+  title: string;
   slug: string;
   techlist: Tech[];
   pinnedProjects: Project[];
@@ -58,7 +61,8 @@ function MainRoles({ roles }: MainRolesProps) {
         },
         "pinnedProjects": pinnedProjects[]->{
           title,
-          slug
+          slug,
+          thumbnail,
         }
       }`;
       return await client.fetch(query);
@@ -76,10 +80,10 @@ function MainRoles({ roles }: MainRolesProps) {
             <TechIcons key={tech.slug.current} tech={tech.name} />
           ))}
         </div>
-        <div className=" text-[1.5rem] mt-8">Pinned Projects</div>
-        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className=" text-[1.5rem] my-4">Pinned Projects</div>
+        <div className=" grid grid-cols-1 gap-8">
           {occupationDetail?.pinnedProjects.map((project) => (
-            <ProjectCard
+            <PinnedProject
               key={project.slug.current}
               projectSlug={project.slug.current}
             />

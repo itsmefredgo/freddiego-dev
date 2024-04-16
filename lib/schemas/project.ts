@@ -35,6 +35,12 @@ export const project = defineType({
       fields: [{ type: "text", name: "alt", title: "Alt" }],
     },
     {
+      title: "techstack",
+      name: "techstack",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "tech" }] }],
+    },
+    {
       title: "techlist",
       name: "techlist",
       type: "array",

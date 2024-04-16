@@ -15,7 +15,6 @@ export const category = defineType({
       title: "Slug",
       type: "slug",
       options: { source: "name" },
-      //   validation: (Rule) => Rule.required().error("A slug is required."),
     },
   ],
 });

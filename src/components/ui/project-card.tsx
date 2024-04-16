@@ -1,7 +1,7 @@
 import { client } from "@/lib/client";
 import { Project } from "@/sanity/sanityPropsInterface";
-import { PortableText } from "@portabletext/react";
 import Image from "next/image";
+import { PortableText } from "@portabletext/react";
 import { urlForImage } from "@/lib/image";
 import { CardBody, CardContainer, CardItem } from "@/src/components/ui/3d-card";
 import TechIcon from "@/src/components/ui/tech-icon";
@@ -95,6 +95,7 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
     </CardContainer>
   );
 }
+
 const myPortableTextComponents = {
   types: {
     image: ({ value }: any) => (

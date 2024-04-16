@@ -3,17 +3,18 @@
 import { cn } from "@/utils/cn";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
+import { client } from "@/lib/client";
 
 import Link from "next/link";
 import { Project } from "@/sanity/sanityPropsInterface";
 
-export const ProjectHoverEffect = ({
+export function ProjectHoverEffect({
   projects,
   className,
 }: {
   projects: Project[];
   className?: string;
-}) => {
+}) {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -29,7 +30,7 @@ export const ProjectHoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 
+                className="absolute inset-0 h-full w-full bg-neutral-200
                         dark:bg-slate-800/[0.8] block rounded-2xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
@@ -44,20 +45,51 @@ export const ProjectHoverEffect = ({
               />
             )}
           </AnimatePresence>
+          {/* <ProjectCard
+            projectSlug={project.slug.current}
+            idx={idx}
+          ></ProjectCard> */}
           <ProjectContainer>
-            <ProjectTitle>{project.title}</ProjectTitle>
-            <ProjectDate>
-              {new Date(project?.publishedAt).toDateString()}
-            </ProjectDate>
-            {project.excerpt && (
-              <ProjectAbstract>Abstract: {project.excerpt}</ProjectAbstract>
-            )}
+            <div className=" w-full min-h-[10rem] bg-subBackground">
+              {/* <ProjectCard projectSlug={project.slug.current} idx={idx} /> */}
+            </div>
           </ProjectContainer>
         </Link>
       ))}
     </div>
   );
-};
+
+  async function getProjectCardData(projectSlug: string) {
+    const query = `*[_type == "project" && slug.current == "${projectSlug}"][0] 
+      {title, slug, publishedAt, thumbnail, github, demo, excerpt }`;
+    return await client.fetch(query);
+  }
+
+  async function ProjectCard({
+    projectSlug,
+    idx,
+  }: {
+    projectSlug: string;
+    idx: number;
+  }) {
+    const projectData: Project = await getProjectCardData(projectSlug);
+
+    return (
+      <>
+        <ProjectTitle>
+          {projectData.title}
+          {idx}
+        </ProjectTitle>
+        <ProjectDate>
+          {new Date(projectData?.publishedAt).toDateString()}
+        </ProjectDate>
+        {projectData.excerpt && (
+          <ProjectAbstract>Abstract: {projectData.excerpt}</ProjectAbstract>
+        )}
+      </>
+    );
+  }
+}
 
 export const ProjectContainer = ({
   className,
