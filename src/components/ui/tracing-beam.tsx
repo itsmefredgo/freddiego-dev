@@ -26,7 +26,7 @@ export const TracingBeam = ({
     if (ref.current) {
       setSvgHeight(ref.current.offsetHeight);
     }
-  }, [usePathname(), ref.current?.offsetHeight]); // remakes the svg height on route change
+  }, [usePathname(), ref.current?.offsetHeight, contentRef.current]); // remakes the svg height on route change and when ref changes
 
   // Instead of creating the beam from in scale from 0.8 to 1,
   // Now is is mapped from 1 to 1.25 to reflect the height of the content

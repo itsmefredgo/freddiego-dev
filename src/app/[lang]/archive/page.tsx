@@ -1,20 +1,27 @@
 import { Locale } from "@/src/i18n.config";
-import { getDictionary } from "@/public/dictionary";
 import { client } from "@/lib/client";
 
 import SectionTitle from "@/src/components/ui/section-title";
 import { Project, Blog } from "@/sanity/sanityPropsInterface";
-import { ProjectHoverEffect } from "@/src/containers/archive-page/ProjectListHover";
 import { BlogHoverEffect } from "@/src/containers/archive-page/BlogListHover";
 import ProjectCard from "@/src/components/ui/project-card";
 
 async function getProjects() {
-  const query = `*[_type == "project"] | order(publishedAt desc) {
+  const projectsWithPublishedAt = `*[_type == "project" && defined(publishedAt)] | order(publishedAt desc) {
+    title,
+    slug,
+    publishedAt,
+  }`;
+  const projectsWithoutPublishedAt = `*[_type == "project" && !defined(publishedAt)] {
     title,
     slug,
   }`;
-
-  return await client.fetch(query);
+  const projects1: Project[] = await client.fetch(`${projectsWithPublishedAt}`);
+  const projects2: Project[] = await client.fetch(
+    `${projectsWithoutPublishedAt}`
+  );
+  const projects = projects1.concat(projects2);
+  return projects;
 }
 
 async function getBlogs() {
@@ -29,12 +36,7 @@ async function getBlogs() {
   return await client.fetch(query);
 }
 
-export default async function Archive({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}) {
-  const { page } = await getDictionary(lang);
+export default async function Archive() {
   const projects: Project[] = await getProjects();
   const blogs: Blog[] = await getBlogs();
 

@@ -41,12 +41,6 @@ export const project = defineType({
       of: [{ type: "reference", to: [{ type: "tech" }] }],
     },
     {
-      title: "techlist",
-      name: "techlist",
-      type: "array",
-      of: [{ type: "string" }],
-    },
-    {
       name: "github",
       title: "GitHub Link",
       type: "string",

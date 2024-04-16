@@ -176,6 +176,23 @@
               "Addressed prior site neglect, resolving issues promptly and ensuring the site now provides up-to-date information.",
               "Resolved issues with email inquiries resulting in clients in interest sending emails via a form easily."
             ]
+          },
+          {
+            "company": null,
+            "role": "프리랜서 웹 개발자",
+            "date": "Jan 2024 - Mar 2024",
+            "descriptions": [
+              "Designed and developed a website for a client to showcase their products and services. The website was built using Next.js and deployed on Vercel. The website is responsive and accessible on mobile and desktop devices."
+            ]
+          },
+          {
+            "company": null,
+            "role": "이제 어디로?",
+            "date": "Feb 2024 - Present",
+            "descriptions": [
+              "저는 현재 개발자로 소프트웨어 엔지니어링의 세계에 뛰어들기 위한 기회를 찾고 있습니다. 자원봉사와 프리랜싱 프로젝트를 통해 웹 개발에 대한 실무 경험을 쌓았으며, 제 기술을 적용하고 더 발전시킬 수 있는 풀타임 역할로 전환하기를 간절히 바라고 있습니다.",
+              "팀에 합류할 헌신된 개발자를 찾고 있다면 또는 어떠한 기회를 아시는 경우, 연락하여 잠재적인 가능성을 탐색하는 기회를 감사히 받겠습니다!"
+            ]
           }
         ]
       },

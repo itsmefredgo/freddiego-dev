@@ -1,5 +1,5 @@
 import { client } from "@/lib/client";
-import { Project } from "@/sanity/sanityPropsInterface";
+import { Project, Tech } from "@/sanity/sanityPropsInterface";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { urlForImage } from "@/lib/image";
@@ -15,12 +15,20 @@ type ProjectCardProps = {
 
 async function getProjectCardData(projectSlug: string) {
   const query = `*[_type == "project" && slug.current == "${projectSlug}"][0] 
-    {title, slug, publishedAt, thumbnail, github, demo, excerpt, techlist[] }`;
+      {title, slug, techlist, thumbnail, github, demo, excerpt, publishedAt,
+        "techstack": techstack[]->{
+          name,
+          slug,
+        },"categories": categories[]->{
+          name,
+          slug,
+        }, }`;
   return await client.fetch(query);
 }
 
 export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
   const projectData: Project = await getProjectCardData(projectSlug);
+
   return (
     <CardContainer className=" w-full">
       <CardBody className=" flex flex-col sm:flex-row lg:flex-col bg-subBackground gap-4 p-4 rounded-md w-full">
@@ -45,15 +53,24 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
               {projectData?.title}
             </Link>
             <div className=" text-subtext text-sm">
-              {new Date(projectData?.publishedAt).toLocaleDateString("en-US", {
-                month: "long",
-                day: "numeric",
-                year: "numeric",
-              })}
+              {projectData.publishedAt ? (
+                <>
+                  {new Date(projectData?.publishedAt).toLocaleDateString(
+                    "en-US",
+                    {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    }
+                  )}
+                </>
+              ) : (
+                <>On-going</>
+              )}
             </div>
             <div className=" flex flex-wrap gap-2">
-              {projectData?.techlist?.map((tech: string) => (
-                <TechIcon key={tech} tech={tech} />
+              {projectData?.techstack?.map((tech: Tech) => (
+                <TechIcon key={tech.slug.current} tech={tech.name} />
               ))}
               ...
             </div>
