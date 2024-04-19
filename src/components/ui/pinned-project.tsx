@@ -34,8 +34,8 @@ async function PinnedProject({ projectSlug }: PinnedProjectProps) {
       rounded-2xl py-8 px-0 duration-200"
       >
         <div
-          className=" w-full h-[50vw] md:h-[20rem] lg:h-auto 
-        lg:flex-1 "
+          className=" w-full h-[50vw] lg:h-auto 
+          lg:flex-1 "
         >
           <Link href={`/archive/project/${projectData.slug.current}`}>
             <PortableText
@@ -46,7 +46,7 @@ async function PinnedProject({ projectSlug }: PinnedProjectProps) {
         </div>
         <div
           className=" min-h-[10rem] lg:min-h-[20rem] flex flex-col gap-2
-        lg:flex-1 justify-start lg:justify-between"
+          lg:flex-1 justify-start lg:justify-between"
         >
           <div className=" flex flex-col gap-2">
             <h1 className=" text-[1.5rem] text-primary hover:text-secondary ">
