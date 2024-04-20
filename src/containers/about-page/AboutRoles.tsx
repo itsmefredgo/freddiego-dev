@@ -6,6 +6,12 @@ type AboutRolesProps = {
   summaryRoles: any[];
 };
 
+/**
+ * Renders the roles section of the about page.
+ * @param title The title of the roles section.
+ * @param summaryRoles The summary of the roles as roles objects.
+ * @returns The rendered roles section.
+ */
 function AboutRoles({ title, summaryRoles }: AboutRolesProps) {
   return (
     <section id="roles" className="pt-[5rem] mt-[-5rem]">
