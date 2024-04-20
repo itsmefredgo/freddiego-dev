@@ -1,8 +1,13 @@
 import { usePathname } from "next/navigation";
-import { FaRegPaperPlane } from "react-icons/fa";
-import { FollowerPointerCard } from "@/src/components/ui/following-pointer";
-import { FaPaperPlane } from "react-icons/fa";
 
+import { FollowerPointerCard } from "@/src/components/ui/following-pointer";
+
+import { FaRegPaperPlane } from "react-icons/fa";
+
+/**
+ * Renders a button that links to the contact section.
+ * @returns The rendered contact button.
+ */
 function ContactButton() {
   return (
     <a

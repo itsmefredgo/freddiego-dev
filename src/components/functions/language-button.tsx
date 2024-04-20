@@ -12,15 +12,17 @@ import { HiOutlineLanguage } from "react-icons/hi2";
 import {
   AlertDialog,
   AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
-  AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/src/components/ui/alert-dialog";
 
+/**
+ * this button will let user switch between supported languages.
+ * @returns The rendered language change button.
+ */
 export default function LanguageChangeButton() {
   // Get the current pathname using the usePathname hook
   const pathName = usePathname();
