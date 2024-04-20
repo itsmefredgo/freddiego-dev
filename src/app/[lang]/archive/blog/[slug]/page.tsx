@@ -1,4 +1,5 @@
 import { client } from "@/lib/client";
+
 import { Blog } from "@/sanity/sanityPropsInterface";
 import BlogComponent from "@/src/containers/archive-page/BlogComponent";
 
@@ -8,6 +9,11 @@ interface Params {
   };
 }
 
+/**
+ * Fetches the blog data from sanity.
+ * @param slug The slug of the blog to fetch.
+ * @returns A Promise that resolves to the blog data.
+ */
 async function getBlogs(slug: string) {
   const query = `*[_type == "blog" && slug.current == "${slug}"][0] {
     title,
@@ -20,8 +26,16 @@ async function getBlogs(slug: string) {
   return await client.fetch(query, { slug });
 }
 
-async function page({ params }: Params) {
+/**
+ * Renders the blog page.
+ * @param params The slug of the blog to render.
+ * @returns The rendered blog page.
+ */
+async function BlogPage({ params }: Params) {
   const blog: Blog = await getBlogs(params.slug);
+
+  // If the blog does not exist, return null.
+  if (!blog) return null;
 
   return (
     <div>
@@ -30,4 +44,4 @@ async function page({ params }: Params) {
   );
 }
 
-export default page;
+export default BlogPage;

@@ -1,6 +1,8 @@
 import "@/public/styles/globals.css";
+
 import { Locale, i18n } from "@/src/i18n.config";
 import { TracingBeam } from "@/src/components/ui/tracing-beam";
+
 import Header from "@/src/components/includes/header";
 import Footer from "@/src/components/includes/footer";
 

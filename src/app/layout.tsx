@@ -1,11 +1,10 @@
-// layout.tsx
 interface Props {
   children: React.ReactNode;
 }
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "freddiego",
+  title: "freddiego.dev",
   description: "Frederick's portfolio website",
 };
 

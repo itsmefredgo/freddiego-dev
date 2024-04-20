@@ -2,15 +2,14 @@ import Image from "next/image";
 import { urlForImage } from "@/lib/image";
 import { PortableText } from "@portabletext/react";
 
-const BlockContent = require("@sanity/block-content-to-react");
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
 import Link from "next/link";
 import ProjectTitle from "./ProjectTitle";
 import { Project } from "@/sanity/sanityPropsInterface";
-import { TbArrowBackUp } from "react-icons/tb";
 
+import { TbArrowBackUp } from "react-icons/tb";
 import github from "@/public/assets/techicons/GitHub.svg";
 import { FollowerPointerCard } from "@/src/components/ui/following-pointer";
 
@@ -18,9 +17,14 @@ interface Props {
   project: Project;
 }
 
+/**
+ * Renders the project component.
+ * @param project The project to render.
+ * @returns The rendered project component page.
+ */
 function ProjectComponent({ project }: Props) {
   return (
-    <article className=" ">
+    <article>
       <div className=" flex justify-between">
         <ProjectTitle title={project?.title} />
         <Link
@@ -28,7 +32,10 @@ function ProjectComponent({ project }: Props) {
           className=" text-primary relative flex flex-col justify-end"
         >
           <FollowerPointerCard title="Back to Projects">
-            <TbArrowBackUp className=" text-[2rem] w-[2rem] mt-2 hover:mt-0 duration-150" />
+            <TbArrowBackUp
+              className=" text-[2rem] w-[2rem] mt-2 hover:mt-0 
+              duration-150"
+            />
           </FollowerPointerCard>
         </Link>
       </div>
@@ -84,6 +91,11 @@ function ProjectComponent({ project }: Props) {
 
 export default ProjectComponent;
 
+/**
+ * The custom components for the portable text.
+ * @param value The value of the portable text.
+ * @returns The custom components for the portable text.
+ */
 const myPortableTextComponents = {
   types: {
     image: ({ value }: any) => (

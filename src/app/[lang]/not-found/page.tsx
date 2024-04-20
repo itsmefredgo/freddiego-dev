@@ -1,12 +1,10 @@
 import "@/public/styles/globals.css";
 
 import Link from "next/link";
-import Header from "../../../components/includes/header";
 
 function NotFound() {
   return (
     <div>
-      {/* <Header lang="en"></Header> */}
       <main
         className={` ${mainDivWidth} font-semibold bg-background flex items-center justify-center
              text-text duration-300 glow5 h-[calc(100vh-4rem)]`}

@@ -1,5 +1,6 @@
 import { Locale } from "@/src/i18n.config";
 import { getDictionary } from "@/public/dictionary";
+
 import MainIntro from "@/src/containers/main-page/MainIntro";
 import MainRoles from "@/src/containers/main-page/MainRoles";
 import MainExperiences from "@/src/containers/main-page/MainExperiences";
