@@ -5,6 +5,14 @@ type ExperienceProps = {
   descriptions: string[];
 };
 
+/**
+ * Renders an experience.
+ * @param company The company name.
+ * @param role The role in the company.
+ * @param date The date of the experience.
+ * @param descriptions The list of descriptions of the experience.
+ * @returns The rendered experience.
+ */
 function Experience({ company, role, date, descriptions }: ExperienceProps) {
   return (
     <li className=" flex flex-col gap-2">
@@ -13,7 +21,7 @@ function Experience({ company, role, date, descriptions }: ExperienceProps) {
         {company && role && (
           <span className=" hidden md:block">&nbsp;-&nbsp;</span>
         )}
-        <span className=" ">{role}</span>
+        <span>{role}</span>
       </div>
       <span>{date}</span>
       <ul>

@@ -10,6 +10,12 @@ type AboutEducationProps = {
   };
 };
 
+/**
+ * Renders the education section of the about page.
+ * @param title The title of the education section.
+ * @param education The education object.
+ * @returns The rendered education section.
+ */
 function AboutEducation({ title, education }: AboutEducationProps) {
   return (
     <section id="education" className="pt-[5rem] mt-[-5rem]">

@@ -7,7 +7,13 @@ import { useState } from "react";
 import Link from "next/link";
 import { Blog } from "@/sanity/sanityPropsInterface";
 
-export const BlogHoverEffect = ({
+/**
+ * Renders the list of blogs.
+ * @param blogs The list of blogs to render.
+ * @param className The class name to apply to the component.
+ * @returns The rendered list of blogs.
+ */
+export const BlogsListComponent = ({
   blogs,
   className,
 }: {
@@ -44,7 +50,7 @@ export const BlogHoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <ProjectContainer>
+          <BlogCard>
             <ProjectTitle>{blog.title}</ProjectTitle>
             <ProjectDate>
               {new Date(blog?.publishedAt).toDateString()}
@@ -52,14 +58,15 @@ export const BlogHoverEffect = ({
             {blog.excerpt && (
               <ProjectAbstract>Abstract: {blog.excerpt}</ProjectAbstract>
             )}
-          </ProjectContainer>
+          </BlogCard>
         </Link>
       ))}
     </div>
   );
 };
 
-export const ProjectContainer = ({
+// Blog card components for the blog list
+export const BlogCard = ({
   className,
   children,
 }: {

@@ -53,7 +53,6 @@ export function middleware(request: NextRequest) {
       )
     );
   }
-  // console.log("exited middleware");
   return NextResponse.next();
 }
 

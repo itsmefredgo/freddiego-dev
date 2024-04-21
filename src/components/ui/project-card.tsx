@@ -1,12 +1,15 @@
 import { client } from "@/lib/client";
-import { Project, Tech } from "@/sanity/sanityPropsInterface";
 import Image from "next/image";
-import { PortableText } from "@portabletext/react";
 import { urlForImage } from "@/lib/image";
-import { CardBody, CardContainer, CardItem } from "@/src/components/ui/3d-card";
-import TechIcon from "@/src/components/ui/tech-icon";
+import { PortableText } from "@portabletext/react";
+
+import { Project, Tech } from "@/sanity/sanityPropsInterface";
+
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
+
+import { CardBody, CardContainer, CardItem } from "@/src/components/ui/3d-card";
+import TechIcon from "@/src/components/ui/tech-icon";
 import Link from "next/link";
 import CategoryCard from "./category-card";
 
@@ -14,7 +17,13 @@ type ProjectCardProps = {
   projectSlug: string;
 };
 
+/**
+ * Fetches the project data from sanity.
+ * @param projectSlug The slug of the project to fetch.
+ * @returns A Promise that resolves to the project data.
+ */
 async function getProjectCardData(projectSlug: string) {
+  // Fetching the specific project data from sanity
   const query = `*[_type == "project" && slug.current == "${projectSlug}"][0] 
       {title, slug, techlist, thumbnail, github, demo, excerpt, publishedAt,
         "techstack": techstack[]->{
@@ -27,12 +36,22 @@ async function getProjectCardData(projectSlug: string) {
   return await client.fetch(query);
 }
 
+/**
+ * Renders the project card component.
+ * @param projectSlug The slug of the project to render.
+ * @returns The rendered project card component.
+ */
 export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
+  // Fetching the project data
   const projectData: Project = await getProjectCardData(projectSlug);
-  console.log(projectData.categories);
+
   return (
     <CardContainer className=" w-full h-full">
-      <CardBody className=" flex flex-col sm:flex-row lg:flex-col bg-subBackground gap-4 p-4 rounded-md w-full h-full">
+      {/* Thumbnail image of the project card */}
+      <CardBody
+        className=" flex flex-col sm:flex-row lg:flex-col 
+        bg-subBackground gap-4 p-4 rounded-md w-full h-full"
+      >
         <CardItem
           translateZ={37.5}
           className=" flex-1 flex h-12 tiny:h-auto w-auto"
@@ -48,9 +67,10 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
             />
           </Link>
         </CardItem>
+        {/* Project details of the project card */}
         <div
           className="flex flex-col gap-2 flex-1 justify-between
-         min-h-[18rem] max-h-[40rem]"
+          min-h-[18rem] max-h-[40rem]"
         >
           <CardItem translateZ={50} className=" flex flex-col gap-4 w-full">
             <Link
@@ -107,7 +127,8 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
               </a>
               <a
                 href={projectData?.demo}
-                className="flex items-center justify-center pb-[3px] hover:text-secondary"
+                className="flex items-center justify-center pb-[3px] 
+                hover:text-secondary"
                 aria-label="Link to the proejct demo"
               >
                 <FaExternalLinkAlt className=" h-[1.3rem] w-[1.3rem] " />
@@ -116,7 +137,8 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
             <div className=" flex items-end">
               <Link
                 href={`/archive/project/${projectData?.slug.current}`}
-                className=" text-[0.75rem] border-b border-primary hover:border-secondary hover:text-secondary"
+                className=" text-[0.75rem] border-b border-primary 
+                hover:border-secondary hover:text-secondary"
                 aria-label="Link to the project details page"
               >
                 Read about it
@@ -129,6 +151,7 @@ export default async function ProjectCard({ projectSlug }: ProjectCardProps) {
   );
 }
 
+// Custom components for portable text
 const myPortableTextComponents = {
   types: {
     image: ({ value }: any) => (

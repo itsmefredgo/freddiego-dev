@@ -21,6 +21,11 @@ type MainExperiencesProps = {
   }[];
 };
 
+/**
+ * Renders the experiences section of the main page.
+ * @param experiences The list of experiences.
+ * @returns The rendered experiences section.
+ */
 function MainExperiences({ experiences }: MainExperiencesProps) {
   return (
     <section className=" w-full bg-transparent rounded-3xl z-10">
@@ -55,7 +60,8 @@ function MainExperiences({ experiences }: MainExperiencesProps) {
                   {experience.links.projects && (
                     <Link
                       href={"/archive#projects"}
-                      className="flex justify-end text-primary hover:text-secondary"
+                      className="flex justify-end text-primary 
+                      hover:text-secondary"
                     >
                       View projects
                     </Link>
