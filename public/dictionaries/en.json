@@ -11,24 +11,40 @@
       "introduction": {
         "greeting": "Hi there,",
         "name": "my name is Frederick Go",
-        "roles": ["Software Engineer", "Data Scientist", "Web Developer"],
+        "roles": ["Software Engineer", "ML Engineer", "Cloud Architect"],
         "hello": "Nice to See You."
       },
       "roles": [
         {
           "title": "Engineer",
           "slug": "engineer",
-          "description": "Full-stack software engineer with a degree in Computer Science from Dalhousie University.",
-          "techstatement": "Some of the tech I love:"
+          "description": "A software engineer who loves to work with cloud and A.I.",
+          "techstatement": "My tech stack as an engineer"
         },
         {
           "title": "Data Scientist",
           "slug": "data-scientist",
-          "description": "Data Scientist/Analyst with a degree in Computer Science and Statistics, and a certificate in Data Science from Dalhousie University; and Data Analytics certificate from Google.",
+          "description": "A Data Analyst/Scientist with a degree in Computer Science and Statistics, and loves A.I. and machine learning.",
           "techstatement": "Some of the tech I love:"
         }
       ],
       "experiences": [
+        {
+          "company": "VosynAI",
+          "role": "Cloud Solution Architect Intern",
+          "date": "May 2024 - Present",
+          "descriptions": ["- to be added"],
+          "links": { "about": false, "projects": false, "contact": false }
+        },
+        {
+          "company": null,
+          "role": "Freelance Web Developer",
+          "date": "Jan 2024 - April 2024",
+          "descriptions": [
+            "- Designed and developed a website for a client to showcase their products and services. The website was built using Next.js and deployed on Vercel. The website is responsive and accessible on mobile and desktop devices."
+          ],
+          "links": { "about": false, "projects": true, "contact": false }
+        },
         {
           "company": "St. Joseph's Children's Centre",
           "role": "Web Developer",
@@ -39,25 +55,6 @@
             "- Resolved issues with email inquiries resulting in clients in interest sending emails via a form easily."
           ],
           "links": { "about": false, "projects": false, "contact": false }
-        },
-        {
-          "company": null,
-          "role": "Freelance Web Developer",
-          "date": "Jan 2024 - Mar 2024",
-          "descriptions": [
-            "- Designed and developed a website for a client to showcase their products and services. The website was built using Next.js and deployed on Vercel. The website is responsive and accessible on mobile and desktop devices."
-          ],
-          "links": { "about": false, "projects": true, "contact": false }
-        },
-        {
-          "company": null,
-          "role": "Where Next?",
-          "date": "Feb 2024 - Present",
-          "descriptions": [
-            "I'm currently seeking opportunities to to dive into the world of software engineering as a developer. With practical experience in web development gained through volunteering and freelancing projects, I'm eager to transition into a full-time role where I can apply and further develop my skills.",
-            "If you're on the lookout for a dedicated developer to join your team or know of any opportunities, I'd appreciate the chance to connect and explore potential possibilities!"
-          ],
-          "links": { "about": true, "projects": false, "contact": true }
         }
       ]
     },
@@ -182,19 +179,16 @@
           {
             "company": null,
             "role": "Freelance Web Developer",
-            "date": "Jan 2024 - Mar 2024",
+            "date": "Jan 2024 - April 2024",
             "descriptions": [
               "Designed and developed a website for a client to showcase their products and services. The website was built using Next.js and deployed on Vercel. The website is responsive and accessible on mobile and desktop devices."
             ]
           },
           {
-            "company": null,
-            "role": "Where Next?",
-            "date": "Feb 2024 - Present",
-            "descriptions": [
-              "I'm currently seeking opportunities to to dive into the world of software engineering as a developer. With practical experience in web development gained through volunteering and freelancing projects, I'm eager to transition into a full-time role where I can apply and further develop my skills.",
-              "If you're on the lookout for a dedicated developer to join your team or know of any opportunities, I'd appreciate the chance to connect and explore potential possibilities!"
-            ]
+            "company": "VosynAI",
+            "role": "Cloud Solutions Architect",
+            "date": "May 2024 - Present",
+            "descriptions": ["To be added"]
           }
         ]
       },
