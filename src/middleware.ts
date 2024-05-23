@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { NextRequest } from "next/server";
 
 import { i18n } from "@/src/i18n.config";
 
@@ -14,8 +14,13 @@ function getLocale(request: NextRequest): string | undefined {
   const locales: string[] = i18n.locales;
   const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
 
-  const locale = matchLocale(languages, locales, i18n.defaultLocale);
-  return locale;
+  try {
+    const locale = matchLocale(languages, locales, i18n.defaultLocale);
+    return locale;
+  } catch (error) {
+    return "en";
+  }
+
 }
 
 export function middleware(request: NextRequest) {
@@ -48,6 +53,7 @@ export function middleware(request: NextRequest) {
       )
     );
   }
+  return NextResponse.next();
 }
 
 export const config = {

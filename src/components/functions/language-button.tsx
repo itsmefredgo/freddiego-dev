@@ -12,15 +12,17 @@ import { HiOutlineLanguage } from "react-icons/hi2";
 import {
   AlertDialog,
   AlertDialogAction,
-  AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
-  AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/src/components/ui/alert-dialog";
 
+/**
+ * this button will let user switch between supported languages.
+ * @returns The rendered language change button.
+ */
 export default function LanguageChangeButton() {
   // Get the current pathname using the usePathname hook
   const pathName = usePathname();
@@ -97,7 +99,7 @@ export default function LanguageChangeButton() {
             <AlertDialogDescription className=" flex flex-col gap-4">
               <div className=" break-keep">
                 일부 컨텐츠는 한국어를 지원하지 않습니다. 양해 부탁드립니다.
-                감사합니다
+                감사합니다.
                 <br /> - 고동현 -
               </div>
               <div>

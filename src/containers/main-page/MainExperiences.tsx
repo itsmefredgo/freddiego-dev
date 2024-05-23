@@ -1,4 +1,4 @@
-import SectionTitle from "@/src/components/ui/SectionTitle";
+import SectionTitle from "@/src/components/ui/section-title";
 import {
   Accordion,
   AccordionContent,
@@ -21,6 +21,11 @@ type MainExperiencesProps = {
   }[];
 };
 
+/**
+ * Renders the experiences section of the main page.
+ * @param experiences The list of experiences.
+ * @returns The rendered experiences section.
+ */
 function MainExperiences({ experiences }: MainExperiencesProps) {
   return (
     <section className=" w-full bg-transparent rounded-3xl z-10">
@@ -28,7 +33,7 @@ function MainExperiences({ experiences }: MainExperiencesProps) {
       <Accordion type="single" collapsible>
         {experiences?.map((experience, index) => (
           <AccordionItem value={`item-${index}`} key={`item-${index}`}>
-            <AccordionTrigger className=" border border-red-700">
+            <AccordionTrigger>
               <div className="flex flex-col items-start" id="hello">
                 <div className=" items-start flex flex-col sm:flex-row">
                   <span>{experience.role}</span>
@@ -55,7 +60,8 @@ function MainExperiences({ experiences }: MainExperiencesProps) {
                   {experience.links.projects && (
                     <Link
                       href={"/archive#projects"}
-                      className="flex justify-end text-primary hover:text-secondary"
+                      className="flex justify-end text-primary 
+                      hover:text-secondary"
                     >
                       View projects
                     </Link>

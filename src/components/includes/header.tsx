@@ -1,40 +1,46 @@
 "use client";
 
 import { Locale } from "@/src/i18n.config";
-import Image from "next/image";
-import LanguageChangeButton from "../functions/LanguageChangeButton";
-import HeaderLink from "../ui/HeaderLink";
-import { IoMenu } from "react-icons/io5";
 import getCurrentPage from "../helpers/useFindCurrentPage";
+import Image from "next/image";
+
+import LanguageChangeButton from "../functions/language-button";
+import ToggleDarkMode from "../functions/dark-mode-toggler";
+
+import LinkForLanguage from "../ui/lang-direct-link";
+import ContactButton from "../functions/contact-button";
+
+import { IoMenu } from "react-icons/io5";
 import freddiego from "@/public/assets/images/freddiego.svg";
-import ToggleDarkMode from "../functions/ToggleDarkMode";
-import ContactButton from "../functions/ContactButton";
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/src/components/ui/dropdown-menu";
 
+/**
+ * Renders the header section of the website.
+ * @param lang The language to render the header in.
+ * @returns The rendered header section.
+ */
 export default function Header({ lang }: { lang: Locale }) {
   const navigation = {
     "": "freddiego",
     about: "About",
     archive: "Archive",
   };
-  // ${defaultNavBarStyle}
   return (
-    <header>
+    <header className="">
       <nav className={` ${headerStyle}`} role="navigation">
         <div
           className=" flex flex-row-reverse justify-end md:justify-start 
           md:flex-row gap-2 md:gap-8 items-center"
         >
           <span className=" flex md:pr-8 md:border-r-[1.25px] md:border-text">
-            <HeaderLink href={`/`} lang={lang} key={""}>
+            <LinkForLanguage href={`/`} lang={lang} key={""}>
               <div className=" h-[25px] w-auto ">
                 <Image
                   src={freddiego}
@@ -42,7 +48,7 @@ export default function Header({ lang }: { lang: Locale }) {
                   className=" h-full w-full customSvgColour"
                 />
               </div>
-            </HeaderLink>
+            </LinkForLanguage>
           </span>
           <div
             className="hidden md:static w-auto h-auto bg-inherit gap-12
@@ -62,11 +68,11 @@ export default function Header({ lang }: { lang: Locale }) {
               dark:bg-subBackground"
             >
               {Object.entries(navigation).map(([key, value]) => (
-                <HeaderLink href={`/` + key} lang={lang} key={key}>
+                <LinkForLanguage href={`/` + key} lang={lang} key={key}>
                   <DropdownMenuItem>{value}</DropdownMenuItem>
                   {value !== navigation.archive}
                   <DropdownMenuSeparator></DropdownMenuSeparator>
-                </HeaderLink>
+                </LinkForLanguage>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
@@ -95,9 +101,9 @@ export default function Header({ lang }: { lang: Locale }) {
                 getCurrentPage(lang) === key && " underline"
               }`}
             >
-              <HeaderLink href={`/` + key} lang={lang} key={key}>
+              <LinkForLanguage href={`/` + key} lang={lang} key={key}>
                 {value}
-              </HeaderLink>
+              </LinkForLanguage>
             </span>
           )
         )}

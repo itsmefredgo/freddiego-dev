@@ -5,13 +5,22 @@ export interface Project {
   };
   publishedAt: string;
   thumbnail: any;
+  techstack: Array<Tech>;
   techlist: Array<string>;
   github: string;
   demo: string;
   excerpt: string;
   body: any;
-  tags: Array<Tag>;
+  categories: Array<category>;
   _id: string;
+}
+
+export interface category {
+  name: string;
+  slug: {
+    current: string;
+    _id: string;
+  };
 }
 
 export interface Blog {
@@ -25,10 +34,10 @@ export interface Blog {
   _id: string;
 }
 
-export interface Tag {
-  title: string;
+export interface Tech {
+  name: string;
   slug: {
     current: string;
+    _id: string;
   };
-  _id: string;
 }

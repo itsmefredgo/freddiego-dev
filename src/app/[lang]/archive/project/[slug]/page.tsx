@@ -1,9 +1,6 @@
-import { Locale } from "@/src/i18n.config";
-import { getDictionary } from "@/public/dictionary";
-import SectionTitle from "@/src/components/ui/SectionTitle";
 import { client } from "@/lib/client";
-import { Project, Tag } from "@/sanity/sanityPropsInterface";
-import ProjectListItem from "@/src/containers/archive-page/ProjectListItem";
+import { Project } from "@/sanity/sanityPropsInterface";
+
 import ProjectComponent from "@/src/containers/archive-page/ProjectComponent";
 
 interface Params {
@@ -12,6 +9,11 @@ interface Params {
   };
 }
 
+/**
+ * Fetches the project data from sanity.
+ * @param slug The slug of the project to fetch.
+ * @returns A Promise that resolves to the project data.
+ */
 async function getProject(slug: string) {
   const query = `*[_type == "project" && slug.current == "${slug}"][0] {
     title,
@@ -21,14 +23,21 @@ async function getProject(slug: string) {
     demo,
     publishedAt,
     excerpt,
-    tags,
   }`;
 
   return await client.fetch(query);
 }
 
-async function page({ params }: Params) {
+/**
+ * Renders the project page.
+ * @param params The slug of the project to render.
+ * @returns The rendered project page.
+ */
+async function ProjectPage({ params }: Params) {
   const project: Project = await getProject(params.slug);
+
+  // If the project does not exist, return null.
+  if (!project) return null;
 
   return (
     <div>
@@ -37,4 +46,4 @@ async function page({ params }: Params) {
   );
 }
 
-export default page;
+export default ProjectPage;

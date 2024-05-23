@@ -11,44 +11,40 @@
       "introduction": {
         "greeting": "Hi there,",
         "name": "my name is Frederick Go",
-        "roles": [
-          "Software Engineer",
-          "Full-stack Developer",
-          "Data Scientist"
-        ],
+        "roles": ["Software Engineer", "ML Engineer", "Cloud Architect"],
         "hello": "Nice to See You."
       },
       "roles": [
         {
           "title": "Engineer",
-          "description": "I am a dedicated Software Engineer/Full-stack Developer. ",
-          "techstatement": "Some of the tech I love:",
-          "techlist": [
-            "Next.js",
-            "JavaScript",
-            "TypeScript",
-            "HTML",
-            "CSS",
-            "Python"
-          ],
-          "projects": ["notifyall", "notifyall"]
+          "slug": "engineer",
+          "description": "A software engineer who loves to work with cloud and A.I.",
+          "techstatement": "My tech stack as an engineer"
         },
         {
           "title": "Data Scientist",
-          "description": "I am a dedicated Data Scientist. ",
-          "techstatement": "Some of the tech I love:",
-          "techlist": [
-            "Next.js",
-            "JavaScript",
-            "TypeScript",
-            "HTML",
-            "CSS",
-            "Python"
-          ],
-          "projects": ["notifyall", "notifyall"]
+          "slug": "data-scientist",
+          "description": "A Data Analyst/Scientist with a degree in Computer Science and Statistics, and loves A.I. and machine learning.",
+          "techstatement": "Some of the tech I love:"
         }
       ],
       "experiences": [
+        {
+          "company": "VosynAI",
+          "role": "Cloud Solution Architect Intern",
+          "date": "May 2024 - Present",
+          "descriptions": ["- to be added"],
+          "links": { "about": false, "projects": false, "contact": false }
+        },
+        {
+          "company": null,
+          "role": "Freelance Web Developer",
+          "date": "Jan 2024 - April 2024",
+          "descriptions": [
+            "- Designed and developed a website for a client to showcase their products and services. The website was built using Next.js and deployed on Vercel. The website is responsive and accessible on mobile and desktop devices."
+          ],
+          "links": { "about": false, "projects": true, "contact": false }
+        },
         {
           "company": "St. Joseph's Children's Centre",
           "role": "Web Developer",
@@ -59,25 +55,6 @@
             "- Resolved issues with email inquiries resulting in clients in interest sending emails via a form easily."
           ],
           "links": { "about": false, "projects": false, "contact": false }
-        },
-        {
-          "company": null,
-          "role": "Freelance Web Developer",
-          "date": "Jan 2024 - Mar 2024",
-          "descriptions": [
-            "- Designed and developed a website for a client to showcase their products and services. The website was built using Next.js and deployed on Vercel. The website is responsive and accessible on mobile and desktop devices."
-          ],
-          "links": { "about": false, "projects": true, "contact": false }
-        },
-        {
-          "company": null,
-          "role": "Where Next?",
-          "date": "Feb 2024 - Present",
-          "descriptions": [
-            "I'm currently seeking opportunities to to dive into the world of software engineering as a developer. With practical experience in web development gained through volunteering and freelancing projects, I'm eager to transition into a full-time role where I can apply and further develop my skills.",
-            "If you're on the lookout for a dedicated developer to join your team or know of any opportunities, I'd appreciate the chance to connect and explore potential possibilities!"
-          ],
-          "links": { "about": true, "projects": false, "contact": true }
         }
       ]
     },
@@ -87,6 +64,7 @@
       "summaryRoles": [
         {
           "role": "Engineer",
+          "slug": "engineer",
           "description": "Front-end has been the appealing aspect of software and web developments for me. However, ever since I have discovered how much the front-end can be so powerful with a great back-end, I have been so eager to learn both sides of technology and integrate which led myself into becoming a full-stack developer. Web applications are in my toolkit with experiences of building cloud-based web applications. I love to code in my lovely tech stack: NextJS and Express, my go-to frameworks. Then I pick a data base and integrate all other sorts of things depending on the project, I love learning new techs. ",
           "techstack": [
             {
@@ -143,7 +121,8 @@
           ]
         },
         {
-          "role": "Data Analyst",
+          "role": "Data Scientist",
+          "slug": "data-scientist",
           "description": "While there is an engineering side of me, on the other side, I love playing around with math/stat especially when it comes to extracting information and visualizing them. I fell in love with data science on the day I saw the power of big data and it has been a fascinating field for me. The idea of being able to extract super meaningful information out of some rows and columns of random looking data is so exiting, just imagine finding patterns of all sorts of things and solving problems! That is when I decided to dive deeper into data science which led me to achieving a certificate in data science from Dalhousie University and Data Analytics certificate from Google. Now, from time to time, whenever I want to understand about certain areas of the world, I dig for data online and make analysis using Python (mostly) and R using data analysis and machine learning. ",
           "techstack": [
             {
@@ -196,6 +175,20 @@
               "Addressed prior site neglect, resolving issues promptly and ensuring the site now provides up-to-date information.",
               "Resolved issues with email inquiries resulting in clients in interest sending emails via a form easily."
             ]
+          },
+          {
+            "company": null,
+            "role": "Freelance Web Developer",
+            "date": "Jan 2024 - April 2024",
+            "descriptions": [
+              "Designed and developed a website for a client to showcase their products and services. The website was built using Next.js and deployed on Vercel. The website is responsive and accessible on mobile and desktop devices."
+            ]
+          },
+          {
+            "company": "VosynAI",
+            "role": "Cloud Solutions Architect",
+            "date": "May 2024 - Present",
+            "descriptions": ["To be added"]
           }
         ]
       },

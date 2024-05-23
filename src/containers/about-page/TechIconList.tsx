@@ -1,9 +1,14 @@
-import TechIcon from "@/src/components/ui/TechIcon";
+import TechIcon from "@/src/components/ui/tech-icon";
 
 type TechIconListProps = {
   techIcons: string[];
 };
 
+/**
+ * Renders a list of tech icons.
+ * @param techIcons The list of tech icon names in strings to render.
+ * @returns The rendered list of tech icons.
+ */
 function TechIconList(props: TechIconListProps) {
   const { techIcons } = props;
   return (

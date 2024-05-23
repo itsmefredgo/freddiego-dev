@@ -2,28 +2,36 @@ import Image from "next/image";
 import { urlForImage } from "@/lib/image";
 import { PortableText } from "@portabletext/react";
 
-const BlockContent = require("@sanity/block-content-to-react");
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+
+import { TbArrowBackUp } from "react-icons/tb";
+import { FollowerPointerCard } from "@/src/components/ui/following-pointer";
 
 import Link from "next/link";
 import ProjectTitle from "./ProjectTitle";
 import { Blog } from "@/sanity/sanityPropsInterface";
-import { TbArrowBackUp } from "react-icons/tb";
-import { FollowerPointerCard } from "@/src/components/ui/following-pointer";
 
 interface Props {
   blog: Blog;
 }
 
+/**
+ * Renders the blog component.
+ * @param blog The blog to render.
+ * @returns The rendered blog component page.
+ */
 function BlogComponent({ blog }: Props) {
   return (
-    <article className=" ">
+    <article>
       <div className=" flex justify-between">
         <ProjectTitle title={blog?.title} />
         <Link href={"/archive#blogs"} className=" text-primary relative">
           <FollowerPointerCard title="Back to Blogs">
-            <TbArrowBackUp className=" text-[2rem] w-[2rem] pt-2 hover:pt-0 duration-150" />
+            <TbArrowBackUp
+              className=" text-[2rem] w-[2rem] pt-2 hover:pt-0 
+              duration-150"
+            />
           </FollowerPointerCard>
         </Link>
       </div>
@@ -51,10 +59,13 @@ function BlogComponent({ blog }: Props) {
 
 export default BlogComponent;
 
+// ProjectComponent for BlogComponent.
 const myPortableTextComponents = {
   types: {
     image: ({ value }: any) => (
-      <Image src={urlForImage(value)} alt="Post" width={700} height={700} />
+      <div className=" flex justify-around">
+        <Image src={urlForImage(value)} alt="Post" width={700} height={700} />
+      </div>
     ),
     code: ({ value }: any) => (
       <div className="my-2">
@@ -79,10 +90,5 @@ const myPortableTextComponents = {
     ),
   },
 };
-const portableTextStyles = `
-[&>*]:my-4
-[&>h1]:text-[1.5rem]
-[&>h2]:text-[1.25rem]
-glow5
-
-`;
+const portableTextStyles = `[&>*]:my-4 [&>h1]:text-[1.5rem]
+[&>h2]:text-[1.25rem] glow5`;

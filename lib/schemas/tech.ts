@@ -1,13 +1,15 @@
+import { Rule } from "sanity";
 import { defineType } from "sanity";
 
-export const tag = defineType({
-  name: "tag",
-  title: "Tag",
+export const tech = defineType({
+  name: "tech",
+  title: "Tech",
   type: "document",
+
   fields: [
     {
       name: "name",
-      title: "Tag Name",
+      title: "Tech Name",
       type: "string",
     },
     {
@@ -15,7 +17,7 @@ export const tag = defineType({
       title: "Slug",
       type: "slug",
       options: { source: "name" },
-      //   validation: (Rule) => Rule.required().error("A slug is required."),
+      validation: (Rule: Rule) => Rule.required().error("A title is required."),
     },
   ],
 });
